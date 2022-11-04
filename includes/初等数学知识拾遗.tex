@@ -19,9 +19,9 @@
 \begin{center}
     \begin{tblr}{colspec = {X[-1, l]|X[l]}, width = 0.7\textwidth}\hline
         记号                                   & 说明                                  \\ \hline
-        \(a\mid b\)                            & \(a\) 整除 \(b\)，即 \(b / a\) 是整数 \\
-        \(\exists !\)                          & 存在且唯一                            \\
-        \(\left\lfloor \cdots  \right\rfloor\) & 下取整函数                            \\
+        $a\mid b$                            & $a$ 整除 $b$，即 $b / a$ 是整数 \\
+        $\exists !$                          & 存在且唯一                            \\
+        $\left\lfloor \cdots  \right\rfloor$ & 下取整函数                            \\
         \hline\end{tblr}
 \end{center}
 
@@ -33,6 +33,7 @@
 大家所熟悉。然而，由于教学大纲的变化，许多重要的三角函数知识被删去，对三角恒等变换的要求降低
 ，这无疑给大家适应大学数学的学习带来了不少困难。下面，我们就来补充一些常用的三角函数知识。
 \subsection{和差化积与积化和差}
+\label{积化和差}
 
 我们熟知如下 cos 的两角和差公式
 
@@ -112,43 +113,6 @@
         \hline
     \end{tblr}
 \end{center}
-\begin{center}
-    \begin{tikzpicture}
-        \pgfplotsset{width = 10cm,height = 10cm}
-        \begin{axis}[
-                axis x line = middle,
-                axis y line = middle,
-                every inner x axis line/.append style={->},
-                every inner y axis line/.append style={->},
-                title={\itshape 反三角函数},
-                legend pos = south east,
-                xlabel = $x$,
-                ylabel = $y$,
-                ymajorgrids = false,
-                xmajorgrids = false,
-                grid style = dashed,
-                samples = 1000,
-                xmin = -1.5, xmax = 1.5
-            ]
-            \addplot+[
-                no marks,
-                thick,
-            ] table {Plot1.dat};
-
-            \addplot+[
-                no marks,
-                thick,
-            ] table {Plot2.dat};
-
-            \addplot+[
-                no marks,
-                thick,
-            ] table {Plot3.dat};
-
-            \legend{\(\arcsin x\),\(\arccos x\),\(\arctan x\)}
-        \end{axis}
-    \end{tikzpicture}
-\end{center}
 
 事实上,这里的值域实际上是指反三角函数的\textbf{主值}的取值范围。主值与自变量一一对应，仍然满足函数的定义。
 
@@ -178,7 +142,7 @@
 
     对两边求导，根据复合函数求导的法则\footnote{这里用到了$(\tan x)'=(\sin x / \cos x)'= 1 / \cos ^2x =1+\tan ^2 x$}，有
     \[
-        [f(\tan x)]'=f'(\tan x)({1+\tan ^2 x})=x'=1
+        [\,f(\tan x)]'=f'(\tan x)({1+\tan ^2 x})=x'=1
         ,\]
 
     所以
@@ -202,14 +166,14 @@
 我们定义双曲函数如下表：
 
 \begin{center}
-    \begin{tblr}{c|c|c|c}%\\+indent相当于软回车，不好不好。用\par代替
+    \begin{tblr}{c|c|c|c}
         \hline
         函数名   & 定义                                                                        & 定义域       & 值域           \\
         \hline
         双曲正弦 & $\sinh x=\frac{\mathrm{e}^x-\mathrm{e}^{-x}}{2}$                            & $\mathbb{R}$ & $\mathbb{R}$   \\
         双曲余弦 & $\cosh x=\frac{\mathrm{e}^x+\mathrm{e}^{-x}}{2}$                            & $\mathbb{R}$ & $[1,+\infty )$ \\
         双曲正切 & $\tanh x=\frac{\mathrm{e}^x-\mathrm{e}^{-x}}{\mathrm{e}^x+\mathrm{e}^{-x}}$ & $\mathbb{R}$ & $(-1,1)$       \\
-        \hline%图像
+        \hline
     \end{tblr}
 \end{center}
 
@@ -241,78 +205,97 @@
 剩余若干反双曲函数的表达式请自行推导。下面，我们给出反三角函数、双曲函数与反双曲函数的图像，试从中总结它们的性质。%补图
 
 
-\begin{center}
-    \begin{tikzpicture}
-        \pgfplotsset{width = 8cm,height = 7cm}
-        \begin{axis}[
-                axis x line = middle,
-                axis y line = middle,
-                every inner x axis line/.append style={->},
-                every inner y axis line/.append style={->},
-                title={\itshape 反三角函数},
-                legend pos = south east,
-                xlabel = $x$,
-                ylabel = $y$,
-                ymajorgrids = false,
-                xmajorgrids = false,
-                grid style = dashed,
-                samples = 800,
-                xmin = -2, xmax = 2,
-                ymin = -2
-            ]
-            \addplot+[
-                no marks,
-                thick,
-            ] table {Plot1.dat};
+\begin{center}\footnotesize
+    \makebox[0pt][c]{\begin{tikzpicture}
+            \pgfplotsset{width = \linewidth/2+2em,height = 7cm}
+            \begin{axis}[
+                    axis x line = middle,
+                    axis y line = middle,
+                    every inner x axis line/.append style={->},
+                    every inner y axis line/.append style={->},
+                    title={\itshape 反三角函数},
+                    legend pos = south east,
+                    xlabel = $x$,
+                    ylabel = $y$,
+                    ymajorgrids = false,
+                    xmajorgrids = false,
+                    grid style = dashed,
+                    samples = 800,
+                    xmin = -3, xmax = 3,
+                    ymin = -2
+                ]
+                \addplot+[
+                    no marks,
+                    very thick,macred!90!black
+                ] table {Plot1.dat};
 
-            \addplot+[
-                no marks,
-                thick,
-            ] table {Plot2.dat};
+                \addplot+[
+                    no marks,
+                    very thick,macyellow
+                ] table {Plot2.dat};
 
-            \addplot+[
-                no marks,
-                thick,
-            ] table {Plot3.dat};
+                \addplot+[
+                    no marks,
+                    very thick,macgreen!90!black
+                ] table {Plot3.dat};
+                
+                \addplot[
+                    domain = 0:10,dashed
+                ]{pi/2};
 
-            \legend{\(\arcsin x\),\(\arccos x\),\(\arctan x\)}
-        \end{axis}
-    \end{tikzpicture}
-    \begin{tikzpicture}
-        \pgfplotsset{width = 8cm,height = 7cm}
-        \begin{axis}[
-                axis x line = middle,
-                axis y line = middle,
-                every inner x axis line/.append style={->},
-                every inner y axis line/.append style={->},
-                title={\itshape 双曲函数},
-                legend pos = south east,
-                xlabel = $x$,
-                ylabel = $y$,
-                ymajorgrids = false,
-                xmajorgrids = false,
-                grid style = dashed,
-                samples = 1000,
-                xmin = -2, xmax = 2
-            ]
-            \addplot+[
-                no marks,
-                thick,
-            ]{sinh(x)};
+                \node[coordinate, pin=60:{\footnotesize$(1,\symup\pi /2)$}] at (axis cs:1,pi/2){};
+                \node[coordinate, pin=230:{\footnotesize$(-1,\symup\pi)$}] at (axis cs:-1,pi){};
+                \addplot [only marks,mark=*]
+                coordinates { (1,pi/2) (0,pi/2) (-1,pi)};
+                \legend{$\arcsin x$,$\arccos x$,$\arctan x$}
+            \end{axis}
+        \end{tikzpicture}
+        \begin{tikzpicture}
+            \pgfplotsset{width = \linewidth/2+2em,height = 7cm}
+            \begin{axis}[
+                    axis x line = middle,
+                    axis y line = middle,
+                    every inner x axis line/.append style={->},
+                    every inner y axis line/.append style={->},
+                    title={\itshape 双曲函数},
+                    legend pos = south east,
+                    xlabel = $x$,
+                    ylabel = $y$,
+                    ymajorgrids = false,
+                    xmajorgrids = false,
+                    grid style = dashed,
+                    samples = 1000,
+                    xmin = -3, xmax = 3,
+                    ymin = -2, ymax = 5
+                ]
+                \addplot+[
+                    no marks,
+                    very thick,macred!90!black
+                ]{sinh(x)};
 
-            \addplot+[
-                no marks,
-                thick,
-            ]{cosh(x)};
+                \addplot+[
+                    no marks,
+                    very thick,macyellow
+                ]{cosh(x)};
 
-            \addplot+[
-                no marks,
-                thick,
-            ]{tanh(x)};
+                \addplot+[
+                    no marks,
+                    very thick,macgreen!90!black
+                ]{tanh(x)};
 
-            \legend{\(\sinh x\),\(\cosh x\),\(\tanh x\),\(\arcsin x\),\(\arccos x\),\(\arctan x\)}
-        \end{axis}
-    \end{tikzpicture}
+                \addplot[
+                    domain = 0:10,dashed
+                ]{1};
+
+                \addplot [only marks,mark=*]
+                coordinates { (0,1) };
+
+                \node[coordinate, pin=230:{\footnotesize$(0,1)$}] at (axis cs:0,1){};
+                \legend{$\sinh x$,$\cosh x$,$\tanh x$}
+            \end{axis}
+        \end{tikzpicture}
+    }
+
     \begin{tikzpicture}
         \pgfplotsset{width = \linewidth ,height = 8cm}
         \begin{axis}[
@@ -320,7 +303,7 @@
                 axis y line = middle,
                 every inner x axis line/.append style={->},
                 every inner y axis line/.append style={->},
-                title={\itshape 双曲函数},
+                title={\itshape 反双曲函数},
                 legend pos = south east,
                 xlabel = $x$,
                 ylabel = $y$,
@@ -328,24 +311,24 @@
                 xmajorgrids = false,
                 grid style = dashed,
                 samples = 1000,
-                % xmin = -1.5, xmax = 1.5
             ]
             \addplot+[
                 no marks,
-                thick,
+                very thick,macred!90!black
             ] table {Plot4.dat};
 
             \addplot+[
                 no marks,
-                thick,
+                very thick,macyellow
             ] table {Plot5.dat};
 
             \addplot+[
                 no marks,
-                thick,
+                very thick,macgreen!90!black
             ] table {Plot6.dat};
 
-            \legend{\(\operatorname{arcsinh}x\),\(\operatorname{arccosh}x\),\(\operatorname{arctanh}x\)}
+
+            \legend{$\operatorname{arcsinh}x$,$\operatorname{arccosh}x$,$\operatorname{arctanh}x$}
         \end{axis}
     \end{tikzpicture}
 \end{center}
@@ -397,19 +380,19 @@
 拆解充要条件的符号``$\Leftrightarrow $"，我们发现它由``$\Leftarrow$" ``$\Rightarrow $"两部分组成。
 这看起来像是在说废话，实际上却蕴含了这么一种思想：如果你想证明两个命题等价，只需要证明由任意一方可以推出
 另外一方即可。还是像废话？我们来看一个实际的思路：如果$a,b$之间满足一定关系，证明$a=b$不仅可以由等量关系推出，也可
-分别证明$a\geqslant b,b\geqslant a$，从而得出$a=b$.
+分别证明$a\geqslant b$,~$b\geqslant a$，从而得出$a=b$.
 \begin{example}
-    已知集合$A=\{x \mid x=2m-1,m\in \mathbb{Z} \} ,B=\{x \mid x=4k\pm 1,k\in \mathbb{Z} \} $，求证：$A=B$.
+    已知集合$A=\bigl\{\,x \bigm| x=2m-1,\,m\in \mathbb{Z} \,\bigr\}$,~$B=\bigl\{\,x \bigm| x=4k\pm 1,\,k\in \mathbb{Z} \,\bigr\} $，求证：$A=B$.
 \end{example}
 \begin{prove}
-    一方面，若$x\in A$，则当$m=2k$时,$x=4k-1$且$k\in \mathbb{Z}$,
+    一方面，若$x\in A$，则当$m=2k$时,~$x=4k-1$且$k\in \mathbb{Z}$,
 
 
     当$m=2k+1$时
-    ，$x=2(2k+1)-1=4k+1,k\in \mathbb{Z}$,从而$x\in B$，即得$A\subseteq B$.
+    ，$x=2(2k+1)-1=4k+1$,~$k\in \mathbb{Z}$,从而$x\in B$，即得$A\subseteq B$.
 
 
-    另一方面，若$x∈B$，则$x=4k±1$,$k\in \mathbb{Z}$.
+    另一方面，若$x∈B$，则$x=4k±1$,~$k\in \mathbb{Z}$.
 
 
     当$x=4k-1$时，$x=2(2k)-1$，令$m=2k\in \mathbb{Z}$，有$x=2m-1\in A$.
@@ -424,10 +407,10 @@
 
 我们再用一个例子简单地介绍证明“$p$是$q$的充要条件”的思路。
 \begin{example}
-    已知$a,m,n\in \mathbb{N^*}$，求证：$a^m-1\mid a^n-1$的充要条件是$m\mid n$.
+    已知$a$,~$m$,~$n\in \mathbb{N^*}$，求证：$a^m-1\mid a^n-1$的充要条件是$m\mid n$.
 \end{example}
 \begin{prove}
-    充分性：由$m\mid n$可设$n=km(k\in \mathbb{Z})$，我们有
+    充分性：由$m\mid n$可设$n=km$,~$(k\in \mathbb{Z})$，我们有
     \[
         \begin{aligned}
             a^m-1=(a-1)(1+a+a^2+\dots +a^{m-1}), \\
@@ -467,7 +450,9 @@
 证明不等式，这个时候放缩法的使用就显得尤为重要。这一节，我们会针对高等数学（数学分析）的学习需要，介绍一些常
 用的放缩技巧和思路。
 \subsubsection{放缩的常用工具}
-\begin{enumerate}
+
+
+\begin{itemize}
     \item \textbf{与绝对值有关的不等式}
 
           关于绝对值，我们熟知有以下不等式：
@@ -491,7 +476,7 @@
           \end{prove}
           另外，对于任意$n$个数，上述不等式还有拓展：
           \[
-              |a_1+a_2+\cdots +a_n|\leqslant |a_1|+|a_2|+\cdots +|a_n|
+              |\;\!a_1+a_2+\cdots +a_n|\leqslant |a_1|+|a_2|+\cdots +|a_n|
               .\]
 
           取等条件为$a_1\mathrel{\char"007E}a_n$全部同号。
@@ -560,7 +545,7 @@
               我们取数列$a_n=\left (\frac{n}{\mathrm e} \right )^n$，则
               \begin{gather}
                   \frac{a_n}{a_{n-1}}=\frac{n^n}{(n-1)^{n-1}\mathrm e}=\frac{n\left (1+\frac{1}{n-1}\right )^{n-1}}{\mathrm e},\\
-                  a_n=\frac{a_n}{a_{n-1}} \cdot \frac{a_{n-1}}{a_{n-2}}\cdots \frac{a_2}{a_1} \cdot a_1< n(n-1)\cdot \cdots 2\cdot a_1<n(n-1)\cdots \cdot 2\cdot 1=n!.
+                  a_n=\frac{a_n}{a_{n-1}} \cdot \frac{a_{n-1}}{a_{n-2}}\cdots \frac{a_2}{a_1} \cdot a_1< n(n-1)\cdot \cdots 2\cdot a_1<n(n-1)\cdot \cdots \cdot 2\cdot 1=n!.
               \end{gather}
               证毕。
           \end{prove}
@@ -568,7 +553,7 @@
           例9揭示了$n$的阶乘与$n$的$n$次幂之间的关系，它与重要极限$\lim\limits_{n \to \infty}\left (1
               +\frac{1}{n}\right )^n=\mathrm e$密切相关。事实上，我们有极限
           $\lim\limits_{n \to \infty}\frac{n}{\sqrt[n]{n!}}=\mathrm e$.
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{放缩的常用手段}
 \label{sssec:A}
@@ -667,7 +652,7 @@
         .\]
     而
     \[
-        \lim\limits_{n \to \infty}\frac{n}{\sqrt{n^2+n}}=\lim\limits_{n \to \infty}\frac{1}{\sqrt{1+\frac{1}{n}}}=1,
+        \lim\limits_{n \to \infty}\frac{n}{\sqrt{n^2+n}}=\lim\limits_{n \to \infty}\frac{1}{\sqrt{1+\frac{1}{n}}}=1,\quad
         \lim\limits_{n \to \infty}\frac{n}{\sqrt{n^2+1}}=\lim\limits_{n \to \infty}\frac{1}{\sqrt{1+\frac{1}{n^2}}}=1
         .\]
     由夹逼定理即得$\lim\limits_{n \to \infty}\left( \frac{1}{\sqrt{n^2+1}}+\frac{1}{\sqrt{n^2+2}}+\cdots +\frac{1}{\sqrt{n^2+n}} \right) =1$.
@@ -683,9 +668,9 @@
     设$a_n=\sqrt{2+\sqrt{2+\sqrt{2+\cdots}}}$（$n$重根式），求证$\lim\limits_{n \to \infty}a_n$存在并求其极限。
 \end{example}
 \begin{solve}
-    $a_n$满足递推关系：$a_1=\sqrt{2}$,~$a_{n+1}=\sqrt{a_n+2}$.
+    $a_n$满足递推关系：$a_1=\sqrt{2}$, $a_{n+1}=\sqrt{a_n+2}$.
 
-    注意到$a_2=\sqrt{2+\sqrt{2}}>a_1$,~$a_3=\sqrt{2+\sqrt{2+\sqrt{2}}}>a_2$.
+    注意到$a_2=\sqrt{2+\sqrt{2}}>a_1$, $a_3=\sqrt{2+\sqrt{2+\sqrt{2}}}>a_2$.
 
     我们猜想，如果$a_n>a_{n-1}$，那么
     \[
@@ -703,7 +688,7 @@
 第二数学归纳法与第一数学归纳法类似，但却比它更强，其内容如下：
 
 \begin{enumerate}
-    \item 前提：当$n=m(m \in \mathbb{N})$时，结论成立；
+    \item 前提：当$n=m$,~$(m \in \mathbb{N})$时，结论成立；
     \item 假设与归纳：假设$n\leqslant k$（注意与第一数学归纳法比较）时结论成立，若由此推得$n=k+1$时结论也成立，
           则结论对$n \geqslant m$总成立。
 
@@ -721,8 +706,8 @@
     展开式写成$a_0+a_1\cos \theta+a_2\cos^2 \theta+\cdots +a_n \cos^n\theta$的形式，其中$a_k$均为整数。
 
 
-    我们考虑积化和差公式（见1.1节），有$2\cos k\theta\cos \theta=\cos (k+1)\theta +\cos (k-1)\theta$.
-    显然$n=1,2$时$\cos n\theta$,~$(n \in \mathbb{N})$均可以表示为关于$\cos \theta$的整系数多项式\footnote{$n=2$时即二倍角公式。}。
+    我们考虑积化和差公式（见 \autoref{积化和差} ），有$2\cos k\theta\cos \theta=\cos (k+1)\theta +\cos (k-1)\theta$.
+    显然$n=1$,~$2$时$\cos n\theta$,~$(n \in \mathbb{N})$均可以表示为关于$\cos \theta$的整系数多项式\footnote{$n=2$时即二倍角公式。}。
     假设$n\leqslant k$时$\cos n\theta$均可以表示为关于$\cos \theta$的整系数多项式，则
     \[
         \cos (k+1)\theta=2\cos k\theta\cos \theta-\cos (k-1)\theta
@@ -753,7 +738,7 @@
         \begin{tikzpicture}
             \pgfplotsset{width=10cm,height=7cm}
             \begin{axis}[
-                    title={当 \(r=1\) 时的摆线},
+                    title={当 $r=1$ 时的摆线},
                     xmin = -11, xmax = 11,
                     ymin = -11, ymax = 11,
                     axis x line=middle,
@@ -766,7 +751,7 @@
                 \addplot [
                     variable = t,
                     domain = 0:10*pi,
-                    thick,
+                    very thick,
                     trig format plots = rad,
                     samples = 1000,
                 ] (
@@ -790,7 +775,7 @@
 
 容易发现，极坐标与直角坐标有转换关系如下：
 \[
-    \rho ^2=x^2+y^2,\,\rho \cos \theta=x,\,\rho \sin \theta=y
+    \rho ^2=x^2+y^2,\quad\rho \cos \theta=x,\quad\rho \sin \theta=y
     .\]
 
 
@@ -818,7 +803,7 @@
             \addplot [
             samples = 400,
             domain = 0:2*pi,
-            thick,
+            very thick,
             trig format plots = rad,
             ] (deg(x), {1 - cos(x)});
         \end{polaraxis}
@@ -831,11 +816,11 @@
 \begin{center}
     \begin{tikzpicture}
         \pgfplotsset{width=7cm,height=7cm}
-        \begin{polaraxis}[title = {\itshape 阿基米德螺线 \(\rho =4+\theta\),~\((0\leqslant \theta\leqslant 4\symup \pi )\)}]
+        \begin{polaraxis}[title = {\itshape 阿基米德螺线 $\rho =4+\theta$,~$(0\leqslant \theta\leqslant 4\symup \pi )$}]
             \addplot [
             samples = 400,
             domain = 0:4*pi,
-            thick,
+            very thick,
             trig format plots = rad,
             ] (deg(x), {4 + x});
         \end{polaraxis}
@@ -843,11 +828,11 @@
     \quad
     \begin{tikzpicture}
         \pgfplotsset{width=7cm,height=7cm}
-        \begin{polaraxis}[title = {\itshape 玫瑰线 \(\rho =5\sin (4\theta)\),~\((0\leqslant \theta\leqslant 2\pi )\)}]
+        \begin{polaraxis}[title = {\itshape 玫瑰线 $\rho =5\sin (4\theta)$,~$(0\leqslant \theta\leqslant 2\pi )$}]
             \addplot [
             samples = 400,
             domain = 0:2*pi,
-            thick,
+            very thick,
             trig format plots = rad,
             ] (deg(x), {5*sin(4*x)});
         \end{polaraxis}
@@ -863,13 +848,13 @@
 高中时有位数学老师的话让我印象深刻：“没学过微积分，人半辈子都是黑暗的哦。”这种看法虽然比较极端，但也暗示
 了微积分对人思维的重要性。其中，最重要的一点，就是如何用精确的数学语言去描述看似浅显的“极限”“连续”概念。
 
-\subsection{从定义看极限}
+\subsection{从定义看极限}\label{continous property}
 高数课本上重点阐述了关于数列极限的“$\varepsilon  \text{-} N$语言”和关于函数极限的“$\varepsilon  \text{-} \delta$语言”,
 这里我们重点从数列极限的角度切入，帮助大家弄懂极限是什么，要怎么证明有关收敛性的题目。
 
 
 仔细观察$\varepsilon  \text{-}N$语言的内容：若对于所有正数$\varepsilon$，均存在正整数$N$，使得对于所有大于$N$
-的整数$n$，都有$|a_n-a|<\varepsilon$.记住$\varepsilon$是可以\textbf{任意}小的，只要它比0大，取
+的整数$n$，都有$|\;\!a_n-a|<\varepsilon$.记住$\varepsilon$是可以\textbf{任意}小的，只要它比0大，取
 什么值都没问题。但我们的$|a_n-a|$居然比它还要小！也就是说，只要有无穷多个（可以说明，这等价于“存在正整数$N$，使得对于所有大于$N$
 的整数$n$”）$|\,a_n-a\,|$比任意小的$\varepsilon$还要小，就可以说$a_n$收敛于$a$.
 
@@ -883,8 +868,8 @@
     题设等价于$\lim\limits_{n \to \infty}\frac{a_{n+1}}{a_n}=\frac{1}{l}=t<1$,
     即
     \[
-        \forall \varepsilon>0,\exists N\in \mathbb{N},\forall n>N,\left|\, \frac{a_{n+1}}{a_n}-t\, \right| <\varepsilon
-        \Rightarrow \frac{a_{n+1}}{a_n}<t+\varepsilon.
+        \forall \varepsilon>0,\,\exists N\in \mathbb{N},\,\forall n>N,\,\left|\, \frac{a_{n+1}}{a_n}-t\, \right| <\varepsilon
+        \Rightarrow \frac{a_{n+1}}{a_n}<t+\varepsilon
         .\]
     我们取$\varepsilon=1-t-\tau $，其中$\tau >0$且$\tau +t<1$.即得$\frac{a_{n+1}}{a_n}<1-\tau $.
     因此,$\forall n>N,$
@@ -909,26 +894,24 @@
 的辨析是这一节内容的重点。
 
 
-我们知道，一个数是有理数的充要条件是，它可以被表示为$\frac{q}{p}$的形式，其中$p,q$是互质（最大公因数为1）
+我们知道，一个数是有理数的充要条件是，它可以被表示为$\frac{q}{p}$的形式，其中$p$,~$q$是互质（最大公因数为1）
 的整数。我们说有理数是稠密的，是指任意两个实数之间必存在有理数。（利用前述的放缩法可以证明，这作为一道小小
 的思考题）
 
 
-但它并不是连续（参照5.1节关于连续性的定义）的，因为任意两个有理数之间必存在无理数（事实上，
+但它并不是连续（参照 \autoref{continous property} 关于连续性的定义）的，因为任意两个有理数之间必存在无理数（事实上，
 对任意有理数$a$,~$b$,取$c=a+\frac{1}{\sqrt{2}}(b-a)$即可）。这说明有理数并不“完美”，直观上来说，
 仅由有理数并不能生成一条连续的数轴，只能得到一系列离散的点——有理数与有理数之间是有“空隙”的。
 
 
 而引入实数的概念后，连续性的问题得到了解决。我们是这样阐述实数的连续性的：对于集合$X,Y$，若$\forall x\in X
-    ,y\in Y,x\leqslant y$，则$\exists c\in \mathbb{R},x\leqslant c\leqslant y$.可以这么说，无论两个实数多么“接近”，总有那么一个
+    $,~$y\in Y$,~$x\leqslant y$，则$\exists c\in \mathbb{R}$,~$x\leqslant c\leqslant y$.可以这么说，无论两个实数多么“接近”，总有那么一个
 实数可以“插入”到它们中间，这就是所谓“连续不断”。
 \begin{example}
     取集合$X=\{\, x\mid x^2\leqslant 2\,\}$,~$Y=\{\, y\mid y^2>2\,\}$，显然满足$\forall x\in X,\,y\in Y$,~$x\leqslant y$.
-    而$\exists ! c\in \mathbb{R}$,~$c^2=2$,~$x\leqslant c\leqslant y$.如果限制在有理数范围内，则无法找到这样的$c$.%加批注
+    而$\exists ! c\in \mathbb{R}$,~$c^2=2$,~$x\leqslant c\leqslant y$.如果限制在有理数范围内，则无法找到这样的$c$.
 \end{example}
 
 
 上面几段文字的描述可能显得很抽象。但不要紧，多去找一些实例或推论，尝试自己去证明一些结论，理解必然会不断加深。
 具体可以查询有关“实数完备性等价定理”的资料。
-
-% \end{document}

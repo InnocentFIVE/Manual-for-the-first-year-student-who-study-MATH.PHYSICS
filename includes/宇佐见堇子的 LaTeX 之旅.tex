@@ -50,13 +50,13 @@
     \begin{tcolorbox}[enhanced, breakable,
             colback = white!90!black, colframe = white!40!black, colbacktitle = cyan,
             boxsep=2mm, width=14cm,
-            boxed title style = {sharp corners}]
+            boxed title style = {sharp corners}]\itshapeCJK
         \begin{itemize}
-            {\kaishu \item \LaTeX 具有专业的排版输出能力，本身就是为了美观而服务的。
+            \item \LaTeX 具有专业的排版输出能力，本身就是为了美观而服务的。
             \item \LaTeX 目前仍是最强大的公式排版系统之一。
             \item 这玩意可以让用户更专注与内容、而不是被错综复杂的版式耍的团团转。%抓了个虫
             \item 有很多面向 \LaTeX 开发的宏包可以解决各式各样的问题。
-            \item 横跨全平台，而且开源免费。}
+            \item 横跨全平台，而且开源免费。
         \end{itemize}
     \end{tcolorbox}
 \end{center}
@@ -67,16 +67,16 @@
 
 \subsection{\LaTeX 的下载与安装}
 
-\LaTeX 有很多发行版，比如 \verb`TeXlive`, \verb`MiKTeX`, \verb`MacTeX` 这些，每个发行版可能有不同的宏包管理器（ \LaTeX 很多实现都是要依赖宏包才比较好搞），在这里我推荐的是比较全的 \verb`TeXlive` ，因为我用的就是 \verb`TeXlive` ，所以以下的教程全部以 \verb`TeXlive` 为基准。同样的，以下的教程基于 Windows 10。
+\LaTeX 有很多发行版，比如 \verb"TeXlive", \verb"MiKTeX", \verb"MacTeX" 这些，每个发行版可能有不同的宏包管理器（ \LaTeX 很多实现都是要依赖宏包才比较好搞），在这里我推荐的是比较全的 \verb"TeXlive" ，因为我用的就是 \verb"TeXlive" ，所以以下的教程全部以 \verb"TeXlive" 为基准。同样的，以下的教程基于 Windows 10。
 
-我们仅仅需要打开 \verb`TeXlive` 的相关网站—— \url{https://tug.org/texlive/}，然后选择
+我们仅仅需要打开 \verb"TeXlive" 的相关网站—— \url{https://tug.org/texlive/}，然后选择
 
 \begin{center}
-    \vbox{\textbf{\sffamily All the ways to acquire TeX Live:} \(\longrightarrow\) {\sffamily on DVD}
+    \vbox{\textbf{\sffamily All the ways to acquire TeX Live:} $\longrightarrow$ {\sffamily on DVD}
 
-        \(\longrightarrow\) {\sffamily downloading the TeX Live ISO image and burning your own DVD}
+    $\longrightarrow$ {\sffamily downloading the TeX Live ISO image and burning your own DVD}
 
-        \(\longrightarrow\) {\sffamily download from a nearby CTAN mirror}}
+    $\longrightarrow$ {\sffamily download from a nearby CTAN mirror}}
 \end{center}
 
 然后下载 \verb"texlive2022.iso"\footnote{根据年份不同可能会发生改变。} 即可。当然如果嫌慢，也可以使用一些镜像源：
@@ -90,17 +90,17 @@
 
 反正各大学校一般都会有自己的镜像源，一样下载即可。
 
-下载完成后可以运行 \verb`install-tl-windows.bat` 进行安装，选项默认就行，静待安装完成。
+下载完成后可以运行 \verb"install-tl-windows.bat" 进行安装，选项默认就行，静待安装完成。
 
 “呃……这个 ISO 文件怎么处理啊？”宇佐见堇子挠了挠头。
 
-“直接解压就行了，里面就有一个 \verb`install-tl-windows.bat`。”
+“直接解压就行了，里面就有一个 \verb"install-tl-windows.bat"。”
 
 \subsection{\LaTeX 的初步使用}
+"
+“安装完你的电脑里就有这么一个叫做 \LaTeX 的东西了，然后打开你的 Windows 菜单，应该会有一个 \verb"TeX live" 文件夹，里面有一个 \verb"TeXworks editor" 的软件，这是 \verb"TeXlive" 自带的一个 \LaTeX 代码编辑器。在里面可以写代码：
 
-“安装完你的电脑里就有这么一个叫做 \LaTeX 的东西了，然后打开你的 Windows 菜单，应该会有一个 \verb'TeX live' 文件夹，里面有一个 \verb`TeXworks editor` 的软件，这是 \verb`TeXlive` 自带的一个 \LaTeX 代码编辑器。在里面可以写代码：
-
-
+`
 
 \begin{lstlisting}
     \documentclass{article}
@@ -122,20 +122,20 @@
 
 这些玩意各有千秋，给我的感觉大概是这样子的：
 \begin{itemize}
-    \item \verb`pdfLaTeX`
+    \item \verb"pdfLaTeX"
           \begin{itemize}
               \item 古老
               \item 编译很快
-              \item 不原生支持 Unicode，这意味着如果你要写中文的话会很麻烦，而且如果你想要哪怕是一点点花里胡哨的视觉效果都最好别用 \verb`pdfLaTeX`。
+              \item 不原生支持 Unicode，这意味着如果你要写中文的话会很麻烦，而且如果你想要哪怕是一点点花里胡哨的视觉效果都最好别用 \verb"pdfLaTeX"。
           \end{itemize}
-    \item \verb`XeLaTeX`
+    \item \verb"XeLaTeX"
           \begin{itemize}
               \item 比较现代
               \item 编译有点慢
               \item 原生支持 Unicode
-              \item 有一些宏包是只支持 \verb`XeLaTeX` 和 \verb`LuaLaTeX` 的，比如 \verb`Unicode-math` 宏包（但“支持”是相对 \verb`pdfLaTeX` 来说的）
+              \item 有一些宏包是只支持 \verb"XeLaTeX" 和 \verb"LuaLaTeX" 的，比如 \verb"Unicode-math" 宏包（但“支持”是相对 \verb"pdfLaTeX" 来说的）
           \end{itemize}
-    \item \verb`LuaLaTeX`
+    \item \verb"LuaLaTeX"
           \begin{itemize}
               \item 允许写 Lua 代码来拓展功能
           \end{itemize}
@@ -165,8 +165,8 @@
 
 接下来写些带其他文字的例子 \autoref{fig:滚滚长江东逝水} ：
 
-\begin{codeing}
-    \begin{lstlisting}
+
+\begin{lstlisting}
     \documentclass{article}
     \usepackage{ctex}
     \begin{document}
@@ -178,7 +178,7 @@
         古今多少事，都付笑谈中。    
     \end{document}
 \end{lstlisting}
-\end{codeing}
+
 
 “我来解释一下这里面的命令……
 
@@ -194,8 +194,8 @@
 
 “其实倒也不是这样，因为 \LaTeX 里面的换行其实有点像空格……在某些层面影响很大的。”莲子纠正道，“我给你看个好康的例子。”
 
-\begin{codeing}
-    \begin{lstlisting}
+
+\begin{lstlisting}
     \documentclass{article}
     \usepackage{ctex}
     \begin{document}
@@ -205,7 +205,6 @@
         }
     \end{document}
 \end{lstlisting}
-\end{codeing}
 
 \begin{center}\footnotesize
     \colorbox{red}{
@@ -220,14 +219,13 @@
 
 “呃……其实有方法可以规避的……我们一般会在折行处加一个 \verb"%" 符号，这样子就可以注释掉后面的换行（空格）了。”
 
-\begin{codeing}
-    \begin{lstlisting}
+
+\begin{lstlisting}
     \colorbox{red}{%
         \color{white}%
         A spanning list in a vector space may not be a basis because it is not linearly independent.%
     }
 \end{lstlisting}
-\end{codeing}
 
 \begin{center}\footnotesize
     \colorbox{red}{%
@@ -248,18 +246,17 @@
 
 “公式嘛……其实与正文不一样，因此要提供一个‘数学环境’这样的东西。”
 
-\begin{codeing}
-    \begin{lstlisting}
+
+\begin{lstlisting}
     \documentclass{article}
     \begin{document}
         as we know:
         \[
             \sum_{n=0}^\infty \frac{1}{n!} = \exp (1)
         .\]
-        and \(\sin \left( \frac{\pi}{2} \right) = 1 \).
+        and $\sin \left( \frac{\pi}{2} \right) = 1 $.
     \end{document}
 \end{lstlisting}
-\end{codeing}
 
 得到 \autoref{fig:firstmath}。
 
@@ -274,10 +271,10 @@
 其中我们会认为：
 \begin{itemize}
     \item \verb"\[...\]" 之间是\textbf{行间公式}环境，我们可以称为``displaystyle math''。
-    \item 与之对应的，\verb"\(...\)" 是行内数学公式环境，可以称为``textstyle math''。
+    \item 与之对应的，\verb"$...$" 是行内数学公式环境，可以称为``textstyle math''。
 \end{itemize}
 
-当然以上两种也可以用 \verb"$$...$$" 和 \verb"$...$" 来代替，虽然我不推荐\footnote{其实有时候用 \texttt{\$\$...\$\$} 和 \texttt{\$...\$} 会好一些，但在一般写作里面用括号比较多（也方便查找）。}就是了。在例子中可以很清楚对照到“上标”是 \verb"^{...}"，下标是 \verb"_{...}" ，当只有一个字符的时候可以省略掉大括号。 至于像其他乱七八糟的数学符号命令现在在这里全部说明也不适合——具体可以参考——呃算了等到一会我回去的时候给你些链接。”
+当然以上两种也可以用 \verb"$$...$$" 和 \verb"$...$" 来代替，虽然我不推荐\footnote{其实有时候用 \texttt{\$...\$} 替代 \texttt{\char"005C(...\char"005C)} 会好一些，但在一般写作里面用括号比较多（也方便查找）。}就是了。在例子中可以很清楚对照到“上标”是 \verb"^{...}"，下标是 \verb"_{...}" ，当只有一个字符的时候可以省略掉大括号。 至于像其他乱七八糟的数学符号命令现在在这里全部说明也不适合——具体可以参考——呃算了等到一会我回去的时候给你些链接。”
 
 “链接？不会又是什么全英文地狱电子文档吧？”堇子试探性的问道。
 
@@ -301,15 +298,14 @@
 
 在此机制之上我们就可以组织我们文档的层级了。”
 
-\begin{codeing}
-    \begin{lstlisting}
+
+\begin{lstlisting}
     \part{Algebra}
     \section{Groups}
     \subsection{Free groups}
     \paragraph{The constrution of free groups}
-        We know \(A\) is just a...
+        We know $A$ is just a...
 \end{lstlisting}
-\end{codeing}
 
 
 
@@ -324,7 +320,7 @@
     \vskip3.25ex\noindent{\normalfont\large\bfseries 1.1\kern2.25ex {Free groups}}\vskip1.3ex
 
     \paragraph{The constrution of free groups}
-    We know \(A\) is just a...
+    We know $A$ is just a...
 \end{tcolorbox}
 
 
@@ -351,41 +347,39 @@
 
 “我们应该知道一些规范，比如说正儿八经的公式就应该用正儿八经的数学环境：
 
-“a - b 和 \(a - b\)，就分别是正文环境与数学环境的例子。因为在前者中 \verb"-" 是作为连字符呈现的，而后者是正儿八经的「减号」。正如前面展示的数学例子一样，我们用 \verb"\(...\)" 和 \verb"\[...\]" 来声明数学环境。”
+“a - b 和 $a - b$，就分别是正文环境与数学环境的例子。因为在前者中 \verb"-" 是作为连字符呈现的，而后者是正儿八经的「减号」。正如前面展示的数学例子一样，我们用 \verb"$...$" 和 \verb"\[...\]" 来声明数学环境。”
 
 \subsection{\AmS 与一些规范}
 
 “进入数学环境之后，我们就不允许像在正文环境那样随意了，首先是一个痛点——在数学环境尽量避免使用非 ASCII\footnote{即
     American Standard Code for Information Interchange，你可以认为是美式键盘上可以直接输入的所有字符。} 代码，否则——：
 
-“\verb"\(A^ {ij} _{γ}\)" 会得到\(
-A^{ij} %_{γ}
-\)，这样子 \(\gamma \) 显然没办法正常显示\footnote{除非你引入可以在数学环境进行特殊处理的包，比如 \texttt{unicode-math}.}，如果要打出正常的希腊字母 \(\gamma \)只需打出 \verb"\gamma" 即可，其他希腊字母照常。
+“\verb"$A^ {ij} _{γ}$" 会得到$
+    A^{ij} %_{γ}
+$，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可以在数学环境进行特殊处理的包，比如 \texttt{unicode-math}.}，如果要打出正常的希腊字母 $\gamma $只需打出 \verb"\gamma" 即可，其他希腊字母照常。
 
 “草草，这也太离谱了，什么都不让用。”
 
 “本身代码这种就最好纯用 ASCII 写啊，况且你不想想那是什么年代。另外还有一些事情是要注意的，那就是要按照正常的科技规范来正确输入，我们引入 \AmS{}Math 这个数学宏包——
 
-\begin{codeing}
-    \begin{lstlisting}
+
+\begin{lstlisting}
     % \usepackage{amsmath}
     \[
         \sum_{n=0}^{\infty} \frac{x^n}{n!} = \mathrm{e} ^ x
     .\]
 \end{lstlisting}
-\end{codeing}
 
 自然就会得到：
 
-\begin{codeing}
 
-    \[
-        \sum_{n=0}^{\infty} \frac{x^n}{n!} = \mathrm{e} ^ x
-        .\]
-\end{codeing}
+
+\[
+    \sum_{n=0}^{\infty} \frac{x^n}{n!} = \mathrm{e} ^ x
+    .\]
 “长得挺好看的这公式。”堇子立刻评论道。
 
-“对，你看这个里面有这么一个命令 \verb"\mathrm"，这玩意是将吸收的参数转化为 roman 字形，在科技文献中我们会一般要求自然对数的底 \(\mathrm{e}\) 要正体，同理，面对虚数单位 \(\mathrm{i}\)，微分算子 \(\mathrm{d}\) 也最后如此：
+“对，你看这个里面有这么一个命令 \verb"\mathrm"，这玩意是将吸收的参数转化为 roman 字形，在科技文献中我们会一般要求自然对数的底 $\mathrm{e}$ 要正体，同理，面对虚数单位 $\mathrm{i}$，微分算子 $\mathrm{d}$ 也最后如此：
 \[
     \int_0^{2\symup\pi } \mathrm{e} ^ {2 \mathrm{i} z } \,\mathrm{d}z = 0
     .\]
@@ -395,14 +389,14 @@ A^{ij} %_{γ}
 
 \begin{center}
     \begin{tabular}{cc}
-        \verb"\sin z"    &    \(\sin z\)    \\
-        \verb"sin z"     &    \(sin z\)     \\
+        \verb"\sin z"    &    $\sin z$    \\
+        \verb"sin z"     &    $sin z$     \\
     \end{tabular}
 \end{center}
 
 “草我在一些论坛上面逛的就看到后面这种，难看死了。”
 
-“对，而且也不合规范——这一点如果不熟悉的话还是要注意的。归根到底，其实是 \verb"\sin" 本身就是一个新的命令，展开后会得到正体的 \(\sin \) 以及和后面的变量之间\textbf{带上空格}\footnote{其实不应该叫空格，叫glue更恰当。}。可以看到在上面的例子中，即使在代码里面加入空格，真正显示出来的也不会有空格。
+“对，而且也不合规范——这一点如果不熟悉的话还是要注意的。归根到底，其实是 \verb"\sin" 本身就是一个新的命令，展开后会得到正体的 $\sin $ 以及和后面的变量之间\textbf{带上空格}\footnote{其实不应该叫空格，叫glue更恰当。}。可以看到在上面的例子中，即使在代码里面加入空格，真正显示出来的也不会有空格。
 
 “草这空格怎么那么麻烦……”\\
 
@@ -414,20 +408,20 @@ A^{ij} %_{γ}
     \DefTblrTemplate{caption-tag}{default}{}
     \DefTblrTemplate{caption-sep}{default}{}
     \begin{longtblr}{colspec = {X[-1]XX[-1]}, width = \textwidth}\hline
-        分类                 & 代码                                                                                                                         & 预览                                                    \\\hline
-        Opening symbols      & \texttt{\char"005C (, [, \char"005C\{, \char"005Clceil, \char"005Csqrt\{\}}                                                  & \((, [, \{, \lceil, \sqrt{}\)                           \\
-        Closing symbols      & \texttt{\char"005C !, ), ], \char"005C\}, \char"005C rfloor}                                                                 & \(!, ), ], \}, \rfloor\)                                \\
-        Fence symbols        & \texttt{\char"005C | = \char"005C vert, \char"005C Vert = \char"005C|}                                                       & \(| = \vert, \Vert = \|\)                               \\
-        Punctuation symbols  & \texttt{\char"005C , : ;}                                                                                                    & \(, : ;\)                                               \\
-        Over symbols         & \texttt{\char"005C overbrace\{a + b\}\^{}M}                                                                                  & \(\overbrace{a + b}^M\)                                 \\
-        Under symbols        & \texttt{\char"005C underbrace\{h + k\}\_L}                                                                                   & \(\underbrace{h + k}_L\)                                \\
-        Accents              & \texttt{\char"005C bar\{x\}, \char"005C tilde\{x\}, \char"005C dot\{x\}, \char"005C ddot\{x\}, \char"005C mathcirc\{x\}}     & \(\bar{x}, \tilde{x}, \dot{x}, \ddot{x}, \mathring{x}\) \\
-        Math operators       & \texttt{\char"005C sin, \char"005C lim, \char"005C inf}                                                                      & \(\sin, \lim, \inf\)                                    \\
-        BIG Math operators   & \texttt{\char"005C int\_0\^{}1 \char"005C sum\_0\^{}1 \char"005C displaystyle \char"005C int\_0\^{}1 \char"005C sum\_0\^{}1} & \(\int_0^1 \sum_0^1 \displaystyle \int_0^1 \sum_0^1\)   \\
-        Binary relations     & \texttt{\char"005C a+b, a\{+b\}, - ,\char"005C times, \char"005C div}                                                        & \(a + b, a{+b}, - ,\times, \div\)                       \\
-        Ordinary symbols     & \texttt{\char"005C forall, \char"005C exists, \char"005C emptyset}                                                           & \(\forall, \exists, \emptyset\)                         \\
-        Relation symbols     & \texttt{\char"005C a<b, a\{<b\}, \char"005C to, \char"005C leftarrow, \char"005C mapsto}                                     & \(a<b, a{<b}, \to, \leftarrow, \mapsto\)                \\
-        Alphabetical symbols & \texttt{\char"005C pi, \char"005C mathbf\{A\}, \char"005C mathcal\{X\}, \char"005C mathsf\{C\}}                              & \(\pi, \mathbf{A}, \mathcal{X}, \mathsf{C}\)            \\\hline
+        分类                 & 代码                                                                                                                         & 预览                                                  \\\hline
+        Opening symbols      & \texttt{\char"005C (, [, \char"005C\{, \char"005Clceil, \char"005Csqrt\{\}}                                                  & $(, [, \{, \lceil, \sqrt{}$                           \\
+        Closing symbols      & \texttt{\char"005C !, ), ], \char"005C\}, \char"005C rfloor}                                                                 & $!, ), ], \}, \rfloor$                                \\
+        Fence symbols        & \texttt{\char"005C | = \char"005C vert, \char"005C Vert = \char"005C|}                                                       & $| = \vert, \Vert = \|$                               \\
+        Punctuation symbols  & \texttt{\char"005C , : ;}                                                                                                    & $, : ;$                                               \\
+        Over symbols         & \texttt{\char"005C overbrace\{a + b\}\^{}M}                                                                                  & $\overbrace{a + b}^M$                                 \\
+        Under symbols        & \texttt{\char"005C underbrace\{h + k\}\_L}                                                                                   & $\underbrace{h + k}_L$                                \\
+        Accents              & \texttt{\char"005C bar\{x\}, \char"005C tilde\{x\}, \char"005C dot\{x\}, \char"005C ddot\{x\}, \char"005C mathcirc\{x\}}     & $\bar{x}, \tilde{x}, \dot{x}, \ddot{x}, \mathring{x}$ \\
+        Math operators       & \texttt{\char"005C sin, \char"005C lim, \char"005C inf}                                                                      & $\sin, \lim, \inf$                                    \\
+        BIG Math operators   & \texttt{\char"005C int\_0\^{}1 \char"005C sum\_0\^{}1 \char"005C displaystyle \char"005C int\_0\^{}1 \char"005C sum\_0\^{}1} & $\int_0^1 \sum_0^1 \displaystyle \int_0^1 \sum_0^1$   \\
+        Binary relations     & \texttt{\char"005C a+b, a\{+b\}, - ,\char"005C times, \char"005C div}                                                        & $a + b, a{+b}, - ,\times, \div$                       \\
+        Ordinary symbols     & \texttt{\char"005C forall, \char"005C exists, \char"005C emptyset}                                                           & $\forall, \exists, \emptyset$                         \\
+        Relation symbols     & \texttt{\char"005C a<b, a\{<b\}, \char"005C to, \char"005C leftarrow, \char"005C mapsto}                                     & $a<b, a{<b}, \to, \leftarrow, \mapsto$                \\
+        Alphabetical symbols & \texttt{\char"005C pi, \char"005C mathbf\{A\}, \char"005C mathcal\{X\}, \char"005C mathsf\{C\}}                              & $\pi, \mathbf{A}, \mathcal{X}, \mathsf{C}$            \\\hline
     \end{longtblr}
 \end{center}
 
@@ -441,19 +435,26 @@ A^{ij} %_{γ}
 
 \subsection{字体与数学字体}
 
-“在排版中，我们当然不会只用一种字体，而是使用各种各样形状的——见 \autoref{tab:字形们}。”
+“在排版中，我们当然不会只用一种字体，而是使用各种各样形状的——见 \autoref{tab:字形们}\footnote{此处使用字体为：
+    \begin{itemize}
+        \item 宋体：Noto Serif CJK SC
+        \item 黑体：Noto Sans CJK SC
+        \item 楷体：方正楷体
+        \item 西文衬线体：\TeX{} Gyre Pagella
+        \item 西文无衬线体：Noto Sans
+        \item 等宽字体：Iosevka
+    \end{itemize}
+}。”
 
 \begin{table}[ht]
     \centering
-    \begin{lstlisting}
-        % \usepackage{ctex}
-    \end{lstlisting}
     \begin{tblr}{ll}\hline
         \texttt{\char"005C textbf\{ABCabc123啦特可爱\}} & \textbf{ABCabc123啦特可爱} \\
         \texttt{\char"005C textit\{ABCabc123啦特可爱\}} & \textit{ABCabc123啦特可爱} \\
         \texttt{\char"005C textsf\{ABCabc123啦特可爱\}} & \textsf{ABCabc123啦特可爱} \\
         \texttt{\char"005C textsl\{ABCabc123啦特可爱\}} & \textsl{ABCabc123啦特可爱} \\
-        \texttt{\char"005C textsc\{ABCabc123啦特可爱\}} & \textsc{ABCabc123啦特可爱} \\
+        \texttt{\char"005C textsl\{ABCabc123啦特可爱\}} & \textsl{ABCabc123啦特可爱} \\
+        \texttt{\char"005C texttt\{ABCabc123啦特可爱\}} & \texttt{ABCabc123啦特可爱} \\
         \texttt{\char"005C textrm\{ABCabc123啦特可爱\}} & \textrm{ABCabc123啦特可爱} \\ \hline
     \end{tblr}
     \caption{字形们}
@@ -465,31 +466,31 @@ A^{ij} %_{γ}
 “没啥意思，你看看那个倾斜体，好像长得特别奇怪，这是为了在斜体环境与意大利作区分：
 
 \begin{center}
-    \textsl{a letter \(a\)} and \textit{a letter \(a\)}
+    \textsl{a letter $a$} and \textit{a letter $a$}
 \end{center}
 
 “因为意大利体的字母和数学环境中的斜体字母差别相当小，我们在原本需要意大利体与数学环境混排的时候就可能会使用倾斜体。
 
 “事实上我一点都没觉得它奇怪。”堇子说。
 
-“这玩意应该算计算机时代才应用起来的东西\footnote{倾斜（罗马）体出现与20世纪30年代，但其作为经典意大利体的替代品而被广泛使用则是20世纪70年代的事了。\slshape Slanted roman type was introduced in the 1930s, but it first became widely used as an alternative to the conventional italic during the late 1970s.\upshape 来自  \citep[The \TeX book]{knuth1984texbook}。}，以往的斜体 (Italic fonts) 倒是很具有手写的痕迹，而倾斜体差不多就是矩阵变换得来的。”
+“这玩意应该算计算机时代才应用起来的东西\footnote{倾斜（罗马）体出现与20世纪30年代，但其作为经典意大利体的替代品而被广泛使用则是20世纪70年代的事了。\slshape ``Slanted roman type was introduced in the 1930s, but it first became widely used as an alternative to the conventional italic during the late 1970s.''\upshape 来自  \citep[The \TeX book]{knuth1984texbook}。}，以往的斜体 (Italic fonts) 倒是很具有手写的痕迹，而倾斜体差不多就是矩阵变换得来的。”
 
-“除了在正文中的各种各样的字体风格，我们也需要在数学环境中如此表示——比如 \(\mathcal{F}\) 表示 Fourier 变换、用 \(\mathsf{C}\) 表示范畴 (Categories) 什么的。\autoref{tab:数学字形们} 是一些\textbf{特殊}的形状。”
+“除了在正文中的各种各样的字体风格，我们也需要在数学环境中如此表示——比如 $\mathcal{F}$ 表示 Fourier 变换、用 $\mathsf{C}$ 表示范畴 (Categories) 什么的。\autoref{tab:数学字形们}\footnote{本文使用的数学字体为 \TeX{} Gyre Pagella Math.} 是一些\textbf{特殊}的形状。”
 
 
 \begin{table}[ht]
     \centering
     \begin{tblr}{colspec = {X[2]X[-1]X}, width = \textwidth}\hline
-        命令                                        & 预览                     & 备注                             \\ \hline
-        \texttt{\char"005C mathbf\{ABCabc123\}}     & \(\mathbf{ABCabc123}\)   &                                  \\
-        \texttt{\char"005C mathit\{ABCabc123\}}     & \(\mathit{ABCabc123}\)   &                                  \\
-        \texttt{\char"005C mathsf\{ABCabc123\}}     & \(\mathsf{ABCabc123}\)   &                                  \\
-        \texttt{\char"005C mathrm\{ABCabc123\}}     & \(\mathrm{ABCabc123}\)   &                                  \\
-        \texttt{\char"005C boldsymbol\{ABCabc123\}} & \(\symbfit{ABCabc123}\)  &                                  \\
-        \texttt{\char"005C mathfrak\{ABCabc123\}}   & \(\mathfrak{ABCabc123}\) & 需要宏包 \AmS{}Fonts             \\
-        \texttt{\char"005C mathbb\{ABCabc123\}}     & \(\mathbb{ABC}\)         & 在 \AmS{}Math 中只提供了大写字母 \\
-        \texttt{\char"005C mathcal\{ABCabc123\}}    & \(\mathcal{ABC}\)        & 在 \AmS{}Math 中只提供了大写字母 \\
-        \texttt{ABCabc123}                          & \(ABCabc123\)            &                                  \\\hline
+        命令                                        & 预览                   & 备注                             \\ \hline
+        \texttt{\char"005C mathbf\{ABCabc123\}}     & $\mathbf{ABCabc123}$   &                                  \\
+        \texttt{\char"005C mathit\{ABCabc123\}}     & $\mathit{ABCabc123}$   &                                  \\
+        \texttt{\char"005C mathsf\{ABCabc123\}}     & $\mathsf{ABCabc123}$   &                                  \\
+        \texttt{\char"005C mathrm\{ABCabc123\}}     & $\mathrm{ABCabc123}$   &                                  \\
+        \texttt{\char"005C boldsymbol\{ABCabc123\}} & $\symbfit{ABCabc123}$  &                                  \\
+        \texttt{\char"005C mathfrak\{ABCabc123\}}   & $\mathfrak{ABCabc123}$ & 需要宏包 \AmS{}Fonts             \\
+        \texttt{\char"005C mathbb\{ABCabc123\}}     & $\mathbb{ABC}$         & 在 \AmS{}Math 中只提供了大写字母 \\
+        \texttt{\char"005C mathcal\{ABCabc123\}}    & $\mathcal{ABC}$        & 只提供了大写字母                 \\
+        \texttt{ABCabc123}                          & $ABCabc123$            &                                  \\\hline
     \end{tblr}
     \caption{数学字形们}
     \label{tab:数学字形们}
@@ -497,30 +498,28 @@ A^{ij} %_{γ}
 
 “大概就这样，我们只需要使用对用的命令就行——但是最好不要在 \verb"{}" 里面套上特殊的非字母字符，比如：
 
-\begin{codeing}
-    \begin{lstlisting}
+
+\begin{lstlisting}
     \documentclass{article}
-    \usepackage{amsamth}
+    \usepackage{amsmath}
     \begin{document}
         \[
             \mathcal{1}
         .\]
     \end{document}
 \end{lstlisting}
-\end{codeing}
 
 这样反而会得到一个比较匪夷所思的结果——
 
-\begin{codeing}
 
-    \[
-        \mathord\infty
-        .\]
 
-\end{codeing}
+\[
+    \mathord\infty
+    .\]
+
 “草？这是什么乱码……是 bug 吗？”
 
-“这其实是个非常有趣的现象\footnote{事实上，我们可以认为这些个数学符号都是由一组字符来指代的，我们可以用 \texttt{\char"005C mathchar} （\texttt{"} 指的是 16 进制的意思）来呼出对应的符号，比如说 \texttt{\char"005C mathchar"1350} 就是 \(\sum\)，实际上这个 \texttt{\char"005C mathchar"1350} 代表的大致含义是在第 1 类、第 3 族、位置 50 的符号，其中类 (class) 的含义我们暂且可以认为是——\texttt{\char"005C mathord, \char"005C mathop, \char"005C mathbin, \char"005C mathrel, \char"005C mathopen, \char"005C mathclose, \char"005C mathpunct}，对应 Ordinary symbols, BIG Math operators, Binary relations, Relation symbols, Opening symbols, Closing symbols, Punctuation symbols, Variable family 这些（这样其实并不准确，关于 \texttt{mathcode} 这些涉及到的其实是原始的 \TeX{}，而 Unicode-Math 这些分类要晚太多了），而族 (family) 可能可以切换到不同的字形:
+“这其实是个非常有趣的现象\footnote{事实上，我们可以认为这些个数学符号都是由一组字符来指代的，我们可以用 \texttt{\char"005C mathchar} （\texttt{"} 指的是 16 进制的意思）来呼出对应的符号，比如说 \texttt{\char"005C mathchar"1350} 就是 $\sum$，实际上这个 \texttt{\char"005C mathchar"1350} 代表的大致含义是在第 1 类、第 3 族、位置 50 的符号，其中类 (class) 的含义我们暂且可以认为是——\texttt{\char"005C mathord, \char"005C mathop, \char"005C mathbin, \char"005C mathrel, \char"005C mathopen, \char"005C mathclose, \char"005C mathpunct}，对应 Ordinary symbols, BIG Math operators, Binary relations, Relation symbols, Opening symbols, Closing symbols, Punctuation symbols, Variable family 这些（这样其实并不准确，关于 \texttt{mathcode} 这些涉及到的其实是原始的 \TeX{}，而 Unicode-Math 这些分类要晚太多了），而族 (family) 可能可以切换到不同的字形:
     \[
         \mathchar"0041\mathchar"0141\mathchar"0241\mathchar"0541\mathchar"0641\mathchar"0741\mathchar"0841\mathchar"0941\mathchar"0A41
         .\]
@@ -528,34 +527,32 @@ A^{ij} %_{γ}
     \[
         \texttt{\char"005C mathcal\{1\}: \char"005C mathchar"0031} \longrightarrow \texttt{\char"005C mathchar"0231: }\texttt{\char"005C mathord\char"005C infty: } \mathord\infty
         .\]
-    而 \texttt{\char"005C mathchar"0231} 对应的是 \(\infty\) 字形，因此不能够直接在仅仅使用 \AmS{}Math 包的情况下实现 Cal 形状的数字和小写字母。更具体的信息可以参考 \citep[The \TeX book]{knuth1984texbook}。
+    而 \texttt{\char"005C mathchar"0231} 对应的是 $\infty$ 字形，因此不能够直接在仅仅使用 \AmS{}Math 包的情况下实现 Cal 形状的数字和小写字母。更具体的信息可以参考 \citep[The \TeX book]{knuth1984texbook}。
 
     \CJKsout{其实就是没必要搞小写字母为了节省空间存其他符号了。}
 }，以后再和你说。不管如何，在引用 \AmS{}Math 的情况下尊重上面的 \autoref{tab:数学字形们} 大抵是没问题的。
 
 以下是一个普通的例子：\\
 
-\begin{codeing}
-    \begin{lstlisting}
+
+\begin{lstlisting}
     \documentclass{article}
-    \usepackage{amsamth}
+    \usepackage{amsmath}
     \begin{document}
         \[
         \boldsymbol{A} = q \int_0^\infty \frac{1}{\mathcal E^x}\,\mathrm{d} x \in \mathbb{R}^2  \cong \mathbb{C}
         .\]
-        \end{document}
+    \end{document}
 \end{lstlisting}
-\end{codeing}
 
 编译结果为：
 
-\begin{codeing}
 
-    \[
-        \boldsymbol{A} = q \int_0^\infty \frac{1}{\mathcal E^x}\,\mathrm{d} x \in \mathbb{R}^2  \cong \mathbb{C}
-        .\]
 
-\end{codeing}
+\[
+    \boldsymbol{A} = q \int_0^\infty \frac{1}{\mathcal E^x}\,\mathrm{d} x \in \mathbb{R}^2  \cong \mathbb{C}
+    .\]
+
 
 “当然这是没什么意义的公式。”
 
@@ -570,25 +567,21 @@ A^{ij} %_{γ}
 “这种方法可以非常方便地在数学环境中加入空格，更为直接的办法是使用 \verb"\kern" 命令，注意不要使用大括号来包裹长度：
 
 
-\begin{codeing}
-    \begin{lstlisting}
+
+\begin{lstlisting}
     \documentclass{article}
-    \usepackage{amsamth}
+    \usepackage{amsmath}
     \begin{document}
         \[
             a \kern 5em b
         .\]
     \end{document}
 \end{lstlisting}
-\end{codeing}
 
 结果为：
-
-\begin{codeing}
-    \[
-        a   \kern 5em b
-        .\]
-\end{codeing}
+\[
+    a   \kern 5em b
+    .\]
 方便个鬼！堇子心里想道，这太愚蠢了，就在她即将吐槽的时候——
 
 “我知道你肯定觉得这很麻烦，但事实上这玩意会更加精确。”莲子说，“各种控制字符代表的宽度可以参看 \autoref{tab:空格预览}。”
@@ -596,17 +589,17 @@ A^{ij} %_{γ}
 
 \begin{table}[ht]
     \centering
-    \begin{tblr}{Q[8em]Q[8em]}\hline
-        命令                      & 预览                                                      \\ \hline
-        这儿什么都没有            & \makebox[0pt]{\color{red}\(|\)}\makebox[0pt]{\(|\)}       \\
-        \texttt{\char"005C ,}     & \makebox[0pt]{\color{red}\(|\)}\,\makebox[0pt]{\(|\)}     \\
-        \texttt{\char"005C ;}     & \makebox[0pt]{\color{red}\(|\)}\;\makebox[0pt]{\(|\)}     \\
-        \texttt{\char"005C :}     & \makebox[0pt]{\color{red}\(|\)}\:\makebox[0pt]{\(|\)}     \\
-        \texttt{\char"005C >}     & \makebox[0pt]{\color{red}\(|\)}\>\makebox[0pt]{\(|\)}     \\
-        \texttt{\char"005C !}     & \makebox[0pt]{\color{red}\(|\)}\!\makebox[0pt]{\(|\)}     \\
-        \texttt{\char"005C ␣}     & \makebox[0pt]{\color{red}\(|\)}\ \makebox[0pt]{\(|\)}     \\
-        \texttt{\char"005C quad}  & \makebox[0pt]{\color{red}\(|\)}\quad\makebox[0pt]{\(|\)}  \\
-        \texttt{\char"005C qquad} & \makebox[0pt]{\color{red}\(|\)}\qquad\makebox[0pt]{\(|\)} \\\hline
+    \begin{tblr}{colspec = {Q[8em]Q[8em]}, font=\ttfamily}\hline
+        命令             & 预览                                              \\ \hline
+        这儿什么都没有   & \makebox[0pt]{\color{red}|}\makebox[0pt]{|}       \\
+        \char"005C ,     & \makebox[0pt]{\color{red}|}\,\makebox[0pt]{|}     \\
+        \char"005C ;     & \makebox[0pt]{\color{red}|}\;\makebox[0pt]{|}     \\
+        \char"005C :     & \makebox[0pt]{\color{red}|}\:\makebox[0pt]{|}     \\
+        \char"005C >     & \makebox[0pt]{\color{red}|}\>\makebox[0pt]{|}     \\
+        \char"005C !     & \makebox[0pt]{\color{red}|}\!\makebox[0pt]{|}     \\
+        \char"005C ␣     & \makebox[0pt]{\color{red}|}\ \makebox[0pt]{|}     \\
+        \char"005C quad  & \makebox[0pt]{\color{red}|}\quad\makebox[0pt]{|}  \\
+        \char"005C qquad & \makebox[0pt]{\color{red}|}\qquad\makebox[0pt]{|} \\\hline
     \end{tblr}
     \caption{空格预览}
     \label{tab:空格预览}
@@ -614,19 +607,17 @@ A^{ij} %_{γ}
 
 可惜的是，这玩意竖直上的长度并没有那么容易微调，我们可以使用 \verb"\raisebox" 实现：
 
-\begin{codeing}
-    \begin{lstlisting}
+
+\begin{lstlisting}
     L\kern-.36em\raisebox{.38ex}{\textsc{a}}\kern -.16em T\kern -.1667em\raisebox{-.5ex}{E}\kern -.125em X
 \end{lstlisting}
-\end{codeing}
 
-\begin{codeing}
 
-    \begin{center}
-        L\kern-.36em\raisebox{.38ex}{\textsc{a}}\kern-.16emT\kern -.1667em\raisebox{-.5ex}{E}\kern -.125em X
-    \end{center}
 
-\end{codeing}
+\begin{center}
+    L\kern-.36em\raisebox{.38ex}{\textsc{a}}\kern-.16emT\kern -.1667em\raisebox{-.5ex}{E}\kern -.125em X
+\end{center}
+
 
 “我们之前看到的错落有致的 \LaTeX{} 图案就可以这样仿制出来。”
 
@@ -650,7 +641,7 @@ A^{ij} %_{γ}
     \item  \verb"texdoc jshort" 是打开日文的翻译版。
 \end{itemize}
 
-“这就是一本很好的入门手册了，另外，也可以参考刘海洋的 \citep[\LaTeX 入门]{刘海洋2013latex}，这本比 \verb"lshort" 要厚不少，虽然内容有些过时了，但也值得一读，哦还有 \citep[\LaTeX{} Reference Sheet for a thesis with KOMA-Script]{RSTL23KS}，这玩意可以当成奇怪的零食干货来吃。”
+“这就是一本很好的入门手册了，另外，也可以参考刘海洋的 \citep[\LaTeX 入门]{刘海洋2013latex}，这本比 \verb"lshort" 要厚不少，虽然内容有些过时了，但也值得一读，哦还有 \citep[\LaTeX{} Reference Sheet for a thesis with KOMA-Script]{RSTL23KS}, \citep[现代 \LaTeX 入门讲座]{stonezeng}，这玩意可以当成奇怪的零食干货来吃。”
 
 “太多了叭！”堇子不耐烦地说道，“这——这本几百页我看这本还不如去看代数！”
 
@@ -668,16 +659,22 @@ A^{ij} %_{γ}
 
 \begin{table}[h]
     \begin{tblr}{colspec = {X[-1]X}, width = \textwidth}\hline
-        宏包名                & 备注                                                         \\\hline
-        \texttt{unicode-math} & 使用 Unicode 数学字体，并且允许在数学环境中使用 Unicode 字符 \\
-                              & 具体参考 \url{https://www.ctan.org/pkg/unicode-math}         \\
-        \texttt{mathtools}    & 一个提供了相当多数学公式拓展的宏包，提供了一些有用的符号     \\
-                              & （比如说长等号什么的）                                       \\
-        \texttt{tikz}         & 著名绘图宏包                                                 \\
-        \texttt{tcolorbox}    & 可以排出各种各样的神奇妙妙彩色盒子                           \\
-        \texttt{tabularray}   & 一个比较新的但是非常厉害的表格宏包                           \\
-        \texttt{fancyhdr}     & 可以方便修改页眉页脚的格式                                   \\
-        \texttt{titlesec}     & 修改章节标题格式                                             \\\hline
+        宏包名                                                               & 极其简要的备注                                                                                 \\\hline
+        \ttfamily \href{https://www.ctan.org/pkg/ctex}{ctex}                 & 当下中文最佳解决方案之一                                                                       \\
+        \ttfamily \href{https://www.ctan.org/pkg/amsmath}{amsmath}           & 数学相关必备宏包之一                                                                           \\
+        \ttfamily \href{https://www.ctan.org/pkg/graphicx}{graphicx}         & 图像的插入与处理                                                                               \\
+        \ttfamily \href{https://www.ctan.org/pkg/unicode-math}{unicode-math} & 使用 Unicode 数学字体，并且允许在数学环境中使用 Unicode 字符，是相当“现代”的数学字体解决方案   \\
+        \ttfamily \href{https://www.ctan.org/pkg/mathtools}{mathtools}       & 一个提供了相当多数学公式拓展的宏包，提供了一些有用的符号                                       \\
+                                                                             & （比如说长等号什么的）                                                                         \\
+        \ttfamily \href{https://www.ctan.org/pkg/tikz}{tikz}                 & 著名绘图宏包，由 Till Tantau 研发，有很多拓展库                                                \\
+        \ttfamily \href{https://www.ctan.org/pkg/pgfplots}{pgfplots}         & Ti\textit{k}Z 拓展库之一，可以绘制函数图像、参数方程、三维图像等                               \\
+        \ttfamily \href{https://www.ctan.org/pkg/tcolorbox}{tcolorbox}       & 可以排出各种各样的神奇妙妙彩色盒子                                                             \\
+        \ttfamily \href{https://www.ctan.org/pkg/tabularray}{tabularray}     & 一个比较新的但是非常厉害的表格宏包                                                             \\
+        \ttfamily \href{https://www.ctan.org/pkg/fancyhdr}{fancyhdr}         & 可以方便修改页眉页脚的格式                                                                     \\
+        \ttfamily \href{https://www.ctan.org/pkg/enumitem}{enumitem}         & \LaTeX 里面有两种环境叫做 \texttt{itemize} 和 \texttt{enumerate}，该宏包可以比较方便更改其样式 \\
+        \ttfamily \href{https://www.ctan.org/pkg/hyperref}{hyperref}         & 处理 PDF 超链接相关的问题                                                                      \\
+        \ttfamily \href{https://www.ctan.org/pkg/fontspec}{fontspec}         & 一个比较现代的字体设置的宏包                                                                   \\
+        \ttfamily \href{https://www.ctan.org/pkg/titlesec}{titlesec}         & 修改章节标题格式                                                                               \\\hline
     \end{tblr}
     \caption{一些数学宏包们}
 \end{table}
@@ -692,6 +689,6 @@ A^{ij} %_{γ}
 
 宇佐见莲子离开后。堇子作为“世界上最强种族的代表”，开始鼓捣那几十年前的老东西。
 
-宇佐见莲子说得没错，这玩意确实排公式方便，也十分美观。但作为古老的引擎，\TeX / \LaTeX 的活力远不如现在的其他排版 / 字处理软件——Microsoft Word、Adobe In Design等等那么充沛，这或许是 \LaTeX 所见非所得的特性和陡峭的学习曲线所致，但在排公式、科技类论文 \LaTeX 的确无出其右者，对排版细节的把握 \TeX 也是达到了相当高的水准。
+宇佐见莲子说得没错，这玩意确实排公式方便，也十分美观。但作为古老的引擎，\TeX / \LaTeX 的活力远不如现在的其他排版 / 字处理软件——\href{https://www.microsoft.com/en-us/microsoft-365/word}{Microsoft Word}、\href{https://www.adobe.com/products/indesign.html}{Adobe In Design} 等等那么充沛，这或许是 \LaTeX 所见非所得的特性和陡峭的学习曲线所致，但在排公式、科技类论文 \LaTeX 的确无出其右者，对排版细节的把握 \TeX 也是达到了相当高的水准。
 
 是时候需要新工具了，宇佐见堇子想，整个社区都在等待着那一天。

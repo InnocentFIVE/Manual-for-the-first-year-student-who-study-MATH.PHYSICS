@@ -1,0 +1,202 @@
+% Sundry Settings
+\setcounter{secnumdepth}{3}
+\linespread{1.4}
+\let\left\mleft
+\let\right\mright
+\graphicspath{{./images/}}
+\pgfplotsset{
+        table/search path={./Plots},
+    }
+\xeCJKsetup{CheckSingle = true}
+\setlist[itemize, 2]{label = $\circ$}
+
+% New theorem environments
+\newtheorem{example}{\indent 例}
+\theoremstyle{definition}
+\newtheorem*{solve}{\indent 解}
+\newtheorem*{prove}{\indent 证明}
+
+% Color definition
+\definecolor{macred}{HTML}{fc5450}
+\definecolor{macyellow}{HTML}{e0a22d}
+\definecolor{macgreen}{HTML}{24cd4c}
+\definecolor{mmagray}{HTML}{d7d7d7}
+\definecolor{EE6743}{HTML}{EE6743}
+
+% Libraries of PKGs
+\tcbuselibrary{breakable}
+\tcbuselibrary{skins}
+\tcbset{breakable, enhanced jigsaw, fonttitle = \bfseries}
+\usepgfplotslibrary{polar}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadings}
+
+% Font Settings
+\setsansfont{Noto Sans}
+\setmonofont{Iosevka}[RawFeature=-calt; -dlig]
+\newfontfamily\mdsans{Noto Sans Bold}
+\setmathfont{texgyrepagella-math.otf}
+\setmathfont{STIXTwoMath-Regular.otf}[range = {"1D49C-"1D4CF, "0212F-"02134, "0212C}]
+\setmainfont{texgyrepagella-regular.otf}[
+    BoldFont = texgyrepagella-bold.otf, 
+    ItalicFont = texgyrepagella-italic.otf, 
+    BoldItalicFont = texgyrepagella-bolditalic.otf, 
+    SlantedFont = TeXGyrePagellaX-Slanted.otf]
+
+% CJK *
+\setCJKmainfont{Noto Serif CJK SC}[
+    ItalicFont = FZKaiS-Extended,
+    BoldItalicFont = FZKaiS-Extended,
+]
+\setCJKsansfont{Noto Sans CJK SC}[ItalicFont = FZKaiS-Extended]
+\setCJKmonofont{Noto Sans CJK SC}[AutoFakeSlant]
+\newCJKfontfamily\mdsansCJK{Noto Sans CJK SC Bold}
+\newCJKfontfamily\itshapeCJK{FZKaiS-Extended-1.ttf}
+
+
+\makeatletter
+% CFT Settings
+\setcounter{tocdepth}{1}
+\newcommand\chapterbox[1]{%
+    \begin{tcbox}[on line,
+            outer arc = 2pt,
+            colback = green!45!blue!50!black,
+            boxsep = 0pt,
+            left = 4pt,
+            right = 4pt,
+            top = 2.5pt,
+            bottom = 2pt,
+            boxrule = 0pt,
+            arc = 2pt,
+            colupper = white
+        ]
+        {#1}
+    \end{tcbox}\hfill}
+\def\cftdot{$\cdot$}
+\def\addauthor#1{\addtocontents{toc}{\protect\vskip-17pt\protect\mbox{\hspace*{\textwidth - 13em}\itshape\color{gray}\footnotesize \underline{Author\,{\normalsize$|$}\footnotesize #1}}\par\bigskip}}
+\renewcommand\cftchapfont{\bfseries}
+\renewcommand\cftchapleader{}
+\renewcommand\cftchapafterpnum{}
+\renewcommand\cftchappagefont{\Large\bfseries}
+\renewcommand\cftchapfillnum[1]{{\cftchapleader}{\makebox[\@pnumwidth][\cftpnumalign]{{\cftchappagefont #1}}\cftchapafterpnum\par}}
+\renewcommand\cftchapfont[1]{%
+    \begin{tcbox}[on line,
+            outer arc=2pt,colback=green!45!blue!50!black,
+            boxsep=0pt,left=4pt,right=4pt,top=2.5pt,bottom=2pt,
+            boxrule=0pt,arc = 2pt,  colupper = white]
+        {\bfseries #1}
+    \end{tcbox}\hfill}
+\renewcommand\cftsecindent{3.8em}
+\renewcommand\cftsecfont{\color{black}\slshape}
+\renewcommand\cftsecleader{\cftdotfill\cftdotsep}
+\renewcommand\cftsecafterpnum{\hspace*{2em}\par\medskip}
+\renewcommand\cftsecdotsep{0.05mu}
+\renewcommand\cftsecpagefont{\itshape\sffamily}
+\def\contentsname{\Huge 目录\\ \LARGE
+    Contents%
+    \bigskip\noindent}
+
+
+% Mathematica
+\newcounter{mma}
+\setcounter{mma}{0}
+\def\mathematicatitlename{八云蓝的挑战 - Wolfram Mathematica 13.1}
+\def\mmain{\stepcounter{mma}\texttt{\color{gray}In[\arabic{mma}]:=}\ignorespaces}
+\def\mmaout{\texttt{\color{gray}Out[\arabic{mma}]={ }}}
+\newtcolorbox{notebook}[1]{
+    colframe = lightgray!70!white,
+    fontupper = \upshape\ttfamily,
+    fontlower = \upshape\ttfamily,
+    title = {
+            \begin{tikzpicture}
+                \filldraw[macred] (0, 0) circle (0.3em);
+                \filldraw[macyellow!80!white] (0.5, 0) circle (0.3em);
+                \filldraw[macgreen] (1, 0) circle (0.3em);
+            \end{tikzpicture}%
+            \hfill{\footnotesize\sffamily #1}\hfill%
+            \phantom{
+                \begin{tikzpicture}
+                    \filldraw[macred] (0, 0) circle (0.3em);
+                    \filldraw[macyellow!80!white] (0.5, 0) circle (0.3em);
+                    \filldraw[macgreen] (1, 0) circle (0.3em);
+                \end{tikzpicture}
+            }
+        }, coltitle = black, segmentation style = {draw = lightgray!70!white, very thick, solid}
+}
+\newenvironment{mathematica}{
+    \begin{notebook}{\mathematicatitlename}%
+        \def\key##1{{\itshape\color[HTML]{3c7d9e}##1}}%
+        \def\UDsymbol##1{{\color[HTML]{002cc3}##1}}%
+        \def\comment##1{{\itshape\color[HTML]{65b4cd}##1}}%
+        \def\tab{\phantom{\ttfamily abcd}}%%
+        \mmain%
+        \def\^{{\char"005E}}%
+        \def\@{{\char"0040}}%
+        \def\~{{\char"007E}}%
+        \def\ShiftEnter{\tcblower\mmaout\ignorespaces\def\^{{\char"005E}}%
+        \def\@{{\char"0040}}%
+        \def\~{{\char"007E}}}\space\ignorespaces
+        }{\end{notebook}}
+
+
+% listings Settings
+\newcommand{\white}[1]{\makebox[2.5em][c]{\makebox[0pt][l]{\special{pdf:literal direct 2 Tr 0.3 w}%
+#1%
+\special{pdf:literal direct 0 Tr 0 w}}\raisebox{-0.09pt}{\includegraphics{white.pdf}}}}
+\def\axisstyle#1{\itshape\color{MediumVioletRed}axis}
+\lstset{
+    basicstyle      = \ttfamily,
+    language        = [latex]tex,
+    commentstyle    = \itshape\color[HTML]{888888},
+    columns         = fixed,
+    basewidth       = 0.5em,
+    alsoletter      = {*},
+    keywordstyle    = \bfseries\color{Teal},
+    texcsstyle      = *\color{CornflowerBlue!60!black}\bfseries,
+    morekeywords    = {\documentclass,\usepackage,\begin,\end},
+    emphstyle       = [1]\itshape\color{MediumVioletRed},
+    emphstyle       = [2]\color{FireBrick},
+    emphstyle       = [3]\bfseries\white,
+    emphstyle       = [4]\bfseries\color{red},
+    emphstyle       = [5]\axisstyle,
+    emph            = {[1]equation,itemize,document,tikzpicture}, 
+    emph            = {[2]article,amsmath,ctex},
+    emph            = {[3]white},
+    emph            = {[4]red},
+    emph            = {[5]styleedaxis},
+    frame           = trBL,
+    backgroundcolor = \color{lightgray!30!white},
+    keepspaces,
+    breaklines,
+    moretexcs={\colorbox,\color,\part,\subsection,\paragraph,\boldsymbol,\mathbb,\mathcal,\pgfplotsset,\addplot}
+}
+
+% Pagestyle / Title style Settings
+\def\CTEX@part@pagestyle{empty}
+\ctexset{
+    section={
+        name={第,节},
+        number=\chinese{section},
+        format=\Large\bfseries\raggedright
+    },
+    subsection={
+        number = {（\chinese{subsection}）},
+    },
+    subsubsection={
+        number = {\Roman{subsubsection}},
+        format = \mdsans\mdsansCJK
+    }
+}
+\fancypagestyle{mainlatter}{
+    \fancyfoot[C]{\thepage}
+}
+
+\makeatother
+
+
+
+% Autoref Settings
+\def\subsubsectionautorefname{第\chinese{section}节--第（\chinese{subsection}）节}
+\def\subsectionautorefname{第\chinese{section}节}
+\renewcommand{\figureautorefname}{图}
+\renewcommand{\tableautorefname}{表}
