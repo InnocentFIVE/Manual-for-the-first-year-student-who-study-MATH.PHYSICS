@@ -8,13 +8,16 @@
 
 \usepackage{fontspec}
 
+\usepackage{fontawesome5}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{tcolorbox}
 \usepackage{tikz}
 
+\usepackage{xparse}
 \usepackage{fvextra}
+\usepackage{marginnote}
 \usepackage{longtable}
 \usepackage{calc}
 \usepackage{pgfplots}
@@ -37,17 +40,22 @@
 \usepackage{fancyhdr}
 \usepackage[top=1.16in,bottom=1.34in,outer=1in,inner=1.2in]{geometry}
 
-\usepackage[square]{natbib}
+% \usepackage[square]{natbib}
+\usepackage[backend=biber, style=gb7714-2015ay, gbtype =true,gbtitlelink =true, backref =true]{biblatex}
+\addbibresource[location=local]{cite.bib}
+\renewcommand*{\newblockpunct}{~}
 \usepackage[
     colorlinks,
-    linkcolor = DarkTurquoise!80!black,
+    linkcolor = DarkTurquoise!60!black,
     anchorcolor = OrangeRed,
-    filecolor = Navy,
-    backref = true,
-    urlcolor = Navy,
+    filecolor = OrangeRed,
+    urlcolor = OrangeRed,
     citecolor = Teal,
     linktocpage,
-    pagebackref = true,
     hyperfootnotes = true,
     breaklinks = true,
 ]{hyperref}
+
+\usepackage{picinpar}
+\usepackage{wrapfig}
+\usepackage[font=small, labelfont = bf, labelsep=space]{caption}

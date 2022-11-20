@@ -1,5 +1,5 @@
-\special{dvipdfmx:config z 0}
-\documentclass[fontset = none]{ctexbook}
+% \special{dvipdfmx:config z 0}
+\documentclass[fontset = none, openany]{ctexbook}
 \input{includes/PKGS.tex}
 \input{includes/settings.tex}
 
@@ -11,6 +11,7 @@
 \setcounter{page}{0}
 \thispagestyle{empty}
 
+
 \input{includes/初等数学知识拾遗.tex}
 \input{includes/宇佐见堇子的 LaTeX 之旅.tex}
 \input{includes/数分高代在学什么？.tex}
@@ -18,9 +19,8 @@
 \input{includes/靛蓝的红枫.tex}
 \input{includes/Mathematica ~ 一切都是表达式.tex}
 
-\bibliographystyle{plainnat}
-\def\bibname{参考与提及的文献}
-\def\emph{\textbf}
-\bibliography{cite}
+
+\printbibliography[heading = bibliography, title = 参考与提及的文献]
+
 
 \end{document}

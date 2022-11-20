@@ -1,9 +1,7 @@
 \begin{center}\LARGE
     \chapter[{初等数学知识拾遗}]{初等数学知识拾遗\\Pre-knowledge of Advanced Mathematics}
-
      {\itshape \normalsize {云与星与歌}}\pagestyle{mainlatter}
     \addauthor{云与星与歌}
-    % 由于你不是 book 环境，不太好用 \part{} 来搞，此处是一个没有打上超链接的标题，这意味着我们需要手动写目录。
 \end{center}
 \medskip
 
@@ -18,42 +16,35 @@
 
 \begin{center}
     \begin{tblr}{colspec = {X[-1, l]|X[l]}, width = 0.7\textwidth}\hline
-        记号                                   & 说明                                  \\ \hline
+        记号                                 & 说明                            \\ \hline
         $a\mid b$                            & $a$ 整除 $b$，即 $b / a$ 是整数 \\
-        $\exists !$                          & 存在且唯一                            \\
-        $\left\lfloor \cdots  \right\rfloor$ & 下取整函数                            \\
+        $\exists !$                          & 存在且唯一                      \\
+        $\left\lfloor \cdots  \right\rfloor$ & 下取整函数                      \\
         \hline\end{tblr}
 \end{center}
 
 \section{三角函数知识补充}
 
-在高中阶段，我们已经学习了三角函数的相关知识。对大家来说，分析形如$f(x)=A\sin(\omega x+b) $
-的函数的增减性并非难事，%注意标点的使用，中文里就用中文括号
-利用正弦公式和余弦公式解三角形（当然，包括其他与函数最值结合的阴间题目）也为
-大家所熟悉。然而，由于教学大纲的变化，许多重要的三角函数知识被删去，对三角恒等变换的要求降低
+在高中阶段，我们已经学习了三角函数的相关知识。对大家来说，分析形如$f(x)=A\sin(\omega x+b) $%
+的函数的增减性并非难事，利用正弦公式和余弦公式解三角形（当然，包括其他与函数最值结合的阴间题目）也为%
+大家所熟悉。然而，由于教学大纲的变化，许多重要的三角函数知识被删去，对三角恒等变换的要求降低%
 ，这无疑给大家适应大学数学的学习带来了不少困难。下面，我们就来补充一些常用的三角函数知识。
 \subsection{和差化积与积化和差}
 \label{积化和差}
 
 我们熟知如下 cos 的两角和差公式
-
 \begin{gather}
-    \cos(\delta +\theta )=\cos \delta  \cos \theta -\sin \delta  \sin \theta,\\
-    \cos (\delta -\theta )=\cos \delta  \cos \theta +\sin \delta  \sin \theta.
+    \cos(\delta +\theta )=\cos \delta  \cos \theta -\sin \delta  \sin \theta,\label{AtM1}\\
+    \cos (\delta -\theta )=\cos \delta  \cos \theta +\sin \delta  \sin \theta.\label{AtM2}
 \end{gather}
-
-(1)(2)两式相加后，我们在等式两边除以2之后得到
-
+\eqref{AtM1} \eqref{AtM2} 两式相加后，我们在等式两边除以 $2$ 之后得到
 \begin{equation}
     \cos \delta  \cos \theta=\frac{1}{2}[\cos(\delta +\theta )+\cos (\delta -\theta )],
 \end{equation}
-
 如果我们用$\alpha,\beta$分别替换括号内的$\delta +\theta,\delta -\theta$, 就得到
-
 \begin{equation}
     \cos \alpha + \cos \beta = 2\cos\left( \frac{\alpha+\beta}{2} \right) \cos\left( \frac{\alpha-\beta}{2} \right) .
 \end{equation}
-
 这就是积化和差与和差化积公式之一。用完全相同的方法，我们可以得出另外6个公式。限于篇幅，就不在此处一一列出了。
 
 然而，我们不仅要知道公式本身，还得掌握它的用法。
@@ -63,13 +54,13 @@
     $\sin A+\sin B+\sin C=4\cos \frac{A}{2}\cos \frac{B}{2}\cos \frac{C}{2}$.
 \end{example}
 
+
 \begin{prove}
     这是三角形中一个经典的结论，利用它我们可以解决很多问题。
     \[
         \begin{aligned}
              & \mathrel{\phantom{=}}\sin A+\sin B+\sin C                                                                                        \\
-             & =\sin A+\sin B+\sin [\symup\pi -(A+B)]                                                                                           \\
-             & =\sin A+\sin B+\sin(A+B)                                                                                                         \\
+             & =\sin A+\sin B+\sin [\symup\pi -(A+B)] =\sin A+\sin B+\sin(A+B)                                                                  \\
              & =2\sin\left( \frac{A+B}{2}\right)\cos\left( \frac{A-B}{2}\right)+2\sin\left( \frac{A+B}{2}\right)\cos\left( \frac{A+B}{2}\right) \\
              & =2\sin\left( \frac{A+B}{2}\right)\left (\cos\left( \frac{A-B}{2}\right)+\cos\left( \frac{A+B}{2}\right)\right )                  \\
              & =2\sin\left( \frac{\symup\pi -C}{2} \right) \left (2\cos\frac{A}{2}\cos\frac{B}{2}\right )                                       \\
@@ -103,13 +94,12 @@
 对于反三角函数，我们有定义如下表：
 
 \begin{center}
-    \begin{tblr}{c|c|c|c}%\\+indent相当于软回车，不好不好。用\par代替
+    \begin{tblr}{colspec = {c|c|c|c}, row{2,3,4} = {abovesep=5pt,belowsep=5pt}}
+        \hline 函数名 & 定义                         & 定义域       & 值域                                                         \\
         \hline
-        函数名 & 定义                         & 定义域       & 值域                                                         \\
-        \hline
-        反正弦 & 若$x=\sin y$,则$y=\arcsin x$ & $[-1,1]$     & $\left[ -\frac{\symup\pi }{2},\frac{\symup\pi }{2} \right] $ \\
-        反余弦 & 若$x=\cos y$,则$y=\arccos x$ & $[-1,1]$     & $[0,\symup\pi ]$                                             \\
-        反正切 & 若$x=\tan y$,则$y=\arctan x$ & $\mathbb{R}$ & $\left( -\frac{\symup\pi }{2},\frac{\symup\pi }{2} \right) $ \\
+        反正弦        & 若$x=\sin y$,则$y=\arcsin x$ & $[-1,1]$     & $\left[ -\frac{\symup\pi }{2},\frac{\symup\pi }{2} \right] $ \\
+        反余弦        & 若$x=\cos y$,则$y=\arccos x$ & $[-1,1]$     & $[0,\symup\pi ]$                                             \\
+        反正切        & 若$x=\tan y$,则$y=\arctan x$ & $\mathbb{R}$ & $\left( -\frac{\symup\pi }{2},\frac{\symup\pi }{2} \right) $ \\
         \hline
     \end{tblr}
 \end{center}
@@ -118,7 +108,6 @@
 
 
 下面我们给出一些关于反三角函数的基本恒等式（其中所有$x$的取值须满足对应函数的定义域）。
-
 \[
     \begin{tblr}{X[c]X[c]X[c]}
         \arcsin(\sin x)=x,      & \arccos(\cos x)=x,               & \arctan(\tan x)=x,      \\
@@ -127,8 +116,6 @@
                                 & \cos(\arcsin x)=\sqrt{1-x^2}.
     \end{tblr}
 \]
-
-
 反三角函数最基本的作用，是在已知角的三角函数值时，拿来表示这个角（这在高中物理中偶尔会用到）。它身上也有许多奇妙
 的性质，譬如，它们的导函数居然可以用有理式（或有理式的二次根式）表示。
 \begin{example}
@@ -142,7 +129,7 @@
 
     对两边求导，根据复合函数求导的法则\footnote{这里用到了$(\tan x)'=(\sin x / \cos x)'= 1 / \cos ^2x =1+\tan ^2 x$}，有
     \[
-        [\,f(\tan x)]'=f'(\tan x)({1+\tan ^2 x})=x'=1
+        \bigl[\,f(\tan x)\bigr]'=f'(\tan x)({1+\tan ^2 x})=x'=1
         ,\]
 
     所以
@@ -166,13 +153,13 @@
 我们定义双曲函数如下表：
 
 \begin{center}
-    \begin{tblr}{c|c|c|c}
+    \begin{tblr}{colspec = {c|c|c|c}, row{2,3,4} = {abovesep=5pt,belowsep=5pt}}
         \hline
-        函数名   & 定义                                                                        & 定义域       & 值域           \\
+        函数名   & 定义                                                                         & 定义域       & 值域           \\
         \hline
-        双曲正弦 & $\sinh x=\frac{\mathrm{e}^x-\mathrm{e}^{-x}}{2}$                            & $\mathbb{R}$ & $\mathbb{R}$   \\
-        双曲余弦 & $\cosh x=\frac{\mathrm{e}^x+\mathrm{e}^{-x}}{2}$                            & $\mathbb{R}$ & $[1,+\infty )$ \\
-        双曲正切 & $\tanh x=\frac{\mathrm{e}^x-\mathrm{e}^{-x}}{\mathrm{e}^x+\mathrm{e}^{-x}}$ & $\mathbb{R}$ & $(-1,1)$       \\
+        双曲正弦 & $\sinh x=\dfrac{\mathrm{e}^x-\mathrm{e}^{-x}}{2}$                            & $\mathbb{R}$ & $\mathbb{R}$   \\
+        双曲余弦 & $\cosh x=\dfrac{\mathrm{e}^x+\mathrm{e}^{-x}}{2}$                            & $\mathbb{R}$ & $[1,+\infty )$ \\
+        双曲正切 & $\tanh x=\dfrac{\mathrm{e}^x-\mathrm{e}^{-x}}{\mathrm{e}^x+\mathrm{e}^{-x}}$ & $\mathbb{R}$ & $(-1,1)$       \\
         \hline
     \end{tblr}
 \end{center}
@@ -202,18 +189,20 @@
 由于$y=\ln t$，于是$y=\ln\left( x+ \sqrt{x^2+1} \right) $.
 
 
-剩余若干反双曲函数的表达式请自行推导。下面，我们给出反三角函数、双曲函数与反双曲函数的图像，试从中总结它们的性质。%补图
+剩余若干反双曲函数的表达式请自行推导。\autoref{反三角函数、双曲函数与反双曲函数的图像} 中，我们给出反三角函数、双曲函数与反双曲函数的图像，试从中总结它们的性质。%补图
 
 
-\begin{center}\footnotesize
-    \makebox[0pt][c]{\begin{tikzpicture}
+\begin{figure}[ht]
+    \centering
+    \makebox[0pt][c]{
+        \begin{tikzpicture}
             \pgfplotsset{width = \linewidth/2+2em,height = 7cm}
             \begin{axis}[
                     axis x line = middle,
                     axis y line = middle,
                     every inner x axis line/.append style={->},
                     every inner y axis line/.append style={->},
-                    title={\itshape 反三角函数},
+                    title= {\itshape 反三角函数},
                     legend pos = south east,
                     xlabel = $x$,
                     ylabel = $y$,
@@ -238,7 +227,7 @@
                     no marks,
                     very thick,macgreen!90!black
                 ] table {Plot3.dat};
-                
+
                 \addplot[
                     domain = 0:10,dashed
                 ]{pi/2};
@@ -331,7 +320,9 @@
             \legend{$\operatorname{arcsinh}x$,$\operatorname{arccosh}x$,$\operatorname{arctanh}x$}
         \end{axis}
     \end{tikzpicture}
-\end{center}
+    \caption{反三角函数、双曲函数与反双曲函数的图像}
+    \label{反三角函数、双曲函数与反双曲函数的图像}
+\end{figure}
 
 
 \section{“充要条件”的理解}
@@ -346,7 +337,7 @@
 
 
 从更“数学”一点的角度看，我们在高中会遇到这样一类导数题——已知函数满足一定的不等条件，求参数的取值范围。
-这时，“必要性探路”\footnote{先取某点的函数值解出参数的一个取值范围,再证明这个取值范围是恒成立的}往往是很常用
+这时，“必要性探路\footnote{先取某点的函数值解出参数的一个取值范围,再证明这个取值范围是恒成立的}”往往是很常用
 的方法，但它有时候也会失效。
 \begin{example}
     当$x \geqslant 0$ 时，$\mathrm{e}^x+ax^2 -x \geqslant \frac{1}{2}x^3 +1$，求$a$的取值范围。
@@ -388,8 +379,7 @@
     一方面，若$x\in A$，则当$m=2k$时,~$x=4k-1$且$k\in \mathbb{Z}$,
 
 
-    当$m=2k+1$时
-    ，$x=2(2k+1)-1=4k+1$,~$k\in \mathbb{Z}$,从而$x\in B$，即得$A\subseteq B$.
+    当$m=2k+1$时，$x=2(2k+1)-1=4k+1$,~$k\in \mathbb{Z}$,从而$x\in B$，即得$A\subseteq B$.
 
 
     另一方面，若$x∈B$，则$x=4k±1$,~$k\in \mathbb{Z}$.
@@ -461,7 +451,7 @@
               \leqslant \lvert a\pm b\rvert \leqslant \lvert a\rvert +\lvert b\rvert
               .\]
 
-          $a,b$间取加号时，左边等号的成立条件是$a,b$异号，右边等号的成立条件是$a,b$同号。取减号是恰好相反。
+          $a$,~$b$间取加号时，左边等号的成立条件是$a$,~$b$异号，右边等号的成立条件是$a$,~$b$同号。取减号是恰好相反。
 
           在之后证明收敛数列极限唯一、极限乘法规则和柯西审敛准则时，都会用到这一工具。
           \begin{example}
@@ -479,7 +469,7 @@
               |\;\!a_1+a_2+\cdots +a_n|\leqslant |a_1|+|a_2|+\cdots +|a_n|
               .\]
 
-          取等条件为$a_1\mathrel{\char"007E}a_n$全部同号。
+          取等条件为$a_1,\,\dots\,,a_n$全部同号。
     \item \textbf{与三角函数有关的不等式}
 
           我们可以通过几何方法证明：
@@ -497,11 +487,11 @@
           数列$\left\{ \left (1+\frac{1}{n}\right )^n  \right\} $是递增的，证明过程如下：
           \begin{prove}
               由均值不等式，
-              \[
+              \begin{equation}
                   \left (1+\frac{1}{n}\right )^n=1\cdot \left (\frac{n+1}{n}\right )\left (\frac{n+1}{n}\right )
                   \cdots \left (\frac{n+1}{n}\right )<
-                  \left (\frac{1+n\cdot \frac{n+1}{n}}{n}\right )^{n+1}=\left (1+\frac{1}{n+1}\right )^{n+1}
-                  .\]
+                  \left (\frac{1+n\cdot \frac{n+1}{n}}{n}\right )^{n+1}=\left (1+\frac{1}{n+1}\right )^{n+1}\label{与指对数有关的不等式}
+              \end{equation}
           \end{prove}
 
 
@@ -524,7 +514,7 @@
 
           阶乘有许多重要的性质，这里我们只介绍在不等关系方面的性质。
 
-          可以这么说，阶乘是比常数的指数更“大”的存在，见下面的例子。
+          可以这么说，阶乘是比常数的指数更“大”的存在，见     下面的例子。
           \begin{example}
               求证：$\lim\limits_{n \to \infty} \frac{n!}{2^n} =0$.
           \end{example}
@@ -539,18 +529,18 @@
 
 
           \begin{example}
-              求证：对$n\in \mathbb{N}$，$n!>\left (\frac{n}{\mathrm e} \right )^n$.
+              求证：对$n\in \mathbb{N}$，$n!>\left (\frac{n}{\mathrm e} \right )^n$.\label{例子9}
           \end{example}
           \begin{prove}
               我们取数列$a_n=\left (\frac{n}{\mathrm e} \right )^n$，则
               \begin{gather}
                   \frac{a_n}{a_{n-1}}=\frac{n^n}{(n-1)^{n-1}\mathrm e}=\frac{n\left (1+\frac{1}{n-1}\right )^{n-1}}{\mathrm e},\\
-                  a_n=\frac{a_n}{a_{n-1}} \cdot \frac{a_{n-1}}{a_{n-2}}\cdots \frac{a_2}{a_1} \cdot a_1< n(n-1)\cdot \cdots 2\cdot a_1<n(n-1)\cdot \cdots \cdot 2\cdot 1=n!.
+                  a_n=\frac{a_n}{a_{n-1}} \frac{a_{n-1}}{a_{n-2}}\cdots \frac{a_2}{a_1} a_1< n(n-1)\cdots 2a_1<n(n-1)\cdot \cdots \cdot 2\cdot 1=n!.
               \end{gather}
               证毕。
           \end{prove}
 
-          例9揭示了$n$的阶乘与$n$的$n$次幂之间的关系，它与重要极限$\lim\limits_{n \to \infty}\left (1
+          例 \autoref{例子9} 揭示了$n$的阶乘与$n$的$n$次幂之间的关系，它与重要极限$\lim\limits_{n \to \infty}\left (1
               +\frac{1}{n}\right )^n=\mathrm e$密切相关。事实上，我们有极限
           $\lim\limits_{n \to \infty}\frac{n}{\sqrt[n]{n!}}=\mathrm e$.
 \end{itemize}
@@ -558,57 +548,57 @@
 \subsubsection{放缩的常用手段}
 \label{sssec:A}
 许多时候，面对一些形式复杂的式子，我们一时想不到如何对其进行放缩。下面我们将用几个例子介绍放缩的常用手段。
-\begin{enumerate}[label = \textbf{\arabic*.}]
-    \item \textbf{朝着可以化简的方向放缩}
 
-          要证明某些累加式或累乘式的值在某个范围内，我们一般把舍弃某些项，把它们放缩成可以求和或求积的形式。
-          \begin{example}
-              求证：$\left ( 1+\frac{1}{2}\right )\left ( 1+\frac{1}{2^2}\right )
-                  \cdots \left ( 1+\frac{1}{2^n}\right )<\mathrm{e}$.
-          \end{example}
-          \begin{prove}
-              由3.1.1.3的最后一个结论，我们有$\ln \left ( 1+\frac{1}{2^k}\right )<\frac{1}{2^k}(k=1,2,\cdots,n)$.则
-              \[
-                  \ln\left( \left ( 1+\frac{1}{2}\right )\left ( 1+\frac{1}{2^2}\right )
-                  \cdots \left ( 1+\frac{1}{2^n}\right ) \right) <\frac{1}{2}+\frac{1}{2^2}
-                  +\cdots+\frac{1}{2^n}=\frac{1}{2}\cdot \frac{1-\frac{1}{2^n}}{1-\frac{1}{2}}<1
-                  .\]
-              从而$\left ( 1+\frac{1}{2}\right )\left ( 1+\frac{1}{2^2}\right )
-                  \cdots \left ( 1+\frac{1}{2^n}\right )<\mathrm{e}$.
-          \end{prove}
+\paragraph{朝着可以化简的方向放缩}
 
-
-          上面的例子中，我们观察到待证式左边暗含等比数列，就想办法将其提取出来。
-          恰好，取对数之后放缩可以把“$1$”消去，便完成了化简的工作。
-
-    \item \textbf{待定系数，先猜后证}
-
-          某些不等式，特别是证明某式子大于或小于某个非0常数，（这在求极限时很常见）可以用待定系数的方法来进行放缩。
-          \begin{example}
-              求证：$\lim\limits_{n \to \infty}\sqrt[n]{n}=1.$
-          \end{example}
-          \begin{prove}
-              下面我们将会用到3.2节会学到的夹逼定理——事实上，我们的目标是证明$\sqrt[n]{n}-1$小于
-              一个极限为$0$的数列。观察到$\sqrt[n]{n}-1$的特点，我们发现移去$1$对原式取$n$次方后可以实现
-              有效的化简。
+要证明某些累加式或累乘式的值在某个范围内，我们一般把舍弃某些项，把它们放缩成可以求和或求积的形式。
+\begin{example}
+    求证：$\left ( 1+\frac{1}{2}\right )\left ( 1+\frac{1}{2^2}\right )
+        \cdots \left ( 1+\frac{1}{2^n}\right )<\mathrm{e}$.
+\end{example}
+\begin{prove}
+    由 \eqref{与指对数有关的不等式} 的最后一个结论，我们有$\ln \left ( 1+\frac{1}{2^k}\right )<\frac{1}{2^k}(k=1,2,\cdots,n)$.则
+    \[
+        \ln\left( \left ( 1+\frac{1}{2}\right )\left ( 1+\frac{1}{2^2}\right )
+        \cdots \left ( 1+\frac{1}{2^n}\right ) \right) <\frac{1}{2}+\frac{1}{2^2}
+        +\cdots+\frac{1}{2^n}=\frac{1}{2}\cdot \frac{1-\frac{1}{2^n}}{1-\frac{1}{2}}<1
+        .\]
+    从而$\left ( 1+\frac{1}{2}\right )\left ( 1+\frac{1}{2^2}\right )
+        \cdots \left ( 1+\frac{1}{2^n}\right )<\mathrm{e}$.
+\end{prove}
 
 
-              令$\sqrt[n]{n}=1+\lambda_n$，则
-              \[
-                  n=(1+\lambda_n)^n=1+n\lambda_n+\frac{n(n-1)}{2}\lambda^2 _n+\cdots >1+\frac{n(n-1)}{2}\lambda^2 _n
-                  .\]
-              由此解得$\lambda_n<\sqrt{\frac{2}{n}}$，因此$0<\sqrt[n]{n}-1<\sqrt{\frac{2}{n}}$.由夹逼
-              定理可知$\lim\limits_{n \to \infty}\sqrt[n]{n}=1.$
-          \end{prove}
+上面的例子中，我们观察到待证式左边暗含等比数列，就想办法将其提取出来。
+恰好，取对数之后放缩可以把“$1$”消去，便完成了化简的工作。
+
+\paragraph{待定系数，先猜后证}
+
+某些不等式，特别是证明某式子大于或小于某个非0常数，（这在求极限时很常见）可以用待定系数的方法来进行放缩。
+\begin{example}
+    求证：$\lim\limits_{n \to \infty}\sqrt[n]{n}=1.$
+\end{example}
+\begin{prove}
+    下面我们将会用到3.2节会学到的夹逼定理——事实上，我们的目标是证明$\sqrt[n]{n}-1$小于
+    一个极限为$0$的数列。观察到$\sqrt[n]{n}-1$的特点，我们发现移去$1$对原式取$n$次方后可以实现
+    有效的化简。
 
 
-          关于这种技巧，在初等数学的范围内也有很多应用，例如用均值不等式、柯西不等式等解题时，利用取等条件限制，
-          解出配凑的系数。类似的例子还有很多，限于篇幅，就不在此处赘述了。
+    令$\sqrt[n]{n}=1+\lambda_n$，则
+    \[
+        n=(1+\lambda_n)^n=1+n\lambda_n+\frac{n(n-1)}{2}\lambda^2 _n+\cdots >1+\frac{n(n-1)}{2}\lambda^2 _n
+        .\]
+    由此解得$\lambda_n<\sqrt{\frac{2}{n}}$，因此$0<\sqrt[n]{n}-1<\sqrt{\frac{2}{n}}$.由夹逼
+    定理可知$\lim\limits_{n \to \infty}\sqrt[n]{n}=1.$
+\end{prove}
 
 
-          总之，放缩法的技巧和工具五花八门。只有勤加练习，多积累有关知识，才能得心应手地应用。然而，我们
-          也没有必要像高中时那样，为了应试，而刻意去寻找各种偏、怪的不等式，掌握常用且有用的那部分即可。
-\end{enumerate}
+关于这种技巧，在初等数学的范围内也有很多应用，例如用均值不等式、柯西不等式等解题时，利用取等条件限制，
+解出配凑的系数。类似的例子还有很多，限于篇幅，就不在此处赘述了。
+
+
+总之，放缩法的技巧和工具五花八门。只有勤加练习，多积累有关知识，才能得心应手地应用。然而，我们
+也没有必要像高中时那样，为了应试，而刻意去寻找各种偏、怪的不等式，掌握常用且有用的那部分即可。
+% \end{enumerate}
 
 
 
@@ -736,11 +726,11 @@
 
     \begin{center}
         \begin{tikzpicture}
-            \pgfplotsset{width=10cm,height=7cm}
+            \pgfplotsset{width=14cm,height=7cm}
             \begin{axis}[
                     title={当 $r=1$ 时的摆线},
-                    xmin = -11, xmax = 11,
-                    ymin = -11, ymax = 11,
+                    xmin = -2, xmax = 7 ,
+                    ymin = -2, ymax = 4.5,
                     axis x line=middle,
                     axis y line=middle,
                     every inner x axis line/.append style={->},
@@ -750,7 +740,7 @@
                 ]
                 \addplot [
                     variable = t,
-                    domain = 0:10*pi,
+                    domain = 0 : 2*pi,
                     very thick,
                     trig format plots = rad,
                     samples = 1000,
@@ -784,7 +774,7 @@
     以圆锥曲线的一个焦点（椭圆取左焦点，双曲线取右焦点）为极点，以过焦点的对称轴为极轴（向右为正方向）
     ，其极坐标方程可以表示为
     \[
-        \rho =\frac{ep}{1-e\cos \theta},\quad(0\leqslant \theta \leqslant 2 \symup\pi)
+        \rho =\frac{ep}{1-e\cos \theta},\quad(0\leqslant \theta < 2 \symup\pi)
         .\]
     其中$e$为圆锥曲线的离心率，$p$为焦准距。
 \end{example}
@@ -792,7 +782,7 @@
 
 这一极坐标方程暗含圆锥曲线的统一定义，足见极坐标系的优势所在，其推导过程请读者自行尝试。%....
 \begin{example}
-    心形线$\rho =1-\cos \theta$,~$ (0\leqslant \theta \leqslant 2 \symup\pi)$若改写为直角方程，其表达式将变为
+    心形线$\rho =1-\cos \theta$,~$ (0\leqslant \theta < 2 \symup\pi)$若改写为直角方程，其表达式将变为
     $(x^2+y^2+x)^2=x^2+y^2$，不够直观。
 \end{example}
 
@@ -874,7 +864,7 @@
     我们取$\varepsilon=1-t-\tau $，其中$\tau >0$且$\tau +t<1$.即得$\frac{a_{n+1}}{a_n}<1-\tau $.
     因此,$\forall n>N,$
     \[
-        a_n=a_{N+1}\cdot \frac{a_{N+2}}{a_{N+1}}\cdot \cdots \cdot\frac{a_n}{a_{n-1}}<a_{N+1}(1-\tau)^{n-N-1}
+        a_n=a_{N+1}\frac{a_{N+2}}{a_{N+1}}\cdots \frac{a_n}{a_{n-1}}<a_{N+1}(1-\tau)^{n-N-1}
         .\]
     对于任意正数$\delta$,我们取$n>\left\lfloor\log_{1-\tau}\frac{\delta}{\scriptstyle{a}_{{N+1}}}  \right\rfloor+N+2$，则有
     \[
@@ -905,7 +895,7 @@
 
 
 而引入实数的概念后，连续性的问题得到了解决。我们是这样阐述实数的连续性的：对于集合$X,Y$，若$\forall x\in X
-    $,~$y\in Y$,~$x\leqslant y$，则$\exists c\in \mathbb{R}$,~$x\leqslant c\leqslant y$.可以这么说，无论两个实数多么“接近”，总有那么一个
+$,~$y\in Y$,~$x\leqslant y$，则$\exists c\in \mathbb{R}$,~$x\leqslant c\leqslant y$.可以这么说，无论两个实数多么“接近”，总有那么一个
 实数可以“插入”到它们中间，这就是所谓“连续不断”。
 \begin{example}
     取集合$X=\{\, x\mid x^2\leqslant 2\,\}$,~$Y=\{\, y\mid y^2>2\,\}$，显然满足$\forall x\in X,\,y\in Y$,~$x\leqslant y$.

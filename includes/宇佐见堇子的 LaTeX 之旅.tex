@@ -8,18 +8,18 @@
             arc=2mm, auto outer arc,
             boxrule=0.5pt,
             title=前言,
+            fontupper = \itshape,
+            % code before = {\setlength{\parindent}{2em}}
         ]
-        {\itshape\setlength{\parindent}{2em} 话说那宇佐见堇子考入了东京大学第一年就做出了相当成功的研究，正在她想把自己的想法发表在网络上的时候，她犹豫了。
+        话说那宇佐见堇子考入了东京大学第一年就做出了相当成功的研究，正在她想把自己的想法发表在网络上的时候，她犹豫了。
 
-            用什么组织自己的文章呢？她想。在东深见高中上学的时候，自己就曾经用 Blog 的形式将幻想乡的一些讯息扩散出去——虽然总是被当成都市传说，但也是的的确确可以在自己的电脑上随意部署样式。但现在不一样了，既然是专业性的论文，那在自己的 Blog 上部署也太看不起自己了——好歹要传到专业性的期刊上去！要不然实在太枉费自己了。\\
+        用什么组织自己的文章呢？她想。在东深见高中上学的时候，自己就曾经用 Blog 的形式将幻想乡的一些讯息扩散出去——虽然总是被当成都市传说，但也是的的确确可以在自己的电脑上随意部署样式。但现在不一样了，既然是专业性的论文，那在自己的 Blog 上部署也太看不起自己了——好歹要传到专业性的期刊上去！要不然实在太枉费自己了。
 
+        \url{http://arxiv.org/}
 
-            \url{http://arxiv.org/}
+        这样一个网站，上面收集了很多关于物理、数学。计算机科学等学科的论文。虽然看上去平平无奇，但的确有些非常厉害的数学家在上面发表极具影响力作品的历史\footnote{比如格里戈里·雅柯夫列维奇·佩雷尔曼 (Grigori Yakovlevich Perelman) 在 2002 年 11 月发表的解决几何化猜想 (Geometrization conjecture) 的论文。}。她当即决定就这个了。不过她在查找资料的时候注意到了要是用 \TeX 格式发表自己论文的事情，这让她非常疑惑——不是只要写出来就行吗？还管那么多格式干嘛？
 
-            这样一个网站，上面收集了很多关于物理、数学。计算机科学等学科的论文。虽然看上去平平无奇，但的确有些非常厉害的数学家在上面发表极具影响力作品的历史\footnote{比如格里戈里·雅柯夫列维奇·佩雷尔曼 (Grigori Yakovlevich Perelman) 在 2002 年 11 月发表的解决几何化猜想 (Geometrization conjecture) 的论文。}。她当即决定就这个了。不过她在查找资料的时候注意到了要是用 \TeX 格式发表自己论文的事情，这让她非常疑惑——不是只要写出来就行吗？还管那么多格式干嘛？
-
-            于是她找到了同样在东京大学任副教授的宇佐见莲子……
-        }
+        于是她找到了同样在东京大学任副教授的宇佐见莲子……
     \end{tcolorbox}
 \end{center}
 
@@ -46,30 +46,24 @@
 
 “\LaTeX 相比 \TeX 有很多优势——比如在 1994 年后，\LaTeXe{} 已经完善，这玩意已经逐步称为国际上排版数学、物理、计算机等科技领域专业出版物的标准。而 \LaTeX 比 \TeX 本身更容易使用——高德纳开发 \TeX 本质是只为了自己的鸿篇巨制，而 \LaTeX 在此基础上定义了一些宏和格式，其实就将部分排版细节隐藏起来，相对而言更容易点——对你这种只想排论文的再好不过了。当然，你也可以拿 \LaTeX 来写笔记，看起来会比手写的要美观很多……一言以蔽之：
 
-\begin{center}
-    \begin{tcolorbox}[enhanced, breakable,
-            colback = white!90!black, colframe = white!40!black, colbacktitle = cyan,
-            boxsep=2mm, width=14cm,
-            boxed title style = {sharp corners}]\itshapeCJK
-        \begin{itemize}
-            \item \LaTeX 具有专业的排版输出能力，本身就是为了美观而服务的。
-            \item \LaTeX 目前仍是最强大的公式排版系统之一。
-            \item 这玩意可以让用户更专注与内容、而不是被错综复杂的版式耍的团团转。%抓了个虫
-            \item 有很多面向 \LaTeX 开发的宏包可以解决各式各样的问题。
-            \item 横跨全平台，而且开源免费。
-        \end{itemize}
-    \end{tcolorbox}
-\end{center}
+
+\begin{itemize}
+    \item \LaTeX 具有专业的排版输出能力，本身就是为了美观而服务的。
+    \item \LaTeX 目前仍是最强大的公式排版系统之一。
+    \item 这玩意可以让用户更专注与内容、而不是被错综复杂的版式耍的团团转。
+    \item 有很多面向 \LaTeX 开发的宏包可以解决各式各样的问题。
+    \item 横跨全平台，而且开源免费。
+\end{itemize}
 
 “看起来感觉还不错。”宇佐见堇子舔了舔嘴唇。
 
-“我们先从看得见的地方开始说起吧：首先就是这玩意的下载以及安装。”\\
+“我们先从看得见的地方开始说起吧：首先就是这玩意的下载以及安装。”
 
 \subsection{\LaTeX 的下载与安装}
 
 \LaTeX 有很多发行版，比如 \verb"TeXlive", \verb"MiKTeX", \verb"MacTeX" 这些，每个发行版可能有不同的宏包管理器（ \LaTeX 很多实现都是要依赖宏包才比较好搞），在这里我推荐的是比较全的 \verb"TeXlive" ，因为我用的就是 \verb"TeXlive" ，所以以下的教程全部以 \verb"TeXlive" 为基准。同样的，以下的教程基于 Windows 10。
 
-我们仅仅需要打开 \verb"TeXlive" 的相关网站—— \url{https://tug.org/texlive/}，然后选择
+我们仅仅需要打开 \verb"TeXlive" 的相关网站 \link{https://tug.org/texlive/}，然后选择
 
 \begin{center}
     \vbox{\textbf{\sffamily All the ways to acquire TeX Live:} $\longrightarrow$ {\sffamily on DVD}
@@ -97,10 +91,8 @@
 “直接解压就行了，里面就有一个 \verb"install-tl-windows.bat"。”
 
 \subsection{\LaTeX 的初步使用}
-"
-“安装完你的电脑里就有这么一个叫做 \LaTeX 的东西了，然后打开你的 Windows 菜单，应该会有一个 \verb"TeX live" 文件夹，里面有一个 \verb"TeXworks editor" 的软件，这是 \verb"TeXlive" 自带的一个 \LaTeX 代码编辑器。在里面可以写代码：
 
-`
+“安装完你的电脑里就有这么一个叫做 \LaTeX 的东西了，然后打开你的 Windows 菜单，应该会有一个 \verb"TeX live" 文件夹，里面有一个 \verb"TeXworks editor" 的软件，这是 \verb"TeXlive" 自带的一个 \LaTeX 代码编辑器。在里面可以写代码：
 
 \begin{lstlisting}
     \documentclass{article}
@@ -121,6 +113,7 @@
 \end{itemize}
 
 这些玩意各有千秋，给我的感觉大概是这样子的：
+
 \begin{itemize}
     \item \verb"pdfLaTeX"
           \begin{itemize}
@@ -213,7 +206,7 @@
     }
 \end{center}
 
-“看起来好像没啥，实际上——A前面是有一个空格的，这个空格实际上是来自于代码换行。”
+“看起来好像没啥，实际上——A 前面是有一个空格的，这个空格实际上是来自于代码换行。”
 
 “哦哦！所以我是不能随便换行的对吧，那这样太离奇了吧？写代码不能随便换行？？”
 
@@ -330,7 +323,7 @@
 
 “请注意你的言辞，难道你要用 \verb"markdown" 写论文吗？”莲子正色道，“这玩意不保真啊。”
 
-“可是我用 \verb"CSS" 也可以仿出这样的标题形状哇。”堇子反驳道。“ \verb"markdown"{%\simpleicon{markdown}} 
+“可是我用 \verb"CSS" 也可以仿出这样的标题形状哇。”堇子反驳道。“ \verb"markdown"%\simpleicon{markdown}} 
 写得多轻巧，这 \LaTeX 写之前我还要安装个 4 GiB 的大家伙。”
 
 “好，你用 \verb"CSS" 写个正经的折行分页算法给我看看吧。”莲子面无表情地说道。
@@ -398,32 +391,32 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 
 “对，而且也不合规范——这一点如果不熟悉的话还是要注意的。归根到底，其实是 \verb"\sin" 本身就是一个新的命令，展开后会得到正体的 $\sin $ 以及和后面的变量之间\textbf{带上空格}\footnote{其实不应该叫空格，叫glue更恰当。}。可以看到在上面的例子中，即使在代码里面加入空格，真正显示出来的也不会有空格。
 
-“草这空格怎么那么麻烦……”\\
+“草这空格怎么那么麻烦……”
 
-“先不管，我们看看这个神奇妙妙——\footnote{下面的「代码」默认在数学环境里，因此不加数学环境的声明了，此处参考 Will Robertson, \textit{Symbols defined by unicode-math}, 2020/01/31
-    0.8q, \url{https://mirrors.nju.edu.cn/CTAN/macros/unicodetex/latex/unicode-math/unimath-symb}}：
+“先不管，我们看看这个神奇妙妙——\footnote{下面的「代码」默认在数学环境里，因此不加数学环境的声明了，此处参考 \textcite[Symbols defined by unicode-math]{WillRobertson} \link{https://mirrors.nju.edu.cn/CTAN/macros/unicodetex/latex/unicode-math/unimath-symb}。}：
 
-
-\begin{center}
+\begin{table}[h]
+    \centering
+    \caption{一些数学字符的近似分类}
     \DefTblrTemplate{caption-tag}{default}{}
     \DefTblrTemplate{caption-sep}{default}{}
-    \begin{longtblr}{colspec = {X[-1]XX[-1]}, width = \textwidth}\hline
-        分类                 & 代码                                                                                                                         & 预览                                                  \\\hline
-        Opening symbols      & \texttt{\char"005C (, [, \char"005C\{, \char"005Clceil, \char"005Csqrt\{\}}                                                  & $(, [, \{, \lceil, \sqrt{}$                           \\
-        Closing symbols      & \texttt{\char"005C !, ), ], \char"005C\}, \char"005C rfloor}                                                                 & $!, ), ], \}, \rfloor$                                \\
-        Fence symbols        & \texttt{\char"005C | = \char"005C vert, \char"005C Vert = \char"005C|}                                                       & $| = \vert, \Vert = \|$                               \\
-        Punctuation symbols  & \texttt{\char"005C , : ;}                                                                                                    & $, : ;$                                               \\
-        Over symbols         & \texttt{\char"005C overbrace\{a + b\}\^{}M}                                                                                  & $\overbrace{a + b}^M$                                 \\
-        Under symbols        & \texttt{\char"005C underbrace\{h + k\}\_L}                                                                                   & $\underbrace{h + k}_L$                                \\
-        Accents              & \texttt{\char"005C bar\{x\}, \char"005C tilde\{x\}, \char"005C dot\{x\}, \char"005C ddot\{x\}, \char"005C mathcirc\{x\}}     & $\bar{x}, \tilde{x}, \dot{x}, \ddot{x}, \mathring{x}$ \\
-        Math operators       & \texttt{\char"005C sin, \char"005C lim, \char"005C inf}                                                                      & $\sin, \lim, \inf$                                    \\
-        BIG Math operators   & \texttt{\char"005C int\_0\^{}1 \char"005C sum\_0\^{}1 \char"005C displaystyle \char"005C int\_0\^{}1 \char"005C sum\_0\^{}1} & $\int_0^1 \sum_0^1 \displaystyle \int_0^1 \sum_0^1$   \\
-        Binary relations     & \texttt{\char"005C a+b, a\{+b\}, - ,\char"005C times, \char"005C div}                                                        & $a + b, a{+b}, - ,\times, \div$                       \\
-        Ordinary symbols     & \texttt{\char"005C forall, \char"005C exists, \char"005C emptyset}                                                           & $\forall, \exists, \emptyset$                         \\
-        Relation symbols     & \texttt{\char"005C a<b, a\{<b\}, \char"005C to, \char"005C leftarrow, \char"005C mapsto}                                     & $a<b, a{<b}, \to, \leftarrow, \mapsto$                \\
-        Alphabetical symbols & \texttt{\char"005C pi, \char"005C mathbf\{A\}, \char"005C mathcal\{X\}, \char"005C mathsf\{C\}}                              & $\pi, \mathbf{A}, \mathcal{X}, \mathsf{C}$            \\\hline
-    \end{longtblr}
-\end{center}
+    \begin{tblr}{colspec = {X[-1]XX[-1]}, width = \textwidth}\hline
+        分类                 & 代码                                                                                                                         & 预览                                                          \\\hline
+        Opening symbols      & \texttt{\char"005C (, [, \char"005C\{, \char"005Clceil, \char"005Csqrt\{\}}                                                  & $(,~[,~\{,~\lceil,~\sqrt{}$                                   \\
+        Closing symbols      & \texttt{\char"005C !, ), ], \char"005C\}, \char"005C rfloor}                                                                 & $!,~),~],~\},~\rfloor$                                        \\
+        Fence symbols        & \texttt{\char"005C | = \char"005C vert, \char"005C Vert = \char"005C|}                                                       & $| = \vert,~\Vert~= \|$                                       \\
+        Punctuation symbols  & \texttt{\char"005C , : ;}                                                                                                    & $, : ;$                                                       \\
+        Over symbols         & \texttt{\char"005C overbrace\{a + b\}\^{}M}                                                                                  & $\overbrace{a + b}^M$                                         \\
+        Under symbols        & \texttt{\char"005C underbrace\{h + k\}\_L}                                                                                   & $\underbrace{h + k}_L$                                        \\
+        Accents              & \texttt{\char"005C bar\{x\}, \char"005C tilde\{x\}, \char"005C dot\{x\}, \char"005C ddot\{x\}, \char"005C mathcirc\{x\}}     & $\bar{x},~\tilde{x},~\dot{x},~\ddot{x},~\mathring{x}$         \\
+        Math operators       & \texttt{\char"005C sin, \char"005C lim, \char"005C inf}                                                                      & $\sin,~\lim,~\inf$                                            \\
+        BIG Math operators   & \texttt{\char"005C int\_0\^{}1 \char"005C sum\_0\^{}1 \char"005C displaystyle \char"005C int\_0\^{}1 \char"005C sum\_0\^{}1} & $\textstyle\int_0^1 \sum_0^1 \displaystyle \int_0^1 \sum_0^1$ \\
+        Binary relations     & \texttt{\char"005C a+b, a\{+b\}, - ,\char"005C times, \char"005C div}                                                        & $a + b,~a{+b},~- ,\times,~\div$                               \\
+        Ordinary symbols     & \texttt{\char"005C forall, \char"005C exists, \char"005C emptyset}                                                           & $\forall,~\exists,~\emptyset$                                 \\
+        Relation symbols     & \texttt{\char"005C a<b, a\{<b\}, \char"005C to, \char"005C leftarrow, \char"005C mapsto}                                     & $a<b,~a{<b},~\to,~\leftarrow,~\mapsto$                        \\
+        Alphabetical symbols & \texttt{\char"005C pi, \char"005C mathbf\{A\}, \char"005C mathcal\{X\}, \char"005C mathsf\{C\}}                              & $\pi,~\mathbf{A},~\mathcal{X},~\mathsf{C}$                    \\\hline
+    \end{tblr}
+\end{table}
 
 “草这也太哈人了吧。”堇子大叫道。
 
@@ -431,23 +424,16 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 
 “哇，好～厉～害～哦！请问这些细节有什么用捏？”
 
-“草……只是说无论你知晓与否，的确是有很多细节在里面的……这样可以让你对其保持敬畏。\kern0em”
-
+“草……只是说无论你知晓与否，的确是有很多细节在里面的……这样可以让你对其保持敬畏。”
 \subsection{字体与数学字体}
 
-“在排版中，我们当然不会只用一种字体，而是使用各种各样形状的——见 \autoref{tab:字形们}\footnote{此处使用字体为：
-    \begin{itemize}
-        \item 宋体：Noto Serif CJK SC
-        \item 黑体：Noto Sans CJK SC
-        \item 楷体：方正楷体
-        \item 西文衬线体：\TeX{} Gyre Pagella
-        \item 西文无衬线体：Noto Sans
-        \item 等宽字体：Iosevka
-    \end{itemize}
-}。”
+“在排版中，我们当然不会只用一种字体，而是使用各种各样形状的——见 \autoref{tab:字形们}\footnote{此处使用字体为：  宋体：Noto Serif CJK SC；黑体：Noto Sans CJK SC；楷体：方正楷体；西文衬线体：\TeX{} Gyre Pagella；西文无衬线体：Noto Sans；等宽字体：Iosevka。}。”
 
-\begin{table}[ht]
+“啦特可爱是什么意思？”堇子问道。
+
+\begin{table}[h]
     \centering
+    \caption{字形们}
     \begin{tblr}{ll}\hline
         \texttt{\char"005C textbf\{ABCabc123啦特可爱\}} & \textbf{ABCabc123啦特可爱} \\
         \texttt{\char"005C textit\{ABCabc123啦特可爱\}} & \textit{ABCabc123啦特可爱} \\
@@ -457,11 +443,9 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
         \texttt{\char"005C texttt\{ABCabc123啦特可爱\}} & \texttt{ABCabc123啦特可爱} \\
         \texttt{\char"005C textrm\{ABCabc123啦特可爱\}} & \textrm{ABCabc123啦特可爱} \\ \hline
     \end{tblr}
-    \caption{字形们}
     \label{tab:字形们}
 \end{table}
 
-“啦特可爱是什么意思？”堇子问道。
 
 “没啥意思，你看看那个倾斜体，好像长得特别奇怪，这是为了在斜体环境与意大利作区分：
 
@@ -473,13 +457,14 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 
 “事实上我一点都没觉得它奇怪。”堇子说。
 
-“这玩意应该算计算机时代才应用起来的东西\footnote{倾斜（罗马）体出现与20世纪30年代，但其作为经典意大利体的替代品而被广泛使用则是20世纪70年代的事了。\slshape ``Slanted roman type was introduced in the 1930s, but it first became widely used as an alternative to the conventional italic during the late 1970s.''\upshape 来自  \citep[The \TeX book]{knuth1984texbook}。}，以往的斜体 (Italic fonts) 倒是很具有手写的痕迹，而倾斜体差不多就是矩阵变换得来的。”
+“这玩意应该算计算机时代才应用起来的东西\footnote{倾斜（罗马）体出现与20世纪30年代，但其作为经典意大利体的替代品而被广泛使用则是20世纪70年代的事了。\slshape ``Slanted roman type was introduced in the 1930s, but it first became widely used as an alternative to the conventional italic during the late 1970s.''\upshape 来自  \textcite[The \TeX book]{knuth1984texbook}。}，以往的斜体 (Italic fonts) 倒是很具有手写的痕迹，而倾斜体差不多就是矩阵变换得来的。”
 
 “除了在正文中的各种各样的字体风格，我们也需要在数学环境中如此表示——比如 $\mathcal{F}$ 表示 Fourier 变换、用 $\mathsf{C}$ 表示范畴 (Categories) 什么的。\autoref{tab:数学字形们}\footnote{本文使用的数学字体为 \TeX{} Gyre Pagella Math.} 是一些\textbf{特殊}的形状。”
 
-
-\begin{table}[ht]
+% !
+\begin{table}[h]
     \centering
+    \caption{数学字形们}
     \begin{tblr}{colspec = {X[2]X[-1]X}, width = \textwidth}\hline
         命令                                        & 预览                   & 备注                             \\ \hline
         \texttt{\char"005C mathbf\{ABCabc123\}}     & $\mathbf{ABCabc123}$   &                                  \\
@@ -492,7 +477,6 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
         \texttt{\char"005C mathcal\{ABCabc123\}}    & $\mathcal{ABC}$        & 只提供了大写字母                 \\
         \texttt{ABCabc123}                          & $ABCabc123$            &                                  \\\hline
     \end{tblr}
-    \caption{数学字形们}
     \label{tab:数学字形们}
 \end{table}
 
@@ -503,16 +487,11 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
     \documentclass{article}
     \usepackage{amsmath}
     \begin{document}
-        \[
-            \mathcal{1}
-        .\]
+        \[  \mathcal{1} .\]
     \end{document}
 \end{lstlisting}
 
 这样反而会得到一个比较匪夷所思的结果——
-
-
-
 \[
     \mathord\infty
     .\]
@@ -527,7 +506,7 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
     \[
         \texttt{\char"005C mathcal\{1\}: \char"005C mathchar"0031} \longrightarrow \texttt{\char"005C mathchar"0231: }\texttt{\char"005C mathord\char"005C infty: } \mathord\infty
         .\]
-    而 \texttt{\char"005C mathchar"0231} 对应的是 $\infty$ 字形，因此不能够直接在仅仅使用 \AmS{}Math 包的情况下实现 Cal 形状的数字和小写字母。更具体的信息可以参考 \citep[The \TeX book]{knuth1984texbook}。
+    而 \texttt{\char"005C mathchar"0231} 对应的是 $\infty$ 字形，因此不能够直接在仅仅使用 \AmS{}Math 包的情况下实现 Cal 形状的数字和小写字母。更具体的信息可以参考 \textcite[The \TeX book]{knuth1984texbook}。
 
     \CJKsout{其实就是没必要搞小写字母为了节省空间存其他符号了。}
 }，以后再和你说。不管如何，在引用 \AmS{}Math 的情况下尊重上面的 \autoref{tab:数学字形们} 大抵是没问题的。
@@ -561,7 +540,7 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 
 \subsection{奇怪的微调}
 
-“是的，你眼挺尖的：这个家伙和我们看到的命令完全不一样——她不是带字母的，事实上，这被称为控制字符 (control symbol)，这玩意代表的实际上是一个「短空格」。我们之前说过，在数学环境下 \LaTeX{} 会忽略空格，如果我们要人为加入一些空格的话就得使用一些命令，这些命令大多数可以用控制字符呈现 \footnote{事实上，这些控制字符大多不是最基层的命令 (primitive)，比如说 \texttt{\char"005C ,} 会被定义为 \texttt{\char"005C mskip\char"005C thinmuskip}.}。”
+“是的，你眼挺尖的：这个家伙和我们看到的命令完全不一样——她不是带字母的，事实上，这被称为控制字符 (control symbol)，这玩意代表的实际上是一个「短空格」。我们之前说过，在数学环境下 \LaTeX{} 会忽略空格，如果我们要人为加入一些空格的话就得使用一些命令，这些命令大多数可以用控制字符呈现\footnote{事实上，这些控制字符大多不是最基层的命令 (primitive)，比如说 \texttt{\char"005C ,} 会被定义为 \texttt{\char"005C mskip\char"005C thinmuskip}.}。”
 
 
 “这种方法可以非常方便地在数学环境中加入空格，更为直接的办法是使用 \verb"\kern" 命令，注意不要使用大括号来包裹长度：
@@ -586,10 +565,11 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 
 “我知道你肯定觉得这很麻烦，但事实上这玩意会更加精确。”莲子说，“各种控制字符代表的宽度可以参看 \autoref{tab:空格预览}。”
 
-
+% !
 \begin{table}[ht]
     \centering
-    \begin{tblr}{colspec = {Q[8em]Q[8em]}, font=\ttfamily}\hline
+    \caption{空格预览}
+    \begin{tblr}{colspec = {Q[8em]Q[8em]}, rows = {font = \ttfamily}, row{1} = {font = \rmfamily}}\hline
         命令             & 预览                                              \\ \hline
         这儿什么都没有   & \makebox[0pt]{\color{red}|}\makebox[0pt]{|}       \\
         \char"005C ,     & \makebox[0pt]{\color{red}|}\,\makebox[0pt]{|}     \\
@@ -601,7 +581,6 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
         \char"005C quad  & \makebox[0pt]{\color{red}|}\quad\makebox[0pt]{|}  \\
         \char"005C qquad & \makebox[0pt]{\color{red}|}\qquad\makebox[0pt]{|} \\\hline
     \end{tblr}
-    \caption{空格预览}
     \label{tab:空格预览}
 \end{table}
 
@@ -633,7 +612,7 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 
 “我之前说过：‘有很多面向 \LaTeX 开发的宏包可以解决各式各样的问题’。这些作者们开发的宏包实现当然不一样，因此这些问题本质上是无极限的——你又不可能不使用宏包对吧？所以我们一般只需要掌握最基础的宏包的最基础的用法就行。至于其他乱七八糟的什么宏包，我们可以在参考文献中找到——先看看这个神奇妙妙工具。”
 
-“打开你的命令行\footnote{如果你是 Windows 用户，可以使用 \texttt{Win + R} 键打开运行窗口，输入 \texttt{cmd} 打开控制台。}，输入 \verb"texdoc lshort" 然后回车。此时一般会打开个 PDF 文件 \citep[LShort]{oetiker2003not}
+“打开你的命令行\footnote{如果你是 Windows 用户，可以使用 \texttt{Win + R} 键打开运行窗口，输入 \texttt{cmd} 打开控制台。}，输入 \verb"texdoc lshort" 然后回车。此时一般会打开个 PDF 文件 \textcite[LShort]{oetiker2003not}
 ——虽然是英文的地狱，但这玩意流传甚广因此由各种各样的翻译：
 
 \begin{itemize}
@@ -641,7 +620,7 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
     \item  \verb"texdoc jshort" 是打开日文的翻译版。
 \end{itemize}
 
-“这就是一本很好的入门手册了，另外，也可以参考刘海洋的 \citep[\LaTeX 入门]{刘海洋2013latex}，这本比 \verb"lshort" 要厚不少，虽然内容有些过时了，但也值得一读，哦还有 \citep[\LaTeX{} Reference Sheet for a thesis with KOMA-Script]{RSTL23KS}, \citep[现代 \LaTeX 入门讲座]{stonezeng}，这玩意可以当成奇怪的零食干货来吃。”
+“这就是一本很好的入门手册了，另外，也可以参考刘海洋的 \textcite[\LaTeX 入门]{刘海洋2013latex}，这本比 \verb"lshort" 要厚不少，虽然内容有些过时了，但也值得一读，哦还有 \textcite[\LaTeX{} Reference Sheet for a thesis with KOMA-Script]{RSTL23KS}, \textcite[现代 \LaTeX 入门讲座]{stonezeng}，这玩意可以当成奇怪的零食干货来吃。”
 
 “太多了叭！”堇子不耐烦地说道，“这——这本几百页我看这本还不如去看代数！”
 
@@ -649,15 +628,15 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 
 “这性质不一样的吧？”
 
-“不管莉，反正最后就这样，这书写的也是比较容易上手的，当成小入门看完全没问题——你要是有兴趣也可以去啃些其他的作品，比如说 \citep[The \LaTeX{} Companion. Second Edition]{mittelbach2004latex}, 或者 \citep[The \TeX book]{knuth1984texbook}。”
+“不管莉，反正最后就这样，这书写的也是比较容易上手的，当成小入门看完全没问题——你要是有兴趣也可以去啃些其他的作品，比如说 \textcite[The \LaTeX{} Companion. Second Edition]{mittelbach2004latex}, 或者 \textcite[The \TeX book]{knuth1984texbook}。”
 
 “这两本估计是大大怪吧？”堇子说。
 
 “差不多，反正我这里就说一下而已。”
 
-“另外是我自己用过的一些宏包的推荐——如果不清楚具体用法的话可以 \verb"texdoc" 再加上具体的宏包名查询宏包文档：
+“另外是我自己用过的一些宏包的推荐——见 \autoref{table:一些数学宏包们} 如果不清楚具体用法的话可以 \verb"texdoc" 再加上具体的宏包名查询宏包文档：
 
-\begin{table}[h]
+\begin{table}[ht]
     \begin{tblr}{colspec = {X[-1]X}, width = \textwidth}\hline
         宏包名                                                               & 极其简要的备注                                                                                 \\\hline
         \ttfamily \href{https://www.ctan.org/pkg/ctex}{ctex}                 & 当下中文最佳解决方案之一                                                                       \\
@@ -677,11 +656,12 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
         \ttfamily \href{https://www.ctan.org/pkg/titlesec}{titlesec}         & 修改章节标题格式                                                                               \\\hline
     \end{tblr}
     \caption{一些数学宏包们}
+    \label{table:一些数学宏包们}
 \end{table}
 
 “太多了！记不住的这玩意——而且你这形容也太抽象了……”
 
-“呃如果想看看这玩意的用处就去看文档咯——比如那个 \verb"tcolorbox" 就很有意思。” 宇佐见莲子回答说，“反正我在这说也没啥用，你看了就知道了。如果遇到问题也可以到网上咨询：\url{https://tex.stackexchange.com}。”
+“呃如果想看看这玩意的用处就去看文档咯——比如那个 \verb"tcolorbox" 就很有意思。” 宇佐见莲子回答说，“反正我在这说也没啥用，你看了就知道了。如果遇到问题也可以到网上咨询：\link{https://tex.stackexchange.com}。”
 
 言下之意就是不要打扰别人（您）嘛，堇子想道，不过这话当然不能说出来。
 

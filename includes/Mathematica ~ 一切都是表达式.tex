@@ -1,4 +1,4 @@
-\chapter[Mathematica \protect\~{} 一切都是表达式]{Mathematica \~{} 一切都是表达式}
+\newpage\thispagestyle{empty}\newpage\chapter[Mathematica \protect\~{} 一切都是表达式]{Mathematica \~{} 一切都是表达式}
 \addauthor{小飞舞}
 \medskip
 \begin{tcolorbox}[colback=gray!15!white,
@@ -219,7 +219,7 @@
             {
                 \begin{tikzpicture}
                     \draw[blue!70!green!40] (0, 0) circle(0.15);
-                    \node at (0, 0){\color{blue!70!green!40}\fontsize{3pt}{0pt}\selectfont$\sqrt{\phantom{a}}$};
+                    \node at (0, 0){\color{blue!70!green!40}\fontsize{4}{10}\selectfont\mbox{\mathversion{fira}$\sqrt{\phantom{m}}$}};
                     \node[label = right:{\texttt{0.848...}}] at (0.2, 0){};
                 \end{tikzpicture}
             }
@@ -463,11 +463,11 @@
 \begin{mathematica}
     DSolve[\{
 
-    \tab  D[\UDsymbol{u}[\UDsymbol{x}, \textit{t}], \{\textit{t}, 2\}] == D[\UDsymbol{u}[\textit{x}, \UDsymbol{t}], \{\textit{x}, 2\}] + 3,
+    \tab  D[\UDsymbol{u}[\UDsymbol{x}, \key{t}], \{\key{t}, 2\}] == D[\UDsymbol{u}[\key{x}, \UDsymbol{t}], \{\key{x}, 2\}] + 3,
 
     \tab  \UDsymbol{u}[\UDsymbol{x}, 0] == Sin@\UDsymbol{x} - Cos[3\UDsymbol{x}] / Exp[2Abs@\UDsymbol{x} + 3],
 
-    \tab  D[\UDsymbol{u}[\UDsymbol{x}, \textit{t}], \textit{t}] == 0 /. \UDsymbol{t} -> 0
+    \tab  D[\UDsymbol{u}[\UDsymbol{x}, \key{t}], \key{t}] == 0 /. \UDsymbol{t} -> 0
 
     \},
 
@@ -854,19 +854,19 @@
 
 这是我当时用 Mathematica 的初衷，作为狂拽炫酷吊炸天的最强符号运算系统之一，拿来推作业题的积分、微分方程、级数都完全不在话下。实属新生解决应急数学之痛的必备良药口牙。当然，这玩意也可以用来编程——Wolfram 语言是函数式编程语言，可能写起来会比较“过程性”，用在数据处理和数学符号计算再好不过——写 \verb"For" 循环？那还是算了吧……
 
-正如 Mathematica 强调的那样，Mathematica 可以做很多事情，也可以帮助你学到很多——尤其是那极其有用的帮助文档\footnote{请不要通过看帮助文档的数学名词而称为名词党哦（笑）。}和大量的在线学习课程\footnote{这些课程可以在 \url{https://www.wolfram.com} 上找到。}，对新入学的大一新生们大有裨益。
+正如 Mathematica 强调的那样，Mathematica 可以做很多事情，也可以帮助你学到很多——尤其是那极其有用的帮助文档\footnote{请不要通过看帮助文档的数学名词而称为名词党哦（笑）。}和大量的在线学习课程\footnote{这些课程可以在 \link{https://www.wolfram.com} 上找到。}，对新入学的大一新生们大有裨益。
 
-各位看官老爷们也可以看看这里：\url{https://www.zhihu.com/question/27834147} 来感受下 Mathematica(Wolfram) 语言到底有多么神奇。
+各位看官老爷们也可以看看这里：\link{https://www.zhihu.com/question/27834147} 来感受下 Mathematica(Wolfram) 语言到底有多么神奇。
 
 \subsection{如何部署 Mathematica}
 
-开篇先说明：Mathematica 是要钱的。具体价格可以在 \url{https://www.wolfram.com/mathematica/pricing} 上面找到。
+开篇先说明：Mathematica 是要钱的。具体价格可以在 \link{https://www.wolfram.com/mathematica/pricing} 上面找到。
 
 那作为家境贫寒的学生党，如果我们也需要使用那强力的符号运算系统应该怎么办呢？
 
 事实上我们可以这样认为，Mathematica分为两部分，一部分是我们看到的 Mathematica 软件，俗称“前端”。这玩意可以对结果进行调整——比如随手保存图片、拖放图片大小等等，Mathematica 的前端就做得非常的人性化——帮助里的代码甚至都可以直接运行！另一部分我们可以称为是 Mathematica 的 Kernel. 负责所谓的解析输入、计算、返回结果，然后结果由前端来展示。
 
-因此所有的内部计算都需要靠调用 Kernel 来进行，这个 Kernel 我们称为 Wolfram Engine(WE)，幸运的是，它是免费的\footnote{当然，免费分各种情形，具体的信息可以参考 \url{https://www.wolfram.com/engine/commercial-options}.}。因此我们可以在 \url{https://www.wolfram.com/engine} 上面下载这 WE 的 Windows, Mac, Linux 版本。
+因此所有的内部计算都需要靠调用 Kernel 来进行，这个 Kernel 我们称为 Wolfram Engine(WE)，幸运的是，它是免费的\footnote{当然，免费分各种情形，具体的信息可以参考 \link{https://www.wolfram.com/engine/commercial-options}.}。因此我们可以在 \link{https://www.wolfram.com/engine} 上面下载这 WE 的 Windows, Mac, Linux 版本。
 
 按照网页 / 安装包的提示下载安装Mathematiaca / WE 即可。这期间你需要一个 Wolfram 账号。
 
@@ -1042,13 +1042,12 @@ Wolfram 语言与其他很多编程语言都不相同，那就是其非常地“
 有了这玩意，我们就可以通过后缀运算和匿名函数来实现可读性更强的代码：
 
 \begin{mathematica}
-    Sin\@\UDsymbol{x} // \{Table[Series[\key{\#}, \{\key{x}, 0, 2 \key{n}\}], \{\key{n}, 4\}], \key{\#}\} \& // Normal // Plot[\key{\#}, \{\key{x}, -Pi, Pi\}] \&
+    Sin\@\UDsymbol{x} // \{Table[Series[\key{\#}, \{\key{x}, 0, 2\key{n}\}], \{\key{n}, 4\}], \key{\#}\} \& // Normal // Plot[\key{\#}, \{\key{x}, -Pi, Pi\}] \&
     \ShiftEnter
     \begin{center}
         \includegraphics[width = 0.8\textwidth]{Plot7.pdf}
     \end{center}
 \end{mathematica}
-
 
 代码的可读性当然是相当重要的——除非你在参加什么比赛要尽可能写短的代码，如果我们将表头从前到后一直读下来，就能明白代码的大体意思，那自然是再好不过的。
 
@@ -1078,7 +1077,7 @@ Wolfram 语言与其他很多编程语言都不相同，那就是其非常地“
                         \filldraw[macgreen] (1, 0) circle (0.3em);
                     \end{tikzpicture}
                 }
-            }, coltitle = black, colbacklower = red!20, height = 0.6\paperheight-5pt, breakable
+            }, coltitle = black, colbacklower = red!20, height = 0.6\paperheight-20pt, breakable
     ]
     \makebox[\width][c]{\includegraphics[width = \linewidth]{Wolframdoc.pdf}}
 \end{tcolorbox}
@@ -1086,7 +1085,7 @@ Wolfram 语言与其他很多编程语言都不相同，那就是其非常地“
 Mathematica 的帮助已经相当面面俱到——对入门的新手实在是没有什么比其更好了。如果在 Mathematica 终端中打开帮助
 (\verb"F1")，则帮助中的示例代码可以实时修改后运行，对那些乱七八糟的内置函数，在那里乱扯一通工作原理还不如看例子学习得快。
 
-当然，如果你不满足需要撞到问题了再去浩如烟海的帮助中寻迹，那可以在此查看快速的编程入门 \url{https://www.wolfram.com/language/fast-introduction-for-programmers/zh/}，更深入的可以了解 \url{https://www.wolfram.com/language/elementary-introduction/2nd-ed/}，又称 \cite[AN ELEMENTARY INTRODUCTION TO THE Wolfram Language]{wolfram2017}，这玩意有实体书（当然也有 PDF，这 PDF 据称是用 Mathematica 排版的）。
+当然，如果你不满足需要撞到问题了再去浩如烟海的帮助中寻迹，那可以在此查看快速的编程入门 \link{https://www.wolfram.com/language/fast-introduction-for-programmers/zh/}，更深入的可以了解 \link{https://www.wolfram.com/language/elementary-introduction/2nd-ed/}，又称 \textcite[AN ELEMENTARY INTRODUCTION TO THE Wolfram Language]{wolfram2017}，这玩意有实体书（当然也有 PDF，这 PDF 据称是用 Mathematica 排版的）。
 
 另外、如果在实际工作用遇到了什么问题，也可以在 \href{https://mathematica.stackexchange.com/}{Mathematica Stack Exchange} 或者是 \href{https://community.wolfram.com/}{Wolfram Community} 上提问。
 
@@ -1094,32 +1093,32 @@ Mathematica 的帮助已经相当面面俱到——对入门的新手实在是�
 
 哈！这里当然不是什么正经作业——不过我觉得还算是一个蛮有趣的简单练习：
 
-{\itshapeCJK\small\begin{enumerate}%
+\itshapeCJK\begin{enumerate}%
     \item 大家可能使用 \LaTeX 写笔记，其中可能需要进行简单的函数绘图——我们清楚这当然可以用 Mathematica 完成，但是小飞舞同学有时候更喜欢用 PGFPlots 宏包来绘图：
-          \begin{lstlisting}
+\begin{lstlisting}
     \begin{tikzpicture}
-        \pgfplotsset{width = 12cm, height = 7cm}
+        \pgfplotsset{width = 12cm, height = 5.5cm}
         \begin{styleedaxis}[
                 axis x line                           = middle,
                 axis y line                           = middle,
                 every inner x axis line/.append style = {->},
                 every inner y axis line/.append style = {->},
                 title                                 = $\exp x$,
+                ymax                                  = 26,
                 xlabel                                = $x$,
                 ylabel                                = $y$,
-                ymax                                  = 26,
             ]
             \addplot[
                 domain = -3.5: 3.5,
-                color  = black,
+                thick
             ]{e^x};
         \end{styleedaxis}
     \end{tikzpicture}
-    \end{lstlisting}
+\end{lstlisting}
 
           \begin{center}
               \begin{tikzpicture}
-                  \pgfplotsset{width=12cm,height=7cm}
+                  \pgfplotsset{width=12cm,height=5.5cm}
                   \newcommand{\function}{e^x}
                   \begin{axis}[
                           axis x line=middle,
@@ -1127,31 +1126,30 @@ Mathematica 的帮助已经相当面面俱到——对入门的新手实在是�
                           every inner x axis line/.append style={->},
                           every inner y axis line/.append style={->},
                           title={$\exp x$},
-                          legend pos = north west,
-                          xlabel=$x$,
-                          ylabel=$y$,
                           ymajorgrids=false,
                           xmajorgrids=false,
                           grid style=dashed,
                           samples=1000,
                           ymax = 26,
+                          xlabel = $x$,
+                          ylabel = $y$,
                       ]
                       \addplot[
                           domain=-3.5: 3.5,
-                          color=black,
+                          thick
                       ]
                       {\function};
                   \end{axis}
               \end{tikzpicture}
           \end{center}
-          这宏包调用的是 PGFMath，这玩意绘图速度实在是太太太慢了！而且重点是不支持一些特殊函数。比如说我要画第一类贝塞尔函数\footnote{实际上可以调用 GNUPlot 绘图，这玩意支持 Bessel 函数的绘制。} $\operatorname{J}_0(z) =  \sum_{n=0}^{\infty} \frac{(-1)^n}{4^n(n!)^2}z^{2n}$ 就相当麻烦。事实上这宏包可以调用离散点进行绘图，具体可参考 \cite[PGFPlots 文档]{feuersanger2011manual}——总之就是用
-          \begin{lstlisting}
+          这宏包调用的是 PGFMath，这玩意绘图速度实在是太太太慢了！而且重点是不支持一些特殊函数。比如说我要画第一类贝塞尔函数\footnote{实际上可以调用 GNUPlot 绘图，这玩意支持 Bessel 函数的绘制。} $\operatorname{J}_0(z) =  \sum_{n=0}^{\infty} \frac{(-1)^n}{4^n(n!)^2}z^{2n}$ 就相当麻烦。事实上这宏包可以调用离散点进行绘图，具体可参考 \textcite[PGFPlots 文档]{feuersanger2011manual}——总之就是用
+\begin{lstlisting}
         x1  y1  
         x2  y2  
         x3  y3  
         x4  y4  
         ......
-    \end{lstlisting}
+\end{lstlisting}
           进行离散点输入。
 
           那你现在有着最强符号运算系统之一，请你写个小程序让 Mathematica 输出这种形式的坐标，然后给 PGFPlots 绘图。
@@ -1189,14 +1187,13 @@ Mathematica 的帮助已经相当面面俱到——对入门的新手实在是�
           \end{mathematica}
 
           即乘上一个 \texttt{\#1} 到底发生了什么？
-\end{enumerate}}
+\end{enumerate}
 
+\upshape
 
-\mbox{}
 \vfill
-
 \begin{center}
     \includegraphics{wolframLanguage.pdf}
 \end{center}
-
-\vfill\mbox{}\newpage\thispagestyle{empty}
+\vfill\mbox{}
+\clearpage

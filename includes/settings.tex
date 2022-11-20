@@ -1,5 +1,7 @@
 % Sundry Settings
 \setcounter{secnumdepth}{3}
+\setlength{\lineskip}{5pt}
+\setlength{\lineskiplimit}{2.5pt}
 \linespread{1.4}
 \let\left\mleft
 \let\right\mright
@@ -9,6 +11,11 @@
     }
 \xeCJKsetup{CheckSingle = true}
 \setlist[itemize, 2]{label = $\circ$}
+\setlist[itemize]{listparindent = 2em}
+\setlength{\marginparpush}{2em}
+\setlength{\columnsep}{1cm}
+\everymath{\displaystyle}
+\newcommand{\link}[1]{\href{#1}{\faLink}}
 
 % New theorem environments
 \newtheorem{example}{\indent 例}
@@ -26,10 +33,13 @@
 % Libraries of PKGs
 \tcbuselibrary{breakable}
 \tcbuselibrary{skins}
+\tcbuselibrary{documentation}
 \tcbset{breakable, enhanced jigsaw, fonttitle = \bfseries}
 \usepgfplotslibrary{polar}
 \usetikzlibrary{patterns}
 \usetikzlibrary{shadings}
+\usetikzlibrary {trees}
+\usetikzlibrary {mindmap}
 
 % Font Settings
 \setsansfont{Noto Sans}
@@ -37,11 +47,12 @@
 \newfontfamily\mdsans{Noto Sans Bold}
 \setmathfont{texgyrepagella-math.otf}
 \setmathfont{STIXTwoMath-Regular.otf}[range = {"1D49C-"1D4CF, "0212F-"02134, "0212C}]
-\setmainfont{texgyrepagella-regular.otf}[
-    BoldFont = texgyrepagella-bold.otf, 
-    ItalicFont = texgyrepagella-italic.otf, 
-    BoldItalicFont = texgyrepagella-bolditalic.otf, 
-    SlantedFont = TeXGyrePagellaX-Slanted.otf]
+\setmathfont{Fira Math}[version = fira]
+\setmainfont{TeXGyrePagellaX-Regular}[
+    BoldFont = TeXGyrePagellaX-Bold, 
+    ItalicFont = TeXGyrePagellaX-Italic, 
+    BoldItalicFont = TeXGyrePagellaX-BoldItalic, 
+    SlantedFont = TeXGyrePagellaX-Slanted]
 
 % CJK *
 \setCJKmainfont{Noto Serif CJK SC}[
@@ -190,7 +201,9 @@
 \fancypagestyle{mainlatter}{
     \fancyfoot[C]{\thepage}
 }
-
+\csdef{abx@sstr@andothersincite}{等}
+\NewDocumentEnvironment{marginparfigure}{+ b}{\marginpar{\centering\small#1}}{}
+\NewDocumentEnvironment{marginpartext}{+ b}{\marginpar{\begin{abox}#1\end{abox}}}{}
 \makeatother
 
 
@@ -200,3 +213,11 @@
 \def\subsectionautorefname{第\chinese{section}节}
 \renewcommand{\figureautorefname}{图}
 \renewcommand{\tableautorefname}{表}
+\renewcommand{\equationautorefname}[2]{式}
+
+
+% bibsettings
+\renewcommand{\bibauthorfont}{\scshape}
+\renewcommand{\bibtitlefont}{\bfseries}
+\renewcommand{\bibpubfont}{\itshapeCJK\itshape}
+\def\UrlFont{\ttfamily}
