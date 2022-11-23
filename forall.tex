@@ -1,17 +1,20 @@
-% \special{dvipdfmx:config z 0}
 \documentclass[fontset = none, openany]{ctexbook}
 \input{includes/PKGS.tex}
 \input{includes/settings.tex}
+\usepackage{qrcode}
 
 \begin{document}
 
+
+
+
+
+\input{includes/titlepage.tex}
 \input{includes/frontlatter.tex}
-\pagestyle{mainlatter}
 \clearpage
 \setcounter{page}{0}
+\pagestyle{mainlatter}
 \thispagestyle{empty}
-
-
 \input{includes/初等数学知识拾遗.tex}
 \input{includes/宇佐见堇子的 LaTeX 之旅.tex}
 \input{includes/数分高代在学什么？.tex}

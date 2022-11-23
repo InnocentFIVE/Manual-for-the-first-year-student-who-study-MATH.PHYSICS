@@ -1,5 +1,5 @@
 \chapter[宇佐见堇子的 \LaTeX 之旅]{宇佐见堇子的 \LaTeX 之旅}
-
+\label{cp:宇佐见堇子的 LaTeX 之旅}
 \addauthor{小飞舞}
 \begin{center}
     \begin{tcolorbox}[colback=black!15!white,%gray background
@@ -68,9 +68,9 @@
 \begin{center}
     \vbox{\textbf{\sffamily All the ways to acquire TeX Live:} $\longrightarrow$ {\sffamily on DVD}
 
-    $\longrightarrow$ {\sffamily downloading the TeX Live ISO image and burning your own DVD}
+        $\longrightarrow$ {\sffamily downloading the TeX Live ISO image and burning your own DVD}
 
-    $\longrightarrow$ {\sffamily download from a nearby CTAN mirror}}
+        $\longrightarrow$ {\sffamily download from a nearby CTAN mirror}}
 \end{center}
 
 然后下载 \verb"texlive2022.iso"\footnote{根据年份不同可能会发生改变。} 即可。当然如果嫌慢，也可以使用一些镜像源：
@@ -267,7 +267,7 @@
     \item 与之对应的，\verb"$...$" 是行内数学公式环境，可以称为``textstyle math''。
 \end{itemize}
 
-当然以上两种也可以用 \verb"$$...$$" 和 \verb"$...$" 来代替，虽然我不推荐\footnote{其实有时候用 \texttt{\$...\$} 替代 \texttt{\char"005C(...\char"005C)} 会好一些，但在一般写作里面用括号比较多（也方便查找）。}就是了。在例子中可以很清楚对照到“上标”是 \verb"^{...}"，下标是 \verb"_{...}" ，当只有一个字符的时候可以省略掉大括号。 至于像其他乱七八糟的数学符号命令现在在这里全部说明也不适合——具体可以参考——呃算了等到一会我回去的时候给你些链接。”
+当然以上两种也可以用 \verb"$$...$$" 和 \verb"\(...\)" 来代替，虽然我不推荐\footnote{\texttt{\char"005C[...\char"005C]} 比 \texttt{\$\$...\$\$} 多了一层检查用于 \texttt{\char"005C @badmath} 报错，且还支持一些选项（比如说公式左对齐的 \texttt{fleqn} 选项、 \Verb{\tag} 命令等）而 \texttt{\char"005C(...\char"005C)} 则不是 Robust 的命令，具体见 \textcite[The \LaTeXe{} Sources]{braams2003latex2varepsilon} \link{https://www.ctan.org/pkg/source2e}。}就是了。在例子中可以很清楚对照到“上标”是 \verb"^{...}"，下标是 \verb"_{...}" ，当只有一个字符的时候可以省略掉大括号。 至于像其他乱七八糟的数学符号命令现在在这里全部说明也不适合——具体可以参考——呃算了等到一会我回去的时候给你些链接。”
 
 “链接？不会又是什么全英文地狱电子文档吧？”堇子试探性的问道。
 
@@ -279,13 +279,13 @@
     \begin{tblr}{cll}
         \hline
         层次 & 命令                              & 说明                                \\\hline
-        $-1$ & \texttt{\char"005C part}          &                                     \\
-        $0$  & \texttt{\char"005C chapter}       & \texttt{article} 类中并没有这个章节 \\
-        $1$  & \texttt{\char"005C section}       &                                     \\
-        $2$  & \texttt{\char"005C subsection}    &                                     \\
-        $3$  & \texttt{\char"005C subsubsection} & 默认不编号、不编目录                \\
-        $4$  & \texttt{\char"005C paragraph}     & 同上                                \\
-        $5$  & \texttt{\char"005C subparagraph}  & 同上                                \\\hline
+        $-1$ & \ttfamily\char"005C part          &                                     \\
+        $0$  & \ttfamily\char"005C chapter       & \texttt{article} 类中并没有这个章节 \\
+        $1$  & \ttfamily\char"005C section       &                                     \\
+        $2$  & \ttfamily\char"005C subsection    &                                     \\
+        $3$  & \ttfamily\char"005C subsubsection & 默认不编号、不编目录                \\
+        $4$  & \ttfamily\char"005C paragraph     & 同上                                \\
+        $5$  & \ttfamily\char"005C subparagraph  & 同上                                \\\hline
     \end{tblr}
 \end{center}
 
@@ -382,8 +382,8 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 
 \begin{center}
     \begin{tabular}{cc}
-        \verb"\sin z"    &    $\sin z$    \\
-        \verb"sin z"     &    $sin z$     \\
+        \verb"\sin z" & $\sin z$ \\
+        \verb"sin z"  & $sin z$  \\
     \end{tabular}
 \end{center}
 
@@ -427,21 +427,26 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 “草……只是说无论你知晓与否，的确是有很多细节在里面的……这样可以让你对其保持敬畏。”
 \subsection{字体与数学字体}
 
-“在排版中，我们当然不会只用一种字体，而是使用各种各样形状的——见 \autoref{tab:字形们}\footnote{此处使用字体为：  宋体：Noto Serif CJK SC；黑体：Noto Sans CJK SC；楷体：方正楷体；西文衬线体：\TeX{} Gyre Pagella；西文无衬线体：Noto Sans；等宽字体：Iosevka。}。”
+“在排版中，我们当然不会只用一种字体，而是使用各种各样形状的——见 \autoref{tab:字形们}\footnote{此处使用字体为：  宋体：Noto Serif CJK SC；黑体：Noto Sans CJK SC；楷体：方正楷体；西文衬线体：\TeX{} Gyre Pagella；西文无衬线体：Noto Sans；等宽字体：Iosevka。}。且不同的性质 \verb"shape", \verb"family", \verb"series" 可以叠加。”
 
 “啦特可爱是什么意思？”堇子问道。
 
 \begin{table}[h]
     \centering
-    \caption{字形们}
-    \begin{tblr}{ll}\hline
-        \texttt{\char"005C textbf\{ABCabc123啦特可爱\}} & \textbf{ABCabc123啦特可爱} \\
-        \texttt{\char"005C textit\{ABCabc123啦特可爱\}} & \textit{ABCabc123啦特可爱} \\
-        \texttt{\char"005C textsf\{ABCabc123啦特可爱\}} & \textsf{ABCabc123啦特可爱} \\
-        \texttt{\char"005C textsl\{ABCabc123啦特可爱\}} & \textsl{ABCabc123啦特可爱} \\
-        \texttt{\char"005C textsl\{ABCabc123啦特可爱\}} & \textsl{ABCabc123啦特可爱} \\
-        \texttt{\char"005C texttt\{ABCabc123啦特可爱\}} & \texttt{ABCabc123啦特可爱} \\
-        \texttt{\char"005C textrm\{ABCabc123啦特可爱\}} & \textrm{ABCabc123啦特可爱} \\ \hline
+    \caption{控制字形的主要三组参数}
+    \begin{tblr}{l|l|l}
+        \hline
+        \Verb{{\mdseries ABCabc123啦特可爱}} & \Verb{\textup{ABCabc123啦特可爱}} & \mdseries ABCabc123啦特可爱 \\
+        \Verb{{\bfseries ABCabc123啦特可爱}} & \Verb{\textbf{ABCabc123啦特可爱}} & \bfseries ABCabc123啦特可爱 \\
+        \hline
+        \Verb{{\itshape ABCabc123啦特可爱}}  & \Verb{\textit{ABCabc123啦特可爱}} & \itshape ABCabc123啦特可爱  \\
+        \Verb{{\slshape ABCabc123啦特可爱}}  & \Verb{\textsl{ABCabc123啦特可爱}} & \slshape ABCabc123啦特可爱  \\
+        \Verb{{\scshape ABCabc123啦特可爱}}  & \Verb{\textsc{ABCabc123啦特可爱}} & \scshape ABCabc123啦特可爱  \\
+        \hline
+        \Verb{{\rmfamily ABCabc123啦特可爱}} & \Verb{\textrm{ABCabc123啦特可爱}} & \rmfamily ABCabc123啦特可爱 \\
+        \Verb{{\sffamily ABCabc123啦特可爱}} & \Verb{\textsf{ABCabc123啦特可爱}} & \sffamily ABCabc123啦特可爱 \\
+        \Verb{{\ttfamily ABCabc123啦特可爱}} & \Verb{\texttt{ABCabc123啦特可爱}} & \ttfamily ABCabc123啦特可爱 \\
+        \hline
     \end{tblr}
     \label{tab:字形们}
 \end{table}
@@ -466,16 +471,16 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
     \centering
     \caption{数学字形们}
     \begin{tblr}{colspec = {X[2]X[-1]X}, width = \textwidth}\hline
-        命令                                        & 预览                   & 备注                             \\ \hline
-        \texttt{\char"005C mathbf\{ABCabc123\}}     & $\mathbf{ABCabc123}$   &                                  \\
-        \texttt{\char"005C mathit\{ABCabc123\}}     & $\mathit{ABCabc123}$   &                                  \\
-        \texttt{\char"005C mathsf\{ABCabc123\}}     & $\mathsf{ABCabc123}$   &                                  \\
-        \texttt{\char"005C mathrm\{ABCabc123\}}     & $\mathrm{ABCabc123}$   &                                  \\
-        \texttt{\char"005C boldsymbol\{ABCabc123\}} & $\symbfit{ABCabc123}$  &                                  \\
-        \texttt{\char"005C mathfrak\{ABCabc123\}}   & $\mathfrak{ABCabc123}$ & 需要宏包 \AmS{}Fonts             \\
-        \texttt{\char"005C mathbb\{ABCabc123\}}     & $\mathbb{ABC}$         & 在 \AmS{}Math 中只提供了大写字母 \\
-        \texttt{\char"005C mathcal\{ABCabc123\}}    & $\mathcal{ABC}$        & 只提供了大写字母                 \\
-        \texttt{ABCabc123}                          & $ABCabc123$            &                                  \\\hline
+        命令                          & 预览                   & 备注                             \\ \hline
+        \Verb{\mathbf{ABCabc123}}     & $\mathbf{ABCabc123}$   &                                  \\
+        \Verb{\mathit{ABCabc123}}     & $\mathit{ABCabc123}$   &                                  \\
+        \Verb{\mathsf{ABCabc123}}     & $\mathsf{ABCabc123}$   &                                  \\
+        \Verb{\mathrm{ABCabc123}}     & $\mathrm{ABCabc123}$   &                                  \\
+        \Verb{\boldsymbol{ABCabc123}} & $\symbfit{ABCabc123}$  &                                  \\
+        \Verb{\mathfrak{ABCabc123}}   & $\mathfrak{ABCabc123}$ & 需要宏包 \AmS{}Fonts             \\
+        \Verb{\mathbb{ABCabc123}}     & $\mathbb{ABC}$         & 在 \AmS{}Math 中只提供了大写字母 \\
+        \Verb{\mathcal{ABCabc123}}    & $\mathcal{ABC}$        & 只提供了大写字母                 \\
+        \Verb{ABCabc123}              & $ABCabc123$            &                                  \\\hline
     \end{tblr}
     \label{tab:数学字形们}
 \end{table}
@@ -511,9 +516,7 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
     \CJKsout{其实就是没必要搞小写字母为了节省空间存其他符号了。}
 }，以后再和你说。不管如何，在引用 \AmS{}Math 的情况下尊重上面的 \autoref{tab:数学字形们} 大抵是没问题的。
 
-以下是一个普通的例子：\\
-
-
+以下是一个普通的例子：
 \begin{lstlisting}
     \documentclass{article}
     \usepackage{amsmath}
@@ -525,14 +528,9 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 \end{lstlisting}
 
 编译结果为：
-
-
-
 \[
     \boldsymbol{A} = q \int_0^\infty \frac{1}{\mathcal E^x}\,\mathrm{d} x \in \mathbb{R}^2  \cong \mathbb{C}
     .\]
-
-
 “当然这是没什么意义的公式。”
 
 “那这个 \verb"\," 是什么玩意？”堇子问道。
@@ -544,9 +542,6 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
 
 
 “这种方法可以非常方便地在数学环境中加入空格，更为直接的办法是使用 \verb"\kern" 命令，注意不要使用大括号来包裹长度：
-
-
-
 \begin{lstlisting}
     \documentclass{article}
     \usepackage{amsmath}
@@ -570,21 +565,21 @@ $，这样子 $\gamma $ 显然没办法正常显示\footnote{除非你引入可�
     \centering
     \caption{空格预览}
     \begin{tblr}{colspec = {Q[8em]Q[8em]}, rows = {font = \ttfamily}, row{1} = {font = \rmfamily}}\hline
-        命令             & 预览                                              \\ \hline
-        这儿什么都没有   & \makebox[0pt]{\color{red}|}\makebox[0pt]{|}       \\
-        \char"005C ,     & \makebox[0pt]{\color{red}|}\,\makebox[0pt]{|}     \\
-        \char"005C ;     & \makebox[0pt]{\color{red}|}\;\makebox[0pt]{|}     \\
-        \char"005C :     & \makebox[0pt]{\color{red}|}\:\makebox[0pt]{|}     \\
-        \char"005C >     & \makebox[0pt]{\color{red}|}\>\makebox[0pt]{|}     \\
-        \char"005C !     & \makebox[0pt]{\color{red}|}\!\makebox[0pt]{|}     \\
-        \char"005C ␣     & \makebox[0pt]{\color{red}|}\ \makebox[0pt]{|}     \\
-        \char"005C quad  & \makebox[0pt]{\color{red}|}\quad\makebox[0pt]{|}  \\
-        \char"005C qquad & \makebox[0pt]{\color{red}|}\qquad\makebox[0pt]{|} \\\hline
+        命令           & 预览                                              \\ \hline
+        这儿什么都没有 & \makebox[0pt]{\color{red}|}\makebox[0pt]{|}       \\
+        \Verb{\,}      & \makebox[0pt]{\color{red}|}\,\makebox[0pt]{|}     \\
+        \Verb{\;}      & \makebox[0pt]{\color{red}|}\;\makebox[0pt]{|}     \\
+        \Verb{\:}      & \makebox[0pt]{\color{red}|}\:\makebox[0pt]{|}     \\
+        \Verb{\>}      & \makebox[0pt]{\color{red}|}\>\makebox[0pt]{|}     \\
+        \Verb{\!}      & \makebox[0pt]{\color{red}|}\!\makebox[0pt]{|}     \\
+        \Verb{\␣}      & \makebox[0pt]{\color{red}|}\ \makebox[0pt]{|}     \\
+        \Verb{\quad}   & \makebox[0pt]{\color{red}|}\quad\makebox[0pt]{|}  \\
+        \Verb{\qquad}  & \makebox[0pt]{\color{red}|}\qquad\makebox[0pt]{|} \\\hline
     \end{tblr}
     \label{tab:空格预览}
 \end{table}
 
-可惜的是，这玩意竖直上的长度并没有那么容易微调，我们可以使用 \verb"\raisebox" 实现：
+可惜的是，这玩意竖直上的长度并没有那么容易微调，我们可以使用 \verb"\raisebox" 实现\footnote{\LaTeX 的定义并非如此，实际上要复杂得多，具体见  \textcite[The \LaTeXe{} Sources]{braams2003latex2varepsilon} \link{https://www.ctan.org/pkg/source2e}。}：
 
 
 \begin{lstlisting}

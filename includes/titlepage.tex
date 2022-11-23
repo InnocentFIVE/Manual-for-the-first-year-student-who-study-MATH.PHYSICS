@@ -1,0 +1,56 @@
+\begin{titlepage}
+    \thispagestyle{empty}
+
+    \begin{tikzpicture}[remember picture,overlay]
+
+        \filldraw[fill = DarkCyan!80!DodgerBlue!70!black] ([xshift=-1cm,yshift=-1cm]current page.south west) rectangle ([xshift=1cm,yshift=1cm]current page.north east);
+        \draw [line width=1mm,opacity=.25]
+        (current page.center) circle (3cm);
+
+        \begin{scope}[fill=white]
+            \fill[clip] ([xshift=1cm,yshift=1cm]current page.south west) rectangle ([xshift=-1cm,yshift=-1cm]current page.north east);
+            \node at ([xshift=-4cm, yshift=-5cm]current page.center){
+                \includegraphics[width = \paperwidth, width = \paperheight]{梅莉.jpg}
+            };
+
+            \filldraw[fill = DodgerBlue!30!DarkCyan!50!black, opacity=.8, line width = 0pt] ([xshift=1cm,yshift=1cm]current page.south west) rectangle ([xshift=-6cm,yshift=-1cm]current page.north east);
+        \end{scope}
+
+        \node [xshift=9cm,yshift=13cm] at (current page.south west)
+        {
+            \color{white}
+            \begin{minipage}[c][2.5cm][t]{36em}
+                \begin{itemize}[leftmargin = 0pt]
+                    \item \hyperref[cp:初等数学知识拾遗]{\color{white}初等数学知识拾遗}
+
+                    \item \hyperref[cp:宇佐见堇子的 LaTeX 之旅]{\color{white}宇佐见堇子的 \LaTeX 之旅}
+
+                    \item \hyperref[cp:数分/高代在学什么？]{\color{white}数分/高代在学什么？}
+
+                    \item \hyperref[cp:幻想乡工程技术见闻录]{\color{white}幻想乡工程技术见闻录 \~{} Fantasy from Triviality}
+
+                    \item \hyperref[cp:靛蓝的红枫]{\color{white}靛蓝的红枫 \~{} Crystal Maple}
+
+                    \item \hyperref[cp:Mathematica]{\color{white}Mathematica \~{} 一切都是表达式}
+                \end{itemize}
+
+                \fontsize{40}{40}\bfseries 新生手册~~\href{https://github.com/InnocentFIVE/Manual-for-the-first-year-student-who-study-MATH.PHYSICS}{\color{white}\fontsize{30}{40}\faLink} \bigskip
+
+                \LARGE\scshape The MANUAL {\upshape\itshape for} the first year students
+
+                who study MATH \textit{\&} PHYSICS\bigskip\bigskip
+
+                \mdseries\itshapeCJK\normalsize 八云的魔法书\kern\ccwd 出品~~\href{https://jq.qq.com/?_wv=1027&k=7H6CQHKD}{\color{white}\faLink}
+            \end{minipage}
+        };
+
+        
+        \node at (current page.south east) {
+            \begin{tikzpicture}[scale = 7]
+                \filldraw[fill = DodgerBlue!30!DarkCyan!50!white, opacity=.5, line width = 0pt, rotate = 45] (-1,-1) rectangle (1,1);
+            \end{tikzpicture}
+        };
+
+        \draw[line width = 7.5pt, white] ([xshift=1cm,yshift=1cm]current page.south west) rectangle ([xshift=-1cm,yshift=-1cm]current page.north east);
+    \end{tikzpicture}
+\end{titlepage}

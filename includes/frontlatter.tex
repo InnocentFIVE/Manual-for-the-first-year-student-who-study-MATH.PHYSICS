@@ -1,28 +1,45 @@
-\mbox{}\thispagestyle{empty}\vfill
+\thispagestyle{empty}
 
-\begin{tblr}{colspec = {XX}, width = 0.6\textwidth}
-    \Large\textbf{新~生~手~册} & \\
-    八云的魔法书\kern1em 出品  &
+\vspace*{5em}
+\begin{minipage}{0.8\textwidth}
+    \centering
+    \includegraphics[width = 0.6\textwidth]{LOGOs.png}
+\end{minipage}
+\vfill
+
+\newcommand{\BaYunDeQQgroup}{https://jq.qq.com/?_wv=1027&k=7H6CQHKD}
+\newcommand{\BaYunDeQQgroupqrcode}{\qrcode[hyperlink,height=0.5in]{https://jq.qq.com/?_wv=1027&k=7H6CQHKD}}
+\newcommand{\GitHubrepo}{https://github.com/InnocentFIVE/Manual-for-the-first-year-student-who-study-MATH.PHYSICS}
+\newcommand{\ZhiFuBaolink}{https://qr.alipay.com/fkx16137hu2ewrulgtnrn92}
+\newcommand{\qrlink}[2]{\qrcode[height=0.5in]{#1}\\ \smallskip\itshapeCJK\footnotesize\makebox[0pt][c]{#2}}
+
+\begin{tblr}{colspec = {X[2]XX}, width = 0.8\textwidth}
+    \Large\textbf{新~生~手~册} & \SetCell[r=2]{c}\qrlink{\BaYunDeQQgroup}{八云的魔法书 QQ 交流群} & \SetCell[r=2]{c}\qrlink{\ZhiFuBaolink}{支付宝捐款渠道} \\
+    八云的魔法书\kern1em 出品  &                                                                  &
 \end{tblr}
 
 \rule{0.8\textwidth}{1pt}
 
-\begin{tblr}{colspec = {XX}, width = 0.6\textwidth}
-    \textsf{策划}\quad\itshape 小飞舞    &                                                                                     \\
-    \textsf{校对}\quad\itshape 西川      & \textsf{排版}\quad\itshape \mbox{云与星与歌}                                        \\
-    \textsf{作者（按作品先后为序）}\quad &                                                                                     \\
-    \SetCell[c=2]{l}\itshape \mbox{云与星与歌}\quad \mbox{食人妖怪}\quad \mbox{山舞银蛇}\quad \mbox{小飞舞}\quad \mbox{小麻雀} \\
+\begin{tblr}{colspec = {XX}, width = 0.8\textwidth}
+    \textsf{策划}\quad\itshape 小飞舞    &                                                   \\
+    \textsf{校对}\quad\itshape 西川      & \textsf{排版}\itshape\quad 云与星与歌\quad 小飞舞 \\
+    \textsf{作者（按作品先后为序）}\quad &                                                   \\
+    \SetCell[c=2]{l}\itshape 云与星与歌\quad 食人妖怪\quad 山舞银蛇\quad 小飞舞\quad 小麻雀  \\
 \end{tblr}
 
 \rule{0.8\textwidth}{1pt}
 
-\begin{tblr}{colspec = {X[-1]X}, width = 0.5\textwidth}
-    \textsf{仓库链接} & \link{https://github.com/InnocentFIVE/Manual-for-the-first-year-student-who-study-MATH.PHYSICS} \\
-    \textsf{更新时间} & \today
+\begin{tblr}{colspec = {X[2]XX}, width = 0.8\textwidth}
+    \textsf{仓库链接} \kern2\ccwd \link{\GitHubrepo} &  & \SetCell[r=2]{c}\qrlink{\GitHubrepo}{Github 仓库二维码} \\
+    \textsf{更新时间} \kern2\ccwd \today             &  &
 \end{tblr}
 
 \setcounter{page}{0}
-\pagestyle{empty}\newpage
+\pagestyle{empty}
+
+\input{includes/前言.tex}
+
+\clearpage
 
 
 \vspace*{4em}
@@ -32,11 +49,11 @@
 
 \begin{center}
     \begin{tblr}{colspec = {X[-1]X}, width = \textwidth, column{1} = {font = \itshapeCJK}, row{1} = {font = \upshape}}
-        \Large\textbf{编~者~简~介} &                                                                                  \\
+        \Large\textbf{编~者~简~介} &                                                                                  \\ \hline
         云与星与歌                 & 中国科大2022级少年班学院，数学分析/高等代数学习中                                \\
         小飞舞                     & 中山大学2022级数学学院，正在恶补数学，很可爱w                                    \\
         食人妖怪                   & 时不时来吃学不懂数学的小孩                                                       \\
         山舞银蛇                   & 就读于哈尔滨工业大学工程力学专业，研究生一年级，所学及兴趣方向为流固耦合力学相关 \\
-        小麻雀                     & 中国矿大2020级理学院，方向是工程力学，喜欢秘封俱乐部                             \\
+        小麻雀                     & 中国矿大2020级理学院，方向是工程力学，喜欢秘封俱乐部                             \\ \hline
     \end{tblr}
 \end{center}

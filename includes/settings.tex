@@ -7,8 +7,8 @@
 \let\right\mright
 \graphicspath{{./images/}}
 \pgfplotsset{
-        table/search path={./Plots},
-    }
+    table/search path={./Plots},
+}
 \xeCJKsetup{CheckSingle = true}
 \setlist[itemize, 2]{label = $\circ$}
 \setlist[itemize]{listparindent = 2em}
@@ -16,6 +16,7 @@
 \setlength{\columnsep}{1cm}
 \everymath{\displaystyle}
 \newcommand{\link}[1]{\href{#1}{\faLink}}
+\def\LaTeX{L\kern-.36em\raisebox{.38ex}{\textsc{a}}\kern -.16em T\kern -.1667em\raisebox{-.5ex}{E}\kern -.125em X}
 
 % New theorem environments
 \newtheorem{example}{\indent 例}
@@ -49,9 +50,9 @@
 \setmathfont{STIXTwoMath-Regular.otf}[range = {"1D49C-"1D4CF, "0212F-"02134, "0212C}]
 \setmathfont{Fira Math}[version = fira]
 \setmainfont{TeXGyrePagellaX-Regular}[
-    BoldFont = TeXGyrePagellaX-Bold, 
-    ItalicFont = TeXGyrePagellaX-Italic, 
-    BoldItalicFont = TeXGyrePagellaX-BoldItalic, 
+    BoldFont = TeXGyrePagellaX-Bold,
+    ItalicFont = TeXGyrePagellaX-Italic,
+    BoldItalicFont = TeXGyrePagellaX-BoldItalic,
     SlantedFont = TeXGyrePagellaX-Slanted]
 
 % CJK *
@@ -152,8 +153,8 @@
 
 % listings Settings
 \newcommand{\white}[1]{\makebox[2.5em][c]{\makebox[0pt][l]{\special{pdf:literal direct 2 Tr 0.3 w}%
-#1%
-\special{pdf:literal direct 0 Tr 0 w}}\raisebox{-0.09pt}{\includegraphics{white.pdf}}}}
+            #1%
+            \special{pdf:literal direct 0 Tr 0 w}}\raisebox{-0.09pt}{\includegraphics{white.pdf}}}}
 \def\axisstyle#1{\itshape\color{MediumVioletRed}axis}
 \lstset{
     basicstyle      = \ttfamily,
@@ -170,7 +171,7 @@
     emphstyle       = [3]\bfseries\white,
     emphstyle       = [4]\bfseries\color{red},
     emphstyle       = [5]\axisstyle,
-    emph            = {[1]equation,itemize,document,tikzpicture}, 
+    emph            = {[1]equation,itemize,document,tikzpicture},
     emph            = {[2]article,amsmath,ctex},
     emph            = {[3]white},
     emph            = {[4]red},
@@ -186,21 +187,29 @@
 \def\CTEX@part@pagestyle{empty}
 \ctexset{
     section={
-        name={第,节},
-        number=\chinese{section},
-        format=\Large\bfseries\raggedright
-    },
+      name={第,节},
+      number=\chinese{section},
+      format=\Large\bfseries\raggedright
+     },
     subsection={
-        number = {（\chinese{subsection}）},
-    },
+            number = {（\chinese{subsection}）},
+        },
     subsubsection={
-        number = {\Roman{subsubsection}},
-        format = \mdsans\mdsansCJK
-    }
+            number = {\Roman{subsubsection}},
+            format = \mdsans\mdsansCJK
+        }
 }
 \fancypagestyle{mainlatter}{
     \fancyfoot[C]{\thepage}
+    \fancyhead[C]{
+        \begin{tikzpicture}[remember picture,overlay]
+            \node[opacity = 0.08] at (current page.center){
+                \includegraphics[width = 0.8\textwidth]{LOGOs.png}
+            };
+        \end{tikzpicture}
+    }
 }
+
 \csdef{abx@sstr@andothersincite}{等}
 \NewDocumentEnvironment{marginparfigure}{+ b}{\marginpar{\centering\small#1}}{}
 \NewDocumentEnvironment{marginpartext}{+ b}{\marginpar{\begin{abox}#1\end{abox}}}{}
