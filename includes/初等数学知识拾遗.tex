@@ -649,8 +649,11 @@
 
 
 \subsection{夹逼定理}
-在几乎所有高数教材中，我们都会看到这样一条定理：若数列$\{ b_n \} $和$\{ c_n \} $都收敛于$a$，且对
-所有充分大的$n$，有$b_n \leqslant a_n \leqslant c_n$，则数列$\{ a_n \} $也收敛，且极限也为$a$.这就是有名的夹逼定理。
+在几乎所有高数教材中，我们都会看到这样一条定理
+\begin[夹逼定理(Sandwitch Theorem)]{theorem}
+    若数列$\{ b_n \} $和$\{ c_n \} $都收敛于$a$，且对
+    所有充分大的$n$，有$b_n \leqslant a_n \leqslant c_n$，则数列$\{ a_n \} $也收敛，且极限也为$a$.
+\end{theorem}
 
 
 关于夹逼定理的证明，请参照各种教材。我们之所以在此特别提到夹逼定理，是因为其背后蕴含着一个重要思想——夹逼思想，即
@@ -696,6 +699,16 @@
 % \def\thesubsubsection{\arabic{subsubsection}}
 上面的例子也用到了 \autoref{sssec:A} 提到的放缩手段——朝着可以化简的方向放缩。
 \subsection{数学归纳法}
+\begin{quote}
+    \emph{Mathematical Induction} is a method for \href{https://en.wikipedia.org/wiki/Mathematical_proof}{proving}
+    that a statement $P(n)$ is true for every \href{https://en.wikipedia.org/wiki/Natural_number}{natural number} $n$,
+    that is, that the infinitely many cases $P(0), P(1), P(2), P(3), \ldots$ all hold.
+    
+    \begin{flushright}
+        --- Wikipedia, \url{https://en.wikipedia.org/wiki/Mathematical_induction}
+    \end{flushright}
+\end{quote}
+
 在高中时，我们已经对数学归纳法有所了解，但并没有深入地研究其应用，并且仅局限于常见的第一数学归纳法。下面我们更深入地介绍一下
 数学归纳法的奇妙之用。
 \subsubsection{第一数学归纳法}
@@ -713,7 +726,7 @@
         a_{n+1}-a_n=\sqrt{a_n+2}-\sqrt{a_{n-1}+2}=
         \frac{a_n-a_{n-1}}{\sqrt{a_n+2}+\sqrt{a_{n-1}+2}}>0
         .\]
-    从而$a_{n+1}>a_n$，由数学归纳法可得$\{ a_n\}$单调递增。
+    从而$a_{n+1}>a_n$对所有自然数$n$成立，由数学归纳法可得$\{ a_n\}$单调递增。
 
 
     同样由数学归纳法可以证得$a_n<2$，因此$\{ a_n\}$单调递增有上界，则$\{ a_n\}$收敛。设其极限为$a$，在递推式两边取极限
@@ -883,6 +896,8 @@
 \section{极限思维与实数理论概述}
 高中时有位数学老师的话让我印象深刻：“没学过微积分，人半辈子都是黑暗的哦。”这种看法虽然比较极端，但也暗示
 了微积分对人思维的重要性。其中，最重要的一点，就是如何用精确的数学语言去描述看似浅显的“极限”“连续”概念。
+
+\subsection{芝诺悖论和极限的提出}
 
 \subsection{从定义看极限}\label{continous property}
 高数课本上重点阐述了关于数列极限的“$\varepsilon  \text{-} N$语言”和关于函数极限的“$\varepsilon  \text{-} \delta$语言”,
