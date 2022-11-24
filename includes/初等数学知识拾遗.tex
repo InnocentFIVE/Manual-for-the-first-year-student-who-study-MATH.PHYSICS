@@ -378,14 +378,34 @@
 \begin{example}
     已知集合$A=\bigl\{\,x \bigm| x=2m-1,\,m\in \mathbb{Z} \,\bigr\}$,~$B=\bigl\{\,x \bigm| x=4k\pm 1,\,k\in \mathbb{Z} \,\bigr\} $，求证：$A=B$.
 \end{example}
+\begin{glue}
+    这里我们需要证明两个集合相等.
+    
+    如果读者对$ZF$公理体系有所了解的话，在$ZF$公理体系中，外延公理(Axiom of Extensionality)说明了集合相等的条件:
+    
+    \[
+        \forall x \forall y \[\forall z (z\in x \Leftrightarrow z \in y) \Rightarrow x = y\].
+    \]
+
+    注意这里的前提为$z\in x \Leftrightarrow z \in y$,
+    因此我们需要证明$z\in x \Leftarrow z\in y$和$z\in x \Rightarrow z\in y$同时成立.
+
+    一个很常见的且（一点也不有趣的）做法是采用集合包含的定义：
+    \[
+        S \subseteq T \Leftrightarrow \forall x : (x\in S \Leftarrow x\in T)
+    \]
+    
+    很显然，$x = y \Leftrightarrow x \subseteq y \land y \subseteq x$.
+\end{glue}
 \begin{prove}
-    一方面，若$x\in A$，则当$m=2k$时,~$x=4k-1$且$k\in \mathbb{Z}$,
+    ($A\subseteq B$)一方面，若$x\in A$，则当$m=2k$时,~$x=4k-1$且$k\in \mathbb{Z}$,
 
 
     当$m=2k+1$时，$x=2(2k+1)-1=4k+1$,~$k\in \mathbb{Z}$,从而$x\in B$，即得$A\subseteq B$.
 
 
-    另一方面，若$x∈B$，则$x=4k±1$,~$k\in \mathbb{Z}$.
+    \newline
+    ($B \subseteq A$)另一方面，若$x∈B$，则$x=4k±1$,~$k\in \mathbb{Z}$.
 
 
     当$x=4k-1$时，$x=2(2k)-1$，令$m=2k\in \mathbb{Z}$，有$x=2m-1\in A$.
@@ -436,6 +456,25 @@
 
 上面这个例子向我们展示了证明充要性的基本方式：分别证明充分性和必要性。很多情况下，某一方面的证明需要利用
 反证法，而且两个方面的证明思路互相提示。
+
+下面这个著名的例子使用了反证法.
+
+\begin{example}
+    质数有无穷多个
+\end{example}
+\begin{proof}
+    假设质数个数有限，设其为$p_1, p_2, p_3, \ldots, p_n$, $p_i$为第$i$个质数. $n\in \mathbb{N}$
+    例如$p_1 = 2$, $p_2 = 3$.
+
+    构造$p = \Pi_{i=1}{n}p_i + 1$, 那么$p_i \not\mid p, i=1,2,3,\ldots,n$.
+
+    因此$p$是质数,因为它不是合数,否则它可以被某个小于$p$的质数整除.
+
+    因此，质数有无穷多个.
+\end{proof}
+\begin{questionbox}
+    这个证明是怎么说明质数有无穷多个的？
+\end{questionbox}
 
 \section{常用方法——放缩、夹逼与归纳}
 \subsection{放缩法}
