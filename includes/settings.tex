@@ -20,9 +20,11 @@
 
 % New theorem environments
 \newtheorem{example}{\indent 例}
+\newtheorem{theorem}{\indent 定理}
 \theoremstyle{definition}
 \newtheorem*{solve}{\indent 解}
 \newtheorem*{prove}{\indent 证明}
+\newtheorem*{glue}{\indent 思路}
 
 % Color definition
 \definecolor{macred}{HTML}{fc5450}
@@ -230,3 +232,13 @@
 \renewcommand{\bibtitlefont}{\bfseries}
 \renewcommand{\bibpubfont}{\itshapeCJK\itshape}
 \def\UrlFont{\ttfamily}
+
+% Boxes
+\newtcolorbox{questionbox}{
+    colframe=black!60,% black frame colour
+    width=15cm,% Use 5cm total width,
+    arc=2mm, auto outer arc,
+    boxrule=0.5pt,
+    title=问题,
+    fontupper = \itshape,
+}

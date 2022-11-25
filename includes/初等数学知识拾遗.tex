@@ -378,14 +378,34 @@
 \begin{example}
     已知集合$A=\bigl\{\,x \bigm| x=2m-1,\,m\in \mathbb{Z} \,\bigr\}$,~$B=\bigl\{\,x \bigm| x=4k\pm 1,\,k\in \mathbb{Z} \,\bigr\} $，求证：$A=B$.
 \end{example}
+\begin{glue}
+    这里我们需要证明两个集合相等.
+    
+    如果读者对$ZF$公理体系有所了解的话，在$ZF$公理体系中，外延公理(Axiom of Extensionality)说明了集合相等的条件:
+    
+    \[
+        \forall x \forall y \[\forall z (z\in x \Leftrightarrow z \in y) \Rightarrow x = y\].
+    \]
+
+    注意这里的前提为$z\in x \Leftrightarrow z \in y$,
+    因此我们需要证明$z\in x \Leftarrow z\in y$和$z\in x \Rightarrow z\in y$同时成立.
+
+    一个很常见的且（一点也不有趣的）做法是采用集合包含的定义：
+    \[
+        S \subseteq T \Leftrightarrow \forall x : (x\in S \Leftarrow x\in T)
+    \]
+    
+    很显然，$x = y \Leftrightarrow x \subseteq y \land y \subseteq x$.
+\end{glue}
 \begin{prove}
-    一方面，若$x\in A$，则当$m=2k$时,~$x=4k-1$且$k\in \mathbb{Z}$,
+    ($A\subseteq B$)一方面，若$x\in A$，则当$m=2k$时,~$x=4k-1$且$k\in \mathbb{Z}$,
 
 
     当$m=2k+1$时，$x=2(2k+1)-1=4k+1$,~$k\in \mathbb{Z}$,从而$x\in B$，即得$A\subseteq B$.
 
 
-    另一方面，若$x∈B$，则$x=4k±1$,~$k\in \mathbb{Z}$.
+    \newline
+    ($B \subseteq A$)另一方面，若$x∈B$，则$x=4k±1$,~$k\in \mathbb{Z}$.
 
 
     当$x=4k-1$时，$x=2(2k)-1$，令$m=2k\in \mathbb{Z}$，有$x=2m-1\in A$.
@@ -437,6 +457,25 @@
 上面这个例子向我们展示了证明充要性的基本方式：分别证明充分性和必要性。很多情况下，某一方面的证明需要利用
 反证法，而且两个方面的证明思路互相提示。
 
+下面这个著名的例子使用了反证法.
+
+\begin{example}
+    质数有无穷多个
+\end{example}
+\begin{proof}
+    假设质数个数有限，设其为$p_1, p_2, p_3, \ldots, p_n$, $p_i$为第$i$个质数. $n\in \mathbb{N}$
+    例如$p_1 = 2$, $p_2 = 3$.
+
+    构造$p = \Pi_{i=1}{n}p_i + 1$, 那么$p_i \not\mid p, i=1,2,3,\ldots,n$.
+
+    因此$p$是质数,因为它不是合数,否则它可以被某个小于$p$的质数整除.
+
+    因此，质数有无穷多个.
+\end{proof}
+\begin{questionbox}
+    这个证明是怎么说明质数有无穷多个的？
+\end{questionbox}
+
 \section{常用方法——放缩、夹逼与归纳}
 \subsection{放缩法}
 进入高等数学的学习之后，我们不会再像高中那样特意地证明一些不等式。但在证明某些命题，或者求极限的时候，仍需要
@@ -449,12 +488,14 @@
     \item \textbf{与绝对值有关的不等式}
 
           关于绝对值，我们熟知有以下不等式：
-          \[
+          \begin{equation}
               \big | \lvert a \rvert-\lvert b\rvert  \big |
               \leqslant \lvert a\pm b\rvert \leqslant \lvert a\rvert +\lvert b\rvert
-              .\]
+              .
+              \label{三角不等式}
+            \end{equation}
 
-          $a$,~$b$间取加号时，左边等号的成立条件是$a$,~$b$异号，右边等号的成立条件是$a$,~$b$同号。取减号是恰好相反。
+          $a$,~$b$间取加号时，左边等号的成立条件是$a=-b$，右边等号的成立条件是$a=b$同号。取减号是恰好相反。
 
           在之后证明收敛数列极限唯一、极限乘法规则和柯西审敛准则时，都会用到这一工具。
           \begin{example}
@@ -481,7 +522,8 @@
               .\]
 
           具体过程可以参照%加文献引用
-          各类高数或数分教材。然而，在刚接触高数时，我们往往不需要用到这么精细的放缩。注意到正弦和余弦函数的绝对值均不大于 $1$，利用
+          各类高数或数分教材。感兴趣的读者也可以自行思考证明方式.
+          然而，在刚接触高数时，我们往往不需要用到这么精细的放缩。注意到正弦和余弦函数的绝对值均不大于 $1$，利用
           这一性质就可以解决很多问题了。
 
     \item \textbf{与指对数有关的不等式}
@@ -527,7 +569,8 @@
                   <2\cdot \frac{2}{n}=\frac{4}{n}
                   .\]
 
-              余略。
+              根据阶极限定理，结合常用极限$\lim_{n\to \infty}\frac{1}{n} = 0$易得结论，
+              此处略去具体过程.
           \end{prove}
 
 
@@ -606,8 +649,11 @@
 
 
 \subsection{夹逼定理}
-在几乎所有高数教材中，我们都会看到这样一条定理：若数列$\{ b_n \} $和$\{ c_n \} $都收敛于$a$，且对
-所有充分大的$n$，有$b_n \leqslant a_n \leqslant c_n$，则数列$\{ a_n \} $也收敛，且极限也为$a$.这就是有名的夹逼定理。
+在几乎所有高数教材中，我们都会看到这样一条定理
+\begin[夹逼定理(Sandwitch Theorem)]{theorem}
+    若数列$\{ b_n \} $和$\{ c_n \} $都收敛于$a$，且对
+    所有充分大的$n$，有$b_n \leqslant a_n \leqslant c_n$，则数列$\{ a_n \} $也收敛，且极限也为$a$.
+\end{theorem}
 
 
 关于夹逼定理的证明，请参照各种教材。我们之所以在此特别提到夹逼定理，是因为其背后蕴含着一个重要思想——夹逼思想，即
@@ -653,6 +699,16 @@
 % \def\thesubsubsection{\arabic{subsubsection}}
 上面的例子也用到了 \autoref{sssec:A} 提到的放缩手段——朝着可以化简的方向放缩。
 \subsection{数学归纳法}
+\begin{quote}
+    \emph{Mathematical Induction} is a method for \href{https://en.wikipedia.org/wiki/Mathematical_proof}{proving}
+    that a statement $P(n)$ is true for every \href{https://en.wikipedia.org/wiki/Natural_number}{natural number} $n$,
+    that is, that the infinitely many cases $P(0), P(1), P(2), P(3), \ldots$ all hold.
+    
+    \begin{flushright}
+        --- Wikipedia, \url{https://en.wikipedia.org/wiki/Mathematical_induction}
+    \end{flushright}
+\end{quote}
+
 在高中时，我们已经对数学归纳法有所了解，但并没有深入地研究其应用，并且仅局限于常见的第一数学归纳法。下面我们更深入地介绍一下
 数学归纳法的奇妙之用。
 \subsubsection{第一数学归纳法}
@@ -670,7 +726,7 @@
         a_{n+1}-a_n=\sqrt{a_n+2}-\sqrt{a_{n-1}+2}=
         \frac{a_n-a_{n-1}}{\sqrt{a_n+2}+\sqrt{a_{n-1}+2}}>0
         .\]
-    从而$a_{n+1}>a_n$，由数学归纳法可得$\{ a_n\}$单调递增。
+    从而$a_{n+1}>a_n$对所有自然数$n$成立，由数学归纳法可得$\{ a_n\}$单调递增。
 
 
     同样由数学归纳法可以证得$a_n<2$，因此$\{ a_n\}$单调递增有上界，则$\{ a_n\}$收敛。设其极限为$a$，在递推式两边取极限
