@@ -113,11 +113,20 @@
 
 
 % Mathematica
-\newcounter{mma}
-\setcounter{mma}{0}
+\newcounter{mma}[section]
 \def\mathematicatitlename{八云蓝的挑战 - Wolfram Mathematica 13.1}
 \def\mmain{\stepcounter{mma}\texttt{\color{gray}In[\arabic{mma}]:=}\ignorespaces}
 \def\mmaout{\texttt{\color{gray}Out[\arabic{mma}]={ }}}
+\newtcolorbox{prologuebox}[1]{
+    colback = gray!15!white,
+    colframe = black!80,
+    arc = 1mm,
+    auto outer arc,
+    boxrule = 0.5pt,
+    title = #1,
+    fontupper = \itshapeCJK,
+    before upper = {\setlength{\parskip}{0.73em}\setlength{\parindent}{2em}},
+}
 \newtcolorbox{notebook}[1]{
     colframe = lightgray!70!white,
     fontupper = \upshape\ttfamily,
@@ -138,8 +147,8 @@
             }
         }, coltitle = black, segmentation style = {draw = lightgray!70!white, very thick, solid}
 }
-\newenvironment{mathematica}{
-    \begin{notebook}{\mathematicatitlename}%
+\newenvironment{mathematica}[1][]{
+    \begin{notebook}{\expandafter\ifx\expandafter&\detokenize{#1}&\mathematicatitlename\else#1\fi}%
         \def\key##1{{\itshape\color[HTML]{3c7d9e}##1}}%
         \def\UDsymbol##1{{\color[HTML]{002cc3}##1}}%
         \def\comment##1{{\itshape\color[HTML]{65b4cd}##1}}%
@@ -152,6 +161,29 @@
         \def\@{{\char"0040}}%
         \def\~{{\char"007E}}}\space\ignorespaces
         }{\end{notebook}}
+\newtcolorbox{website}[1]{
+    enhanced,
+    clip upper = true,
+    left = -3pt,
+    top = -3pt,
+    right = -3pt,
+    bottom = -3pt,
+    colframe = lightgray!40!white,
+    title = {\
+            \begin{tikzpicture}
+                \filldraw[macred] (0, 0) circle (0.3em);
+                \filldraw[macyellow!80!white] (0.5, 0) circle (0.3em);
+                \filldraw[macgreen] (1, 0) circle (0.3em);
+            \end{tikzpicture}%
+            \hfill{\footnotesize\sffamily #1}\hfill%
+            \phantom{
+                \begin{tikzpicture}
+                    \filldraw[macred] (0, 0) circle (0.3em);
+                    \filldraw[macyellow!80!white] (0.5, 0) circle (0.3em);
+                    \filldraw[macgreen] (1, 0) circle (0.3em);
+                \end{tikzpicture}
+            }
+        }, coltitle = black, sidebyside, righthand ratio = 0.02, colbacklower = red!20, sidebyside gap = 0mm, sidebyside align = top seam, height = 0.5\paperheight}
 
 
 % listings Settings

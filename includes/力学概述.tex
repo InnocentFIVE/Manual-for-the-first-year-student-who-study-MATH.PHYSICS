@@ -141,7 +141,7 @@
 \uwave{拉格朗日}实现了欧拉的猜想。如果说牛顿力学体系的核心概念是“力”，那么拉格朗日力学体系的核心概念就是“能量”。拉格朗日从牛顿力学出发，结合达朗贝尔原理和虚功原理，推出了\textbf{（第二类）拉格朗日方程}：
 
 \[
-    \frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial \dot{q}_i}=0 \quad (i=1,2,\cdots,n)
+    \frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial \dot{q}_i}=0, \quad (i=1,2,\cdots,n)
     .\]
 
 拉格朗日用\textbf{广义坐标}$q_i$来描述物体的空间位置，其中$n$即为自由度数，这时其对时间的导数——广义速度$\dot{q}_i=\dfrac{\mathrm{d} q_i}{\mathrm{d} t}$的概念就不那么直观了。不过，结合坐标和广义坐标之间的关系
@@ -152,13 +152,13 @@
 \end{marginparfigure}
 
 \[
-    x_j=x_j\left(q_1, q_2, \cdots, q_n\right) \quad \left(j=1, 2, \cdots, N\right)
+    x_j=x_j\left(q_1, q_2, \dots, q_n\right), \quad \left(\;\!j=1, 2, \dots, N\right)
     .\]
 
 以及偏导数的链式法则，表示出牛顿体系中的物理量还是不困难的。式中的
 
 \[
-    L=L(q_1,q_2,\cdots,q_n,\dot{q}_1,\dot{q}_2,\cdots,\dot{q}_n,t)
+    L=L(q_1,q_2,\dots,q_n,\dot{q}_1,\dot{q}_2,\dots,\dot{q}_n,t)
     .\]
 
 是系统动能与势能之差，我们称之为\textbf{拉格朗日量}。
@@ -176,7 +176,7 @@
 
 \uwave{哈密顿}早期的工作是研究光学，但他将其中的数学方法推广到了力学上，创立了哈密顿力学体系。哈密顿对拉格朗日量$L$进行了勒让德变换
 \[
-    H\left(q_1,\cdots,q_n,p_1,\cdots,p_n,t\right)=\sum_{i=1}^n{\dot{q}_ip_i}-L\left( q_1,\cdots ,q_n,\dot{q}_1,\cdots ,\dot{q}_n,t \right)
+    H\left(q_1,\dots,q_n,p_1,\dots,p_n,t\right)=\sum_{i=1}^n{\dot{q}_ip_i}-L\left( q_1,\dots ,q_n,\dot{q}_1,\dots ,\dot{q}_n,t \right)
     .\]
 其中$p_i$为广义动量。再对该式取变分，就能推出\textbf{哈密顿方程}
 
@@ -184,7 +184,7 @@
     \begin{dcases}
         \dot{q}_i=\dfrac{\partial H}{\partial p_i},  \\
         \dot{p}_i=-\dfrac{\partial H}{\partial q_i}, \\
-    \end{dcases} \quad \left( i=1,2,\cdots ,n \right)
+    \end{dcases} \quad \left( i=1,2,\dots ,n \right)
     .\]
 
 \begin{marginparfigure}

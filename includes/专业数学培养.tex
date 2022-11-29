@@ -29,8 +29,8 @@
 
 \begin{enumerate}
     \item 善用图书馆。如果将图书馆只是当作自习室，那实在是暴殄天物。对于一个大学生来说，图书馆有着最直接也最好用的海量图书资源。你可以在图书馆借到大量的、侧重点各不相同的同一类书籍。有些大学的图书馆会有许多国外的或者国内已经绝版的、甚至是独一无二的优质资料。不夸张的说，图书馆至少能够满足一般人在本科阶段大多数的资料需求。同时，善用图书馆的检索功能，掌握书籍的检索规律，还能锻炼资料检索的能力。
-    \item 电子资源的检索。Zlib、知网、Sci-Hub、学校图书馆的线上借阅、各种不知名的小网站、百度网盘等等都藏有许多资源，这种资源检索往往需要对所研究的领域有一定了解。在入门阶段，不妨应用百度、知乎、Google、CSDN等检索平台，对于某些领域来说能够满足快速入门，获得一个初步印象的需求。
-          关于更多的具体的数学检索平台，可参见USTC基础数学修课指南。
+    \item 电子资源的检索。\href{https://zh.wikipedia.org/wiki/Z-Library}{Zlib}、\href{https://www.cnki.net}{知网}、\href{https://www.sci-hub.st}{Sci-Hub}、学校图书馆的线上借阅、各种不知名的小网站、百度网盘等等都藏有许多资源，这种资源检索往往需要对所研究的领域有一定了解。在入门阶段，不妨应用\href{https://www.baidu.com}{百度}、\href{https://www.zhihu.com}{知乎}、\href{https://www.google.com}{Google}、\href{https://www.csdn.net}{CSDN} 等检索平台，对于某些领域来说能够满足快速入门，获得一个初步印象的需求。
+          关于更多的具体的数学检索平台，可参见 \href{http://home.ustc.edu.cn/~yx3x/USTC/ustcmathplan3.pdf}{USTC 基础数学修课指南}。
     \item 充分调动人脉资源。很多时候，我们缺少的往往是获得关键信息、资料的途径，这些内容不是通过阅读已有书籍或电子资料就能获得的。这时候，要积极地向身边或线上了解相关领域的朋友请教，他们手中的资料、他们对于该领域的见解，都是相当宝贵的信息，这要比自己探索方便快捷得多。但是，如果有志于独立研究，也不要过分依赖于他人的帮助，因为总有一天会面临无人可问的情形。
 \end{enumerate}
 
@@ -223,8 +223,6 @@
     \item  信号频谱分析——Fourier级数，见 \autoref{fig:一种信号的时域与频域关系对应图}
 \end{itemize}
 
-
-
 \begin{figure}
     \centering
     \includegraphics[scale=0.45]{Fourier_series.pdf}
@@ -288,7 +286,6 @@
           \end{itemize}
 \end{itemize}
 
-
 \subsubsection{线性代数}
 
 \paragraph{主体知识介绍}
@@ -317,13 +314,11 @@
     \caption{验证旋转变换的齐次性}
 \end{figure}
 
-
 \begin{figure}[h]
     \centering
     \includegraphics[width = 0.8\linewidth]{additivity.pdf}
     \caption{验证旋转变换的可加性}
 \end{figure}
-
 
 下面来考察将点$(x,y)$平移$(a,b)$之后的结果，即
 \[
@@ -332,25 +327,7 @@
         y'=y+b. \\
     \end{cases}
     \]
-
-
-
-
-
-
-% \begin{center}
-%     % \includegraphics[scale=0.45]{homogeneity.pdf}
-%     \addtocounter{figure}{1}
-%     \small 图\thesubsection.\thefigure 验证旋转变换的齐次性 \normalsize
-% \end{center}
-% \begin{center}
-%     % \includegraphics[scale=0.45]{additivity.pdf}
-%     \addtocounter{figure}{1}
-%     \small 图\thesubsection.\thefigure 验证旋转变换的可加性 \normalsize
-% \end{center}
-
 我们说这个变换不满足齐次性，也不满足可加性。仅以齐次性为例说明，将平移变换记为$f$，则$f(x,y)=(x+a,y+b)$，对于任意一个给定的$k$，$f(kx,ky)=(kx+a,ky+b)\ne (kx+ka,ky+kb)$。从几何直观上来看，先将向量$(x,y)$伸长$k$倍，再将箭头的位置平移$(a,b)$，与先将向量$(x,y)$箭头的位置平移$(a,b)$，再将其伸长$k$倍的结果显然是不一样的。类似也能验证可加性不成立。但是，如果我们将点$(x,y)$视为三维空间中的向量$(x,y,z)$，并规定新的平移变换为
-
 \begin{align*}
     \begin{cases}
         x'=x+az, \\
@@ -358,7 +335,6 @@
         z'=z .   \\
     \end{cases}
 \end{align*}
-
 能够验证，这样规定的平移变换又是满足齐次性和可加性的了，因而是线性变换。同时，$z$的选取是任意的，为了与平移的单位一致，直接令$z=1$。
 
 \begin{figure}[h]
@@ -488,13 +464,9 @@
     f:\mathbb{R} \times \mathbb{R}^2  \to \mathbb{R}^2,~ (a,\symbfit{x})  \mapsto a\symbfit{x}
     .\]
 和内积
-
 \[
     f:\mathbb{R}^2 \times \mathbb{R}^2\to \mathbb{R},~(\symbfit{x}_1,\symbfit{x}_2) \mapsto a
     .\]
-
-
-
 因为这种映射的“乘数”和“结果”形式不统一，所以说它们不是“真正的”乘法，而不曾定义
 \[
     f:\mathbb{R}^2 \times \mathbb{R}^2\to \mathbb{R}^2,~(\symbfit{x}_1,\symbfit{x}_2) \mapsto \symbfit{y}
@@ -921,7 +893,7 @@ Green函数法具有深厚的物理背景，它从考虑点电荷场分布的问
 
 \begin{itemize}
     \item \textcite[应用泛函分析]{薛小平2012应用泛函分析}
-    \item \textcite[应用泛函分析]{柳重堪1986}     %……
+    \item \textcite[应用泛函分析]{柳重堪1986}
     \item \textcite[变分法基础]{老大中2015变分法基础}
 
           这本书的起点很低，即使没有泛函分析的基础也基本能无障碍阅读，其次它不仅涵盖了各种形式的变分问题的求解方法，还补充了一些关于泛函分析的基本语言和基本知识，最后一章还讨论了变分法在力学中的应用，因此这本书对于力学的同学来说是十分好用的。
@@ -938,8 +910,6 @@ Green函数法具有深厚的物理背景，它从考虑点电荷场分布的问
 
     \item \textcite[有限元方法的数学理论]{杜其奎2012}
 \end{itemize}
-
-%……
 
 \subsection{其他参考资料}
 
