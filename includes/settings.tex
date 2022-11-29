@@ -16,6 +16,9 @@
 \setlength{\columnsep}{1cm}
 \everymath{\displaystyle}
 \newcommand{\link}[1]{\href{#1}{\faLink}}
+
+% Small Caps \LaTeX
+
 \def\LaTeX{L\kern-.36em\raisebox{.38ex}{\textsc{a}}\kern -.16em T\kern -.1667em\raisebox{-.5ex}{E}\kern -.125em X}
 
 % New theorem environments
@@ -182,6 +185,7 @@
     breaklines,
     moretexcs={\colorbox,\color,\part,\subsection,\paragraph,\boldsymbol,\mathbb,\mathcal,\pgfplotsset,\addplot}
 }
+\DeclareDocumentCommand\CS{mg}{\texttt{\symbol{`\\}#1\IfNoValueF{#2}{\{#2\}}}}
 
 % Pagestyle / Title style Settings
 \def\CTEX@part@pagestyle{empty}
